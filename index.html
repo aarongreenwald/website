@@ -1,0 +1,66 @@
+<link href="bootstrap.min.css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html>
+
+<style>
+body {
+	background-color: #efefc5;
+}	
+a { cursor: pointer;}
+</style>
+	<head>
+		<title>Aaron Greenwald | About</title>
+	</head>
+	<body>
+	<div class="container-fluid">
+	<div class="grid">
+	<div class="row">
+	<div class="col-md-2"></div>
+	<div class="col-md-8">
+	<p>			
+			Hello there. I'm Aaron Greenwald, and this page is my small corner of the web.
+			</p>
+			<p>
+			<h3>About Me</h3>			
+			I'm a software developer in the Washington, DC area. 
+			The majority of my work experience has been in the .NET universe, but I've recently begun exploring
+			a FOSS stack for my personal projects. I currently use PostgreSQL and Python 
+			(<a href="http://www.pylonsproject.org/">Pyramid</a>) to develop web apps that 
+			can be hosted on Linux. 
+</p><p>			
+			Since I've begun programming, I've worked on a variety of different kinds of projects. 
+			Currently, I'm focused primarily on web development. 
+			I'm especially interested in how client-side frameworks can be used to make web apps a viable replacement for desktop apps.
+			I've been doing a lot of work with AngularJS recently and I'm starting to believe that although today's client-side frameworks
+			don't eliminate the challenges of developing interactive, desktop-like applications for the web, 
+			they're a big step forward for the future of computing. Time will tell, of course.
+			    </p> <p>
+			My (mostly complete) professional bio can be found on <a href="https://www.linkedin.com/in/greenwaldaaron">LinkedIn</a>.  
+
+		</p><p>					
+		<h3>Contact Me</h3>
+		If you'd like to contact me about software, try contacting me through <a href="https://www.linkedin.com/in/greenwaldaaron">LinkedIn</a> or directly via 
+		<a class="email-address"> email</a>.
+		If you'd like to get in touch with me about anything else, you can try <a href="https://www.facebook.com/aaron.greenwald.18">facebook</a> or <a class="email-address">email</a>.
+		If you're reading this on a mobile device, you can also download 
+		my <a href="/vcard.vcf">contact card</a>. Depending on how awesome your browser is,
+		you may or may not have to open the downloaded file manually.		 
+		</p>
+			
+		
+		</div>
+		<div class="col-md-2"></div>
+		</div>
+		</div>
+		</div> 
+	</body>
+</html>
+<script type="text/javascript" >
+	var elements = document.querySelectorAll(".email-address");
+	var emailAddress = "aaron" + "@" + "aarongreenwald.com";
+	for (var i = 0; i < elements.length; i++ ){		
+		elements[i].onclick = function() {
+			prompt("Please copy and paste my email address into your mail client.", emailAddress)		
+		};	
+	}
+</script>
