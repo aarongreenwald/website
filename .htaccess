@@ -1,6 +1,8 @@
-AddType text/vcard .vcf
+#AddType text/vcard .vcf
 AddType text/x-vcard .vcf
 
 #Redirect 301 /qr /vcard.vcf
-Redirect 301 /qr https://linkedin.com/in/greenwaldaaron
+#Redirect 301 /qr https://linkedin.com/in/greenwaldaaron
+#don't need this, I'll just put the qr file as the index.html of a qr directory
+#Redirect 301 /qr /qr.html
 

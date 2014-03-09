@@ -22,20 +22,21 @@ a { cursor: pointer;}
 	<div>
 	<nav>
     <ul>
-      <!--      <li><a href="/">About Me</a></li>      
+      <li><a href="/">About Me</a></li>      
         <ul>
             <li><a href="/resume">Resume</a></li>
-            <li><a href="/contact">Contact</a></li>
         </ul>
       </li>
-<li><a href="/projects">Projects</a>
+      <!--<li><a href="/projects">Projects</a>
         <ul>
             <li><a href="/projects/pim">PIM</a></li>
             <li><a href="/projects/kanban">Kanban</a></li>                                    
         </ul>
       </li>
       <li><a href="/blog">Blog</a>        
-      </li>          -->      
+      </li>          -->
+      <li><a href="/contact">Contact</a>        
+      </li>
     </ul>
 </nav>
 	</div>

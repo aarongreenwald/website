@@ -1,0 +1,71 @@
+<html>
+<style>
+body {
+	background-color: #efefc5;
+}	
+a { cursor: pointer;}
+</style>
+	<head>
+		<link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">		
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">		
+		<title>Aaron Greenwald | Bio</title>
+	</head>
+	<body>
+	<div class="container-fluid">
+	<div class="grid">
+	<div class="row">
+	<div class="col-md-2"></div>
+	<div class="col-md-8">
+
+<div class="job-entry">
+	<span class="title">Software Developer</span> - <span class="employer">American Capital</span>
+	<span class="time-frame">October 2013 – Present</span>
+</div>		
+
+
+
+Technologies used:
+• SQL Server (2008, 2012)
+• .NET (C#, ASP.NET MVC 5, WebForms)
+• Front-end: AngularJS, jQuery, Bootstrap, HTML, CSS 
+• TFS 2013
+
+Software Developer/Analyst - GEICO
+July 2012 – October 2013
+Member of a team responsible for the development and maintenance of an internal business intelligence/analytics application built with SAS and .NET. Received two promotions in fifteen months.
+
+Responsibilities included both the design and development of new functionality in addition to maintaining and fixing bugs in legacy code. Tools/Technologies:
+• SAS
+• SQL (DB2, SQL Server)
+• .NET (C#, ASP.NET MVC, WinForms)
+• Javascript (jQuery/jQuery UI), HTML, CSS
+• SSRS
+• Unix, SVN (Helped team transition from TFS to SVN for source control)
+
+Participated in complete SDLC, and collaborated with team members on:
+• Fixing bugs
+• Designing and developing new features
+• Writing technical and user test plans and test scripts
+• Technical testing
+• Documenting new features (user and technical)
+• Deployment
+
+Delivered a talk at the company's annual SAS User Group conference entitled: "Deduping Methods: SAS & SQL (plus other SQL windowing tricks)"
+
+Technical Support - Dynamic Data Concepts
+May 2011 – June 2012
+• Responsible for software testing as part of the software release cycle
+• Troubleshooted client issues
+• Resolved technical issues and helped users get the software working for them
+• Trained users in company's software
+• Administered JIRA as company's bug tracker and support Helpdesk
+• Used Microsoft Visual Studio Lightswitch to develop a customer information database to interact with JIRA
+	</div>
+			
+		<div class="col-md-2"></div>
+		</div>
+		</div>
+		</div> 
+	</body>
+</html>

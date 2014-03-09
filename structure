@@ -1,0 +1,24 @@
+Home/
+	Blog * (Home page)
+	About (brief synopsis, reference to full resume on the site. Home page until blog exists)
+	Contact (combine with about?)
+	Resume (full resume, each item is expandable for details, also reference to LinkedIn)
+	Projects (github, whatever)
+	
+For now, it's just About, Contact, and Resume. Or just About/Resume. Should I rename resume to bio? Look around a bit.
+Serve it static if possible. I can repeat headers on each of the pages. Eventually, I'll need a system for the blog, so I'll use Pyramid.
+Until then, I only need one page with hidden content. It loads once. There's not much text, it's all indexed, etc.
+A single page for everything except the blog, I think. It'll be tiny. No frameworks necessary.
+
+The blog will have to be a separate page, with a link for each page, dynamically generated. 
+
+So: / 
+	 /#about
+	 /#contact
+	 /#resume
+	 /#projects
+	 /blog/some-page-title-etc
+
+I'll redo it when there's a blog. Until then, it just makes sense to have one page. Even though it might mean having another library. 
+Alternative is two or three pages and the navbar becomes difficult.  
+	
