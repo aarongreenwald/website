@@ -24,5 +24,8 @@ In the single page method, we have:
 	 /blog/some-page-title-etc (I'd need angular to get this on the single page, and it would kill SEO I think.)
 	 
 We'd use progressive javascript so that all the sections are on the page before javascript runs and google can find them.
+It wouldn't use Angular to load partial data from other pages, because that would hurt SEO. 
 I'm not sure how that compares to separate pages. 
-	
+Another option is to bite the bullet and use server-side dynamic rendering so that I can
+download very little to the client and optimize it there, and keep the code organized and logical
+on the server side.
