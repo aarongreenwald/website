@@ -1,134 +1,150 @@
+<!DOCTYPE html>
 <html>
-<style>
-body {
-	background-color: #efefc5;
-}	
-a { cursor: pointer;}
-div.job-entry  span.title {	
-	font-weight:bold;
-}
-div.job-entry span.employer{
-	
-}
-div.job-entry span.time-frame{
-	font-style:italic;	
-}
-div.job-entry > div.details {
-	/*display:none;*/
-	margin-bottom: 35px;
-}
-</style>
 	<head>
+		<style>
+						
+			div.job-entry  span.title {	
+				font-weight:bold;
+			}
+			div.job-entry span.employer{
+				
+			}
+			div.job-entry span.time-frame{
+				font-style:italic;	
+			}
+			div.job-entry > div.details {				
+				margin-bottom: 35px;
+			}
+			@media (max-width: 990px) {
+				.row .col-md-4 > .time-frame.pull-right {
+					float: none !important;
+					font-style:italic;					
+				}
+			}
+				
+		</style>		
 		<link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">		
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">		
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">		
+		<link href="/style.css" rel="stylesheet">		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="Profssional Bio/Resume of Aaron Greenwald (Software Developer)">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 		<title>Aaron Greenwald | Resume</title>
 	</head>
-	<body>
-	<div class="container-fluid">
-	<div class="grid">
-	<div class="row">
-	<div class="col-md-2"></div>
-	<div class="col-md-8">
-
-	<div class="job-entry">
-		<div class="row">
-			<div class="col-md-8">
-				<span class="title">Software Developer</span> - <span class="employer">American Capital</span>
-			</div>
-			<div class="col-md-4">
-				<span class="time-frame pull-right">October 2013 – Present</span>
-			</div>		
-		</div>
-		
+	<body>	
 	
-		<div class = "details">
-			Technologies used:
-			<ul>
-				<li>SQL Server (2008, 2012)</li>
-				<li>.NET (C#, ASP.NET MVC 5, WebForms)</li>
-				<li>Front-end: AngularJS, jQuery, Bootstrap, HTML, CSS </li>
-				<li>TFS 2013</li>
-			</ul>
-		</div>
-	</div>		
+		<div class="grid">
+			<div class="row">
+			<div class="col-md-2"></div>
+			<div class="col-md-8 side-padding">	
+				<nav class="navbar" role="navigation">		  			
+				  <a class="navbar-brand" href="/">Home</a>
+				  <a class="navbar-brand active" href="/resume">Resume</a>
+				  <a class="navbar-brand" href="/blog">Blog</a>			
+			</nav>
+				
+				<div class="job-entry">
+					<div class="row">
+						<div class="col-md-8">
+							<span class="title">Software Developer</span> - 
+							<span class="employer"><a href="http://www.americancapital.com">American Capital</a></span>
+						</div>
+						<div class="col-md-4">							
+							<span class="time-frame pull-right">October 2013 – Present</span>
+						</div>		
+					</div>
+					
+				
+					<div class = "details">
+						Technologies used:
+						<ul>
+							<li>SQL Server (2008, 2012)</li>
+							<li>.NET (C#, ASP.NET MVC 5, WebForms)</li>
+							<li>Front-end: AngularJS, jQuery, Bootstrap, HTML, CSS </li>
+							<li>TFS 2013</li>
+						</ul>
+					</div>
+				</div>		
 
-	<div class="job-entry">		
-		<div class="row">
-			<div class="col-md-8">
-				<span class="title">Software Developer/Analyst</span> - <span class="employer">GEICO</span>
-			</div>
-			<div class="col-md-4">
-				<span class="time-frame pull-right">July 2012 – October 2013</span>
-			</div>		
-		</div>
-		<div class = "details">
-			<p>
-			Member of a team responsible for the development and maintenance of an internal business 
-			intelligence/analytics application built with SAS and .NET. Received two promotions in fifteen months.
-			</p>
-			<p>
-			Responsibilities included both the design and development of new functionality in 
-			addition to maintaining and fixing bugs in legacy code. Tools/Technologies:
-			</p>
-			<ul>
-				<li>SAS</li>
-				<li>SQL (DB2, SQL Server)</li>
-				<li>Javascript (jQuery/jQuery UI), HTML, CSS</li>
-				<li>SSRS</li>
-				<li>.NET (C#, ASP.NET MVC, WinForms)</li>
-				<li>Unix, SVN (Helped team transition from TFS to SVN for source control)</li>
-			</ul>
+				<div class="job-entry">		
+					<div class="row">
+						<div class="col-md-8">
+							<span class="title">Software Developer/Analyst</span> - 
+							<span class="employer"><a href="http://www.geico.com">GEICO</a></span>
+						</div>
+						<div class="col-md-4">
+							<span class="time-frame pull-right">July 2012 – October 2013</span>
+						</div>		
+					</div>
+					<div class = "details">
 						<p>
-			Participated in complete SDLC, and collaborated with team members on:
-			</p>
-			<ul>
-				<li>Fixing bugs</li>
-				<li>Designing and developing new features</li>
-				<li>Writing technical and user test plans and test scripts</li>
-				<li>Technical testing</li>
-				<li>Documenting new features (user and technical)</li>
-				<li>Deployment</li>
-			</ul>
-			<p>
-				Delivered a talk at the company's annual SAS User Group conference entitled: <i>Deduping Methods: SAS & SQL (plus other SQL windowing tricks)</i>
-			</p>
-		</div>
-	</div>	
+						Member of a team responsible for the development and maintenance of an internal business 
+						intelligence/analytics application built with SAS and .NET. Received two promotions in fifteen months.
+						</p>
+						<p>
+						Responsibilities included both the design and development of new functionality in 
+						addition to maintaining and fixing bugs in legacy code. Tools/Technologies:
+						</p>
+						<ul>
+							<li>SAS</li>
+							<li>SQL (DB2, SQL Server)</li>
+							<li>Javascript (jQuery/jQuery UI), HTML, CSS</li>
+							<li>SSRS</li>
+							<li>.NET (C#, ASP.NET MVC, WinForms)</li>
+							<li>Unix, SVN (Helped team transition from TFS to SVN for source control)</li>
+						</ul>
+									<p>
+						Participated in complete SDLC, and collaborated with team members on:
+						</p>
+						<ul>
+							<li>Fixing bugs</li>
+							<li>Designing and developing new features</li>
+							<li>Writing technical and user test plans and test scripts</li>
+							<li>Technical testing</li>
+							<li>Documenting new features (user and technical)</li>
+							<li>Deployment</li>
+						</ul>
+						<p>
+							Delivered a talk at the company's annual SAS User Group conference entitled: <i>Deduping Methods: SAS & SQL (plus other SQL windowing tricks)</i>
+						</p>
+					</div>
+				</div>	
 
 
-<div class="job-entry">
-		<div class="row">
-			<div class="col-md-8">
-				<span class="title">Technical Support</span> - <span class="employer">Dynamic Data Concepts</span>
+				<div class="job-entry">
+					<div class="row">
+						<div class="col-md-8">
+							<span class="title">Technical Support</span> - 
+							<span class="employer"><a href="http://www.dynamicdataconcepts.com">Dynamic Data Concepts</a></span>
+						</div>
+						<div class="col-md-4">
+							<span class="time-frame pull-right">May 2011 - June 2012</span>		
+						</div>		
+					</div>		
+					<div class = "details">			
+						<ul>
+							<li>Responsible for software testing as part of the software release cycle</li>
+							<li>Troubleshooted client issues</li>
+							<li>Resolved technical issues and helped users get the software working for them</li>
+							<li>Trained users in company's software</li>
+							<li>Administered JIRA as company's bug tracker and support Helpdesk</li>
+							<li>Used Microsoft Visual Studio Lightswitch to develop a customer information database to interact with JIRA</li>
+						</ul>
+					</div>
+				</div>		
+											
 			</div>
-			<div class="col-md-4">
-				<span class="time-frame pull-right">May 2011 - June 2012</span>		
-			</div>		
+			<div class="col-md-2"></div>
 		</div>		
-		<div class = "details">			
-			<ul>
-				<li>Responsible for software testing as part of the software release cycle</li>
-				<li>Troubleshooted client issues</li>
-				<li>Resolved technical issues and helped users get the software working for them</li>
-				<li>Trained users in company's software</li>
-				<li>Administered JIRA as company's bug tracker and support Helpdesk</li>
-				<li>Used Microsoft Visual Studio Lightswitch to develop a customer information database to interact with JIRA</li>
-			</ul>
-		</div>
-	</div>		
-	</div>			
-		<div class="col-md-2"></div>
-		</div>
-		</div>
-		</div> 
+		<script type="text/javascript" >
+			var elements = document.querySelectorAll(".email-address");
+			var emailAddress = "aaron" + "@" + "aarongreenwald.com";
+			for (var i = 0; i < elements.length; i++ ){		
+				elements[i].onclick = function() {
+					prompt("Please copy and paste my email address into your mail client.", emailAddress)		
+				};	
+			}
+		</script>
+
 	</body>
 </html>
-<script>
-var elements = document.querySelectorAll(".job-entry");	
-	for (var i = 0; i < elements.length; i++ ){		
-		elements[i].onclick = function() {
-			this.querySelectorAll(".details")[0].setAttr("display", "visible");
-		};	
-	}
-</script>

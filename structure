@@ -1,31 +1,18 @@
-Ultimately, it should be: 
+A resume says: I need a job, please help me. 
+A business card says: I'm an established professional, let me know if I can assist you.
 
-/ ??
-	/blog
-	/about (brief synopsis, reference to full resume on the site. Home page until blog exists)
-	/contact (combine with about?)
-	/resume (full resume, each item is expandable for details, also reference to LinkedIn)
-	/projects (github, whatever)
+Landing should not use AngularJS unless I know how to do SEO with it. Serving static for now, but
+if it gets to the stage where it's more than a few pages, I'll probably need to use Pyramid to render pages
+based on templates and master pages and such. 
+
+Stage 1 - site is essentially a landing space for my name so my business card points somewhere and so 
+that no one else can get it. It's a way for people looking for me to find contact info and a bit about me:
+/ - Includes About and Contact info
+	/resume - should this be called bio? (full resume, each item is expandable for details, also reference to LinkedIn)
 	
-For now, it's just About, Contact, and Resume. Or just About/Resume. Should I rename resume to bio? Look around a bit.
-Serve it static if possible. I can repeat headers on each of the pages. Eventually, I'll need a system for the blog, so I'll use Pyramid.
-Until then, I only need the simplest thing possible. One page with all the content, and a navbar that shows/hides, might be the solution.
-If that's too complicated, it's ok to have two pages: About (Home)/Resume.
-I'd love to use Angular for this, but what will the performance and SEO impact be? Mostly because I could use directives for
-the resume. The simpler alternative is to just use classes and then javascript to replace the classes with bootstrap or simple
-css.
-
-In the single page method, we have:
-/ ??
-	 /#about
-	 /#contact (combine with about?)
-	 /#resume 
-	 /#projects
-	 /blog/some-page-title-etc (I'd need angular to get this on the single page, and it would kill SEO I think.)
-	 
-We'd use progressive javascript so that all the sections are on the page before javascript runs and google can find them.
-It wouldn't use Angular to load partial data from other pages, because that would hurt SEO. 
-I'm not sure how that compares to separate pages. 
-Another option is to bite the bullet and use server-side dynamic rendering so that I can
-download very little to the client and optimize it there, and keep the code organized and logical
-on the server side.
+Addition: Blog
+	/blog
+	The blog probably takes over the home page, and the home content moves to /about
+	The blog should be a standalone application, I think, that sits on /blog. 
+Addition: Projects	
+	/projects or /code		
