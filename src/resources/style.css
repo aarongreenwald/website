@@ -1,0 +1,42 @@
+body {
+    background-color: #white;
+}   
+a { cursor: pointer;}
+
+.navbar {
+    background-color:#eeeeee;
+}
+
+.navbar > a {
+    float: left;
+    padding: 15px;
+    font-size: 18px;
+    line-height: 20px;
+    height: 50px;
+    margin-left:2px;
+    border-radius:3px;
+    color:black;
+}
+    
+.navbar > a:hover{
+    text-decoration:none;
+    color:white;
+    background-color:#555 !important;     
+}
+.navbar > a.active{
+    color:white;
+    background-color:#333  !important;    
+}
+div.side-padding{
+    padding-left:30px;
+    padding-right:30px;
+}
+@media only screen and (min-width : 768px) {
+    #content {
+        margin-left:20vw;
+        max-width:60vw;
+    }
+}
+#content {
+    padding:5px;
+}
