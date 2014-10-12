@@ -1,0 +1,5 @@
+env/
+production.ini
+*.egg-info/
+
+*.pyc

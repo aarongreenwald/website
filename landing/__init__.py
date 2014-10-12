@@ -1,8 +1,8 @@
 from wsgiref.simple_server import make_server
 from pyramid.config import Configurator
 
-def main():
-    config = Configurator()
+def main(global_config, **settings):
+    config = Configurator(settings=settings)
     config.include('pyramid_chameleon')
     config.add_route('home', '/')
     config.add_route('resume', '/resume')
@@ -11,11 +11,4 @@ def main():
     config.add_static_view('/static', 'resources', cache_max_age = 0) 
     config.scan('views')  
     
-    app = config.make_wsgi_app()
-    return app
-
-if __name__ == '__main__':
-    app = main()
-    server = make_server('0.0.0.0', 6547, app)
-    print ('Starting up server on http://localhost:6547')
-    server.serve_forever()
+    return config.make_wsgi_app()    
