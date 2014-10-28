@@ -13,7 +13,7 @@
         <nav class="navbar" role="navigation">                  
               <a tal:attributes="class 'active' if title=='Home' else ''" href="/">Home</a>
               <a tal:attributes="class 'active' if title=='Resume' else ''" href="/resume">Resume</a>
-              <!--<a tal:attributes="class 'active' if title=='Projects' else ''" href="/projects">Projects</a>-->
+              <a tal:attributes="class 'active' if title=='Projects' else ''" href="/projects">Projects</a>
               <!--<a class="navbar-brand" href="/blog">Blog</a> -->
         </nav>
         

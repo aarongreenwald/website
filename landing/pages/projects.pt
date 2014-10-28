@@ -1,5 +1,13 @@
 <div metal:use-macro="layout">
-<div metal:fill-slot="content" >
-    Coming soon...
+<div metal:fill-slot="content">
+    In general, much of my hobby code can be found on <a href="http://www.github.com/aarongreenwald">GitHub</a>. This page
+    highlights what I'm currently focused on.
+    <h3>SeatStat</h3>
+    SeatStat helps teachers easily create seating plans for their classrooms.
+    It's a hobby project I started very recently, so the code's still a mess
+    and the direction and longevity of the project is still up in the air.
+    It has a python (Pyramid) backend and an AngularJS frontend. Check out 
+    the code on <a href="http://www.github.com/aarongreenwald/seatstat">GitHub</a>
+    or the beta app at <a href="http://www.seatstat.com">www.seatstat.com</a>.
 </div>
 </div>
