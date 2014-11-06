@@ -5,14 +5,16 @@ a { cursor: pointer;}
 
 .navbar {
     background-color:#eeeeee;
+    min-height:40px;    
+    height:40px;
 }
 
 .navbar > a {
     float: left;
-    padding: 15px;
-    font-size: 18px;
-    line-height: 20px;
-    height: 50px;
+    padding: 10px;
+    font-size: 14px;
+    line-height: 15px;
+    height:100%;
     margin-left:2px;
     border-radius:3px;
     color:black;

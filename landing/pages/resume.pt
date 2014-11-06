@@ -45,11 +45,12 @@
             in a shorter development time-frame.
         </p>
         Technologies:
-        <ul>                            
+        <ul>      
+            <li>AngularJS</li>
             <li>SQL Server (2008, 2012)</li>
-            <li>.NET (C#, ASP.NET MVC 5, WebForms)</li>
-            <li>Front-end: JavaScript (AngularJS, jQuery), HTML, CSS (Bootstrap) </li>
-            <li>TFS 2013</li>
+            <li>.NET (C#, ASP.NET MVC 5 & Web API, WebForms)</li>
+            <li>JavaScript (jQuery), HTML, CSS (Bootstrap), Node, npm </li>
+            <li>TFS 2013, git</li>
         </ul>
     </div>
 </div>      
