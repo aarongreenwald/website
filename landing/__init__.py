@@ -9,6 +9,6 @@ def main(global_config, **settings):
     config.add_route('projects', '/projects')  
     config.add_route('qr', '/qr')  
     config.add_static_view('/static', 'resources', cache_max_age = 0) 
-    config.scan('views')  
+    config.scan()  
     
     return config.make_wsgi_app()    
