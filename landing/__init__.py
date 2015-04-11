@@ -7,6 +7,8 @@ def main(global_config, **settings):
     config.add_route('home', '/')
     config.add_route('resume', '/resume')
     config.add_route('projects', '/projects')  
+    config.add_route('blog', '/blog')
+    config.add_route('blog-post', '/blog/{slug}')  
     config.add_route('qr', '/qr')  
     config.add_static_view('/static', 'resources', cache_max_age = 0) 
     config.scan()  

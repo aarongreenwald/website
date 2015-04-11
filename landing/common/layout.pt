@@ -2,19 +2,19 @@
 <html metal:define-macro="layout" lang="en" >
     <head>
         <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">     
-        <link href="static/style.css" rel="stylesheet">       
+        <link href="/static/style.css" rel="stylesheet">       
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="${description}">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-        <title>Aaron Greenwald | ${title}</title>
+        <title>${title} | Aaron Greenwald</title>
     </head>
     <body>  
         <nav class="navbar" role="navigation">                  
               <a tal:attributes="class 'active' if title=='Home' else ''" href="/">Home</a>
               <a tal:attributes="class 'active' if title=='Resume' else ''" href="/resume">Resume</a>
               <a tal:attributes="class 'active' if title=='Projects' else ''" href="/projects">Projects</a>
-              <a class="navbar-brand" href="/blog">Blog</a>
+              <a tal:attributes="class 'active' if title=='Blog' else ''"  href="/blog">Blog</a>
         </nav>
         
         <div id="content">

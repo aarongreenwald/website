@@ -1,0 +1,57 @@
+TFS Monitor: Keeping Track of TFS Builds and Work Progress
+3/23/2015
+tfs tfs-monitor
+
+
+
+<p>Team Web Access, shipped with TFS, has improved a lot in the last few years. It offers a competitive alternative to Visual Studio for tracking your work items, queuing builds and more. But it has a few limitations that make it less than ideal for monitoring your team's progress as a whole.</p>
+
+<p>Team Web Access doesn't have a view you can put on a large monitor (or two) in a hallway or central area in your office. Lots of teams like to have a list of recently run builds (with statuses) or a list of remaining work in the current sprint prominently displayed for all to see. It helps team members and management quickly assess where the team stands with respect to the sprint's end date and the state of the code base. </p>
+<p>Another challenge with using TFS presents itself if your team juggles multiple projects, or if you have project teams with overlapping members. TWA seems to have been designed with the assumption that you're always working on just one project at a time. There is no view, for instance, that displays all failed builds for all projects. If you are running multiple projects, and each has a few build definitions (such as one for CI, another for a UAT enviornment, etc), it would be nice to be able to see the status of all of the builds in your project collection in one place.</p>
+
+<p>On the work side, although it's possible to compose a query that shows work items from multiple projects at the same time, it's not possible to write a query that is aware of the current sprint. You have to update the Iteration Path in the query every time the current sprint changes. Team Web Access is aware of the current sprint in the Backlog view, but for some reason that does not extend to queries. </p>
+
+<p><em>Update: The day after I wrote this, I discovered that a <code>@CurrentIteration</code> query token was just added to Visual Studio Online. It is not available in on-prem yet, though, so for the time being this is still an issue to me.</em></p>
+
+<p>Fortunately, TFS provides a relatively robust API. </p>
+
+<h1>TFS Monitor</h1>
+
+<p>TFS Monitor is a side project some of us in my office started and American Capital, Ltd has graciously open-sourced (<a href="https://github.com/acas/tfs-monitor" title="TFS Monitor Git Repository" target="_blank">GitHub</a>). Its primary goal is to provide a simple solution that can serve as a hallway monitor for our project collection's builds (there are multiple build definitions across multiple projects) and our proejcts' remaining work. </p>
+
+<h2>Real-time Updates</h2>
+
+<p>Another main draw of TFS Monitor, aside from its optimization for large screens, is that it updates itself in real-time. Team Web Access requires someone to keep refreshing the page/query to get updated data on most of its views. The build detail page does auto-update every ten seconds or so but that's small consolation - the  sidebar on the same page needs to be refreshed manually.</p>
+
+<p>TFS Monitor uses signalR to automatically update the client when data on the server changes. This makes it ideal for unattended use: set it up and walk away.</p>
+
+<h2>Other Uses</h2>
+
+<p>TFS Monitor's value is not just in serving as a hallway monitor, although that is its primary function. I find it convenient for a few other things, as well. I typically have the build monitor open in another tab in my browser all day. If a build fails, TFS Monitor plays a short musical number that alerts me. I can check what failed and get it fixed. With continuous integration builds running every time I check something in, this is very convenient. </p>
+
+<p>I also use the work monitor on my desktop a lot. It was designed to present some basic information very straight-forwardly, with fewer clicks than if I was using TWA. For example, how quickly can you answer the following questions about your team?</p>
+
+<ul>
+<li>How many work items are still open in the current sprint for Project XYZ? What about Project ABC?</li>
+<li>How many work items assigned to me are still in a New state, across all projects, in their respective current sprints? What about assigned to Alice? Can I give a quick status update on my work by project?</li>
+<li>I have a few bugs I have to get fixed in a few different projects. There are several sprints going on at once - which sprint ends first? When do they all end? And what sprint are we in middle of for each project?</li>
+</ul>
+
+<p>Most large organizations probably have a team of developers dedicated to a each project with no overlap, and TFS seems to have been designed with those organizations in mind. But in smaller development shops, it's more common for a few developers to support a variety of unrelated applications on different code bases, backlogs, and release cycles. For environments like ours, I find the TFS Monitor helps me stay organized and on top of what's going on without getting confused or losing items in the shuffle. I don't have to constantly switch between projects to and choosing the queries I need to find the most commonly required information.</p>
+
+<h2>The Stack</h2>
+
+<p>TFS Monitor is a simple AngularJS front-end and an ASP.NET WebAPI back-end. It's easy to install on IIS - just plug and play, for the most part. </p>
+
+<p>The AngularJS application uses our ACASLibraries javascript library for some common formatting functionality, bootstrap, and a few other simple libraries. </p>
+
+<h2>The Future</h2>
+
+<p>TFS Monitor is a work in progress. There are some bugs surrounding how and when signalR sends out updates, and I believe the performance server-side can be improved. There's a more-complete-but-not-really-up-to-date <a href="https://github.com/acas/tfs-monitor/issues" title="TFS Monitor Issues" target="_blank">issue tracker</a> on the GitHub repository, but as of today the main things I'd like to see happen are: </p>
+
+<ul>
+<li>A more responsive UI, especially optimized for mobile devices</li>
+<li>Ironing out the server-side push bugs</li>
+<li>Optimizing the server-side work, perhaps converting to TFS's new REST API</li>
+</ul>
+					
