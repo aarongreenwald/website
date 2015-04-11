@@ -66,6 +66,13 @@
 			padding-right:100px;
 		}
 
+		/*override the global #content positioning*/
+		#content {
+			margin-left:10vw;
+			max-width:80vw;
+			margin-right:10vw;
+		}	
+
 	}
 	
 	.content .post {
@@ -99,12 +106,6 @@
 
 	.hide {
 		display:none;
-	}
-
-	#content {
-		margin-left:10vw;
-		max-width:80vw;
-		margin-right:10vw;
 	}
 
 </style>
