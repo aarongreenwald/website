@@ -9,5 +9,17 @@
     It has a python (Pyramid) backend and an AngularJS frontend. Check out 
     the code on <a href="http://www.github.com/aarongreenwald/seatstat">GitHub</a>
     or the beta app at <a href="http://www.seatstat.com">www.seatstat.com</a>.
+
+    <h3><a href="https://github.com/aarongreenwald/pim">PIM</a></h3>
+    PIM (Personal Information Manager) is a hobby project I occassionally put some work into. 
+    It's been a long time with little progress because I keep shifting focus to other things, 
+    but at some point I'm hoping to get it to the point where it's usable. 
+    The basic idea behind PIM is to have a place to store all kinds of personal data 
+    I like to track, from finances and budgeting to a diary to notes. 
+
+    PIM was the first project I started using python on the backend, and I'm using it to
+    learn a new stack I can use on a non-Windows environment.
+    You can view the code on <a href="http://www.github.com/aarongreenwald/pim">GitHub</a>
+    .
 </div>
 </div>

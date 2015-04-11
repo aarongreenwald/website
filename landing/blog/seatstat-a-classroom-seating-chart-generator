@@ -1,0 +1,34 @@
+SeatStat: A Classroom Seating Chart Generator
+10/31/2014
+seatstat
+
+<p>A little while ago I started a new project I now call SeatStat. One bright and sunny day (because all good things start on bright and sunny days) a teacher I know commented to me that making seating charts for her classroom is very time-consuming because there are always kids that can't sit together, and as the year progresses, the list of children that are incompatible with one another grows. It takes a long time, she said, to figure out just where everyone should sit so that they'll all get along. (Her classroom setup consists of a number of tables that children sit around, not desks. Apparently this configuration is somewhat common in the lower grades.)</p>
+
+<p>I'm a nerd, so I responded that that doesn't seem like something a computer couldn't handle fairly easily. Why don't I write something that does that? Yeah, why not? Because that's what programmers do. We overcommit.</p>
+
+<p>When I started thinking about it, I realized that it wouldn't be that easy. Consider a class with 24 children and a classroom with six tables. How many ways can you organize these 24 children into six groups of four each, where order doesn't matter? I knew it would be a big number, but until I did the arithmetic, I had no idea just how large it would be.</p>
+
+<p>It's a <a href="http://www.wolframalpha.com/input/?i=%2824%21%29%2F%286%21*%284%21%5E6%29%29" title="Wolfram Alpha">twelve digit number</a>.</p>
+
+<p>Using a naive brute force method, we could simply iterate through all possible classroom configurations until we find a solution. But I don't want to even find out how long that'll take. I want to return results to users near-instantly. Anything longer than a few hundred milliseconds, including network latency, is too long.</p>
+
+<p>This is an intriguing problem. Most of the software I've worked on in my life follows the same basic concept:</p>
+<ul>
+<li>Show the user some input fields</li>
+<li>Save the data somewhere so that the user can retrieve it later</li>
+<li>Show the user the data they saved last time</li>
+</ul>
+
+<p>Pretty much all business software, and a large portion of consumer software, follows this pattern in some way or another. The vast majority of software development work in the world, it appears, consists of doing these three things in unique ways to satisfy the super-specific needs of a specific audience's use-case.</p>
+
+<p>The classroom seating problem, on the other hand, is an actual, real-world, <i>practical</i> use for the kind of thing CS degrees teach you. Remarkable: I think I found an application for the things I would've learned in school had I majored in CS. I was fascinated, so I started thinking about this problem a lot. I shared it with a friend of mine working on her PhD in physics, and she validated my enthusiasm by confirming that it's quite an interesting puzzle.</p>
+
+<p>Some time after I started down the rabbit hole, I realized that all this thinking about algorithms was a diversion from the real problem here. Teachers don't really care how many ways I can arrange their classroom, or how cool <a href="http://en.wikipedia.org/wiki/Constraint_satisfaction_problem">constraint satisfaction problems</a> are. They just want a seating chart for their classroom, and they want it to be relatively easy. And I bet that the vast majority of the time, the input parameters a teacher will have lend themselves to a trivial solution.</p>
+
+<p>For an app to be useful, it doesn't have to be elegant or mathematically beautiful. It just has to satisfy its audience's needs in a straightforward fashion. Although the math guy in me wants to write an algorithm that guarantees a solution in the minimum amount of time, the software developer in me knows that what makes or breaks a software solution is not its provable correctness but its usability, clarity, and ability to solve the user's problems clearly and intuitively.</p>
+
+<p>If a user tries out SeatStat with an unusually large number of constraints, they may find that SeatStat cannot find a solution. If this happens, SeatStat will indicate as much in the UI. But the odds of that happening are very slim when users are using realistic classroom data. If the UI sucks (and it does, for now)...well, they'll notice that right away, go away and never come back. And then it won't matter whether or not the algorithm works perfectly.</p>
+
+<p>So I stopped thinking about the algorithm and started building an application. I just released a beta version at <a href="http://www.seatstat.com">www.seatstat.com</a>, and if there's enough interest, I'll revisit the algorithm and make it faster and more sophisticated. Check out the source code is on <a href="http://github.com/aarongreenwald/seatstat">GitHub</a>: a python (<a href="http://www.pylonsproject.org/">Pyramid</a>) back-end and an <a href="https://angularjs.org/">AngularJS</a> front-end. I'll probably write more about the app's architecture later. </p>
+
+<p>SeatStat is still a work in progress, so the code's still a mess and I'm still figuring out how it'll work and what it'll do. But it's been a lot of fun building so far, especially because this is the first app I've ever deployed that runs a python web-server. Check it out and let me know what you think.</p>

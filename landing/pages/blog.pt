@@ -1,0 +1,98 @@
+<div metal:use-macro="layout">
+    <div metal:fill-slot="content">
+        <div class="blog-title"><a href="/blog">My Coding Blog</a> 
+        	<div class="blog-tagline">because there weren't enough programming blogs out there</div>
+        </div>
+        <!--For SEO, use a combination of server-side and client-side rendering.
+        	Initially, send back either a list of posts or a single post. 
+        	Based on what comes back is what I'll display. 
+        	Once on the page, if clicking a link, just replace the content
+        	with JSON that comes back.  But then I need to change the url...maybe I need to 
+        	do everything statically? Start static and try to figure out how to load more data without 
+        	reloading everything but yes changing the url
+         -->
+         <div class="content">
+         	<div tal:attributes="class 'post hide' if post_list else 'post'">
+         		<div class="post-title">${post.title}</div>
+         		<div class="post-date">${post.date}</div>
+         		<div class="post-content">${structure: post.content}</div>
+         	</div>
+         	
+     		<div class="post" tal:repeat="post post_list">
+         		<div class="post-title"><a href="/blog/${post.slug}">${post.title}</a></div>
+         		<div class="post-date">${post.date}</div>
+         		<div class="post-content">${structure: post.content}</div>
+     		</div>
+     	
+         </div>
+         <div class="sidebar"> 
+         	<div class="about">
+         		You're reading Aaron Greenwald's coding blog,
+         		where he writes sparingly about code, software and programming.
+         		He doesn't usually write about himself in third-person, but 
+         		taglines are always awkward.
+         	</div> 
+         	<div tal:attributes="class 'recent-posts hide' if post_list else 'recent-posts'" >
+         		<div class="title">Recent Posts</div>
+         	</div>
+         </div>
+    </div>
+</div>
+<style>
+	.blog-title {
+		font-size:18pt;
+	}
+	
+	.blog-title a,
+	.blog-title a:hover {
+		color:black;
+		text-decoration:none;
+	}
+
+	.blog-tagline {
+		font-style:italic;
+		font-size:10pt;
+	}
+	.sidebar{
+		float:right;
+		width:200px;
+	}
+	.content {
+		float:left;
+		width:calc(100% - 200px);
+		padding-right:100px;
+	}
+
+	.content .post {
+		margin-top:20px;
+	}
+	
+	.content .post .post-title {
+		font-size:14pt;
+		margin-bottom:10px;
+		float:left;
+		margin-right:10px;
+	}
+
+	.content .post .post-date {
+		float:right;
+		margin-top:5px;
+	}
+
+	.content .post .post-content {
+		display:inline-block;
+	}
+
+	.sidebar .about {
+		font-style:italic;
+	}
+
+	.sidebar .recent-posts {
+		margin-top:20px;
+	}
+
+	.hide {
+		display:none;
+	}
+
+</style>
