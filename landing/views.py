@@ -57,6 +57,7 @@ def blog(request):
 def blog_post(request):    
     result = blog_data()
     result['post'] = BlogPost(request.matchdict['slug']).load()
+    result['title'] = result['post'].title
     return result
 
 @view_config(renderer="pages/qr.pt", route_name="qr")

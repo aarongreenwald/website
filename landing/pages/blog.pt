@@ -1,7 +1,7 @@
 <div metal:use-macro="layout">
     <div metal:fill-slot="content">
         <div class="blog-title"><a href="/blog">My Coding Blog</a> 
-        	<div class="blog-tagline">because there weren't enough programming blogs out there</div>
+        	<div class="blog-tagline">because there weren't enough programming blogs out there yet</div>
         </div>
         <!--For SEO, use a combination of server-side and client-side rendering.
         	Initially, send back either a list of posts or a single post. 
@@ -32,9 +32,9 @@
          		He doesn't usually write about himself in third-person, but 
          		taglines are always awkward.
          	</div> 
-         	<div tal:attributes="class 'recent-posts hide' if post_list else 'recent-posts'" >
+         	<!--<div tal:attributes="class 'recent-posts hide' if post_list else 'recent-posts'" >
          		<div class="title">Recent Posts</div>
-         	</div>
+         	</div>-->
          </div>
     </div>
 </div>
@@ -53,16 +53,21 @@
 		font-style:italic;
 		font-size:10pt;
 	}
-	.sidebar{
-		float:right;
-		width:200px;
-	}
-	.content {
-		float:left;
-		width:calc(100% - 200px);
-		padding-right:100px;
-	}
 
+	@media only screen and (min-width:900px){
+		.sidebar{
+			float:right;
+			width:200px;
+		}
+
+		.content {
+			float:left;
+			width:calc(100% - 200px);
+			padding-right:100px;
+		}
+
+	}
+	
 	.content .post {
 		margin-top:20px;
 	}
@@ -77,6 +82,7 @@
 	.content .post .post-date {
 		float:right;
 		margin-top:5px;
+		margin-bottom:5px;
 	}
 
 	.content .post .post-content {
@@ -93,6 +99,12 @@
 
 	.hide {
 		display:none;
+	}
+
+	#content {
+		margin-left:10vw;
+		max-width:80vw;
+		margin-right:10vw;
 	}
 
 </style>

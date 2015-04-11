@@ -7,7 +7,7 @@
         <meta name="description" content="${description}">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-        <title>Aaron Greenwald | ${title}</title>
+        <title>${title} | Aaron Greenwald</title>
     </head>
     <body>  
         <nav class="navbar" role="navigation">                  
