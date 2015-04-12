@@ -3,3 +3,5 @@ production.ini
 *.egg-info/
 
 *.pyc
+
+user_access.csv
