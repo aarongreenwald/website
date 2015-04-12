@@ -5,3 +5,4 @@ production.ini
 *.pyc
 
 user_access.csv
+*.sublime-*

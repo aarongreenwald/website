@@ -3,7 +3,8 @@
     <head>
         <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">     
         <link href="/static/style.css" rel="stylesheet">       
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="h=device-width, initial-scale=1.0">
+        <link rel="icon" type="img/ico" href="/static/favicon.ico">
         <meta name="description" content="${description}">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
