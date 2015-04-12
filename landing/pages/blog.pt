@@ -9,7 +9,7 @@
         	Once on the page, if clicking a link, just replace the content
         	with JSON that comes back.  But then I need to change the url...maybe I need to 
         	do everything statically? Start static and try to figure out how to load more data without 
-        	reloading everything but yes changing the url
+        	reloading everything but changing the url
          -->
          <div class="content">
          	<div tal:attributes="class 'hide' if not showing_tag else 'tag-notice'">
@@ -25,7 +25,7 @@
      		<div class="post post-list" tal:repeat="post post_list">
          		<div class="post-title"><a href="/blog/${post.slug}">${post.title}</a></div>
          		<div class="post-date">${post.date}</div>
-         		<div class="post-content">${structure: post.content}
+         		<div class="post-content">${structure: post.content} <a title="read more..." href=${post.slug}>...</a>
          			<div class="tags"><a tal:repeat="tag post.tags" href="/blog/tag/${tag}" title="View posts tagged '${tag}'">${tag}</a></div>
          		</div>
      		</div>
@@ -45,97 +45,12 @@
     </div>
 </div>
 <style>
-	.blog-title {
-		font-size:18pt;
-	}
-	
-	.blog-title a,
-	.blog-title a:hover {
-		color:black;
-		text-decoration:none;
-	}
-
-	.blog-tagline {
-		font-style:italic;
-		font-size:10pt;
-	}
-
-	@media only screen and (min-width:900px){
-		.sidebar{
-			float:right;
-			width:200px;
-		}
-
-		.content {
-			float:left;
-			width:calc(100% - 200px);
-			padding-right:100px;
-		}
-
-		/*override the global #content positioning*/
-		#content {
-			margin-left:10vw;
-			max-width:80vw;
-			margin-right:10vw;
-		}	
-
-	}
-	
-	.content .post {
-		margin-top:30px;
-	}
-	
-	.content .post .post-title {
-		font-size:14pt;
-		margin-bottom:10px;
-		float:left;
-		margin-right:10px;
-	}
-
-	.content .post .post-date {
-		float:right;
-		margin-top:5px;
-		margin-bottom:5px;
-	}
-
-	.content .post .post-content {
-		display:inline-block;
-	}
-
-	.content .tag-notice {
-		margin-top:10px;
-		border:1px solid #ddd;
-		padding:15px;
-		background-color:#eee;
-		border-radius:5px;
-	}
-
-	.content .tag-notice .tag {
-		font-style:italic;
-		font-size:12pt;
-	}
-
-	.tags {
-		float:right;
-	}
-
-	.tags a {
-		color:#666;
-		font-style:italic;
-		text-decoration:underline;
-		margin-left:5px;
-	}
-
-	.sidebar .about {
-		font-style:italic;
-	}
-
-	.sidebar .recent-posts {
-		margin-top:20px;
-	}
-
-	.hide {
-		display:none;
-	}
-
+@media screen only and (min-width:900px){
+   /*override the global #content positioning*/
+    #content {
+        margin-left:10vw;
+        max-width:80vw;
+        margin-right:10vw;
+    }   
+}
 </style>

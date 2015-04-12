@@ -7,7 +7,7 @@ tfs tfs-monitor
 </p>
 
 <p>
-	Until now. Two weeks ago, Microsoft <a href="https://www.visualstudio.com/news/2015-mar-10-vso">announced</a> that they're releasing a query token called <span class="code">@CurrentIteration</span> that can be used to in queries. 
+	Until now. Two weeks ago, Microsoft <a href="https://www.visualstudio.com/news/2015-mar-10-vso">announced</a> that they're releasing a query token called <code>@CurrentIteration</code> that can be used to in queries. 
 </p>
 
 <p>
