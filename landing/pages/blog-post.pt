@@ -1,6 +1,0 @@
-<div metal:use-macro="layout">
-    <div metal:fill-slot="content">
-        <div> because there weren't enough programming blogs out there</div>
-        ${post.content}
-    </div>
-</div>

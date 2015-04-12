@@ -1,14 +1,14 @@
 <div metal:use-macro="layout">
 <div metal:fill-slot="content">
-    In general, much of my hobby code can be found on <a href="http://www.github.com/aarongreenwald">GitHub</a>. This page
+    In general, much of my hobby code can be found on <a href="http://github.com/aarongreenwald">GitHub</a>. This page
     highlights what I'm currently focused on.
-    <h3><a href="http://www.seatstat.com">SeatStat</a></h3>
+    <h3><a href="http://seatstat.com">SeatStat</a></h3>
     SeatStat helps teachers easily create seating plans for their classrooms.
     It's a hobby project I started very recently, so the code's still a mess
     and the direction and longevity of the project is still up in the air.
     It has a python (Pyramid) backend and an AngularJS frontend. Check out 
-    the code on <a href="http://www.github.com/aarongreenwald/seatstat">GitHub</a>
-    or the beta app at <a href="http://www.seatstat.com">www.seatstat.com</a>.
+    the code on <a href="http://github.com/aarongreenwald/seatstat">GitHub</a>
+    or the beta app at <a href="http://seatstat.com">www.seatstat.com</a>.
 
     <h3><a href="https://github.com/aarongreenwald/pim">PIM</a></h3>
     PIM (Personal Information Manager) is a hobby project I occassionally put some work into. 
@@ -19,7 +19,7 @@
 
     PIM was the first project I started using python on the backend, and I'm using it to
     learn a new stack I can use on a non-Windows environment.
-    You can view the code on <a href="http://www.github.com/aarongreenwald/pim">GitHub</a>
+    You can view the code on <a href="http://github.com/aarongreenwald/pim">GitHub</a>
     .
 </div>
 </div>
