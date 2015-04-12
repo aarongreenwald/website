@@ -12,23 +12,29 @@
         	reloading everything but yes changing the url
          -->
          <div class="content">
+         	<div tal:attributes="class 'hide' if not showing_tag else 'tag-notice'">
+         		Showing posts tagged <span class="tag">${showing_tag}</span> <a class="pull-right" href="/blog">view all</a>
+         	</div>
          	<div tal:attributes="class 'post hide' if post_list else 'post'">
          		<div class="post-title">${post.title}</div>
          		<div class="post-date">${post.date}</div>
          		<div class="post-content">${structure: post.content}</div>
+         		<div class="tags"><a tal:repeat="tag post.tags" href="/blog/tag/${tag}" title="View posts tagged '${tag}'">${tag}</a></div>
          	</div>
          	
-     		<div class="post" tal:repeat="post post_list">
+     		<div class="post post-list" tal:repeat="post post_list">
          		<div class="post-title"><a href="/blog/${post.slug}">${post.title}</a></div>
          		<div class="post-date">${post.date}</div>
-         		<div class="post-content">${structure: post.content}</div>
+         		<div class="post-content">${structure: post.content}
+         			<div class="tags"><a tal:repeat="tag post.tags" href="/blog/tag/${tag}" title="View posts tagged '${tag}'">${tag}</a></div>
+         		</div>
      		</div>
      	
          </div>
          <div class="sidebar"> 
          	<div class="about">
          		You're reading Aaron Greenwald's coding blog,
-         		where he writes sparingly about code, software and programming.
+         		where he writes infrequently about code, software and programming.
          		He doesn't usually write about himself in third-person, but 
          		taglines are always awkward.
          	</div> 
@@ -76,7 +82,7 @@
 	}
 	
 	.content .post {
-		margin-top:20px;
+		margin-top:30px;
 	}
 	
 	.content .post .post-title {
@@ -94,6 +100,30 @@
 
 	.content .post .post-content {
 		display:inline-block;
+	}
+
+	.content .tag-notice {
+		margin-top:10px;
+		border:1px solid #ddd;
+		padding:15px;
+		background-color:#eee;
+		border-radius:5px;
+	}
+
+	.content .tag-notice .tag {
+		font-style:italic;
+		font-size:12pt;
+	}
+
+	.tags {
+		float:right;
+	}
+
+	.tags a {
+		color:#666;
+		font-style:italic;
+		text-decoration:underline;
+		margin-left:5px;
 	}
 
 	.sidebar .about {

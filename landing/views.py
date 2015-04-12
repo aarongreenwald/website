@@ -34,9 +34,11 @@ def blog_data():
     return {"layout": layout(),
             "description": "Aaron Greenwald's software blog",
             "title": "Blog",
+            "showing_tag": "",
             "post": {
                    "title": "",
                    "date": "",
+                   "tags": "",
                    "content":""
                 },
             "post_list": []
@@ -52,12 +54,26 @@ def blog(request):
         result['post_list'].append(BlogPost(post).load(True))   
     result['post_list'].sort(key=lambda x: x.date, reverse=True)
     return result
+
+@view_config(renderer="pages/blog.pt", route_name="blog-tag")
+def blog_tag(request):    
+    result = blog_data() 
+    #this is ok for now, but isn't scalable. We'll need to prepare this data in advance
+    posts = [f for f in os.listdir('./blog') if os.path.isfile(os.path.join('./blog',f))]
+    for post in posts:
+        post = BlogPost(post).load(True)
+        if request.matchdict['tag'] in post.tags:
+            result['post_list'].append(post)   
+    result['post_list'].sort(key=lambda x: x.date, reverse=True)
+    result['showing_tag'] = request.matchdict['tag']
+    result['title'] = request.matchdict['tag'] + '| Blog'
+    return result
            
 @view_config(renderer="pages/blog.pt", route_name="blog-post")
 def blog_post(request):    
     result = blog_data()
     result['post'] = BlogPost(request.matchdict['slug']).load()
-    result['title'] = result['post'].title
+    result['title'] = result['post'].title + '| Blog'
     return result
 
 @view_config(renderer="pages/qr.pt", route_name="qr")
