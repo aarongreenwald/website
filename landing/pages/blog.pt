@@ -25,7 +25,7 @@
      		<div class="post post-list" tal:repeat="post post_list">
          		<div class="post-title"><a href="/blog/${post.slug}">${post.title}</a></div>
          		<div class="post-date">${post.date}</div>
-         		<div class="post-content">${structure: post.content} <a title="read more..." href=/blog/${post.slug}>...</a>
+         		<div class="post-content">${structure: post.content} <a title="read more..." href="/blog/${post.slug}">...</a>
          			<div class="tags"><a tal:repeat="tag post.tags" href="/blog/tag/${tag}" title="View posts tagged '${tag}'">${tag}</a></div>
          		</div>
      		</div>
