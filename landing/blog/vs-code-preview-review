@@ -1,0 +1,60 @@
+Visual Studio Goes Cross-Platform: First Impressions of Visual Studio Code Preview
+6/18/2015
+microsoft tools visual-studio
+
+<p>
+It's happening. The apocalypse. 
+Microsoft is releasing an <a href="http://code.visualstudio.com">IDE</a> that works on Linux, Mac, and Windows (in that order) 
+and giving it away for free.  
+So we should all be on the lookout for walkers or gyrating tripods or something like that. 
+</p>
+
+<p>
+But seriously. Much ado has been made on the interwebs about this move from Microsoft, 
+and I think it's a pretty big deal. I've been using Linux at home for years, but the 
+vast majority of my coding experience has been on Windows at work. And I've searched
+for quite some time for an IDE that parallels Visual Studio that I could use on Linux,
+but nothing comes close. (Yes, I know about vi. And I know I'm a heretic. Deal with it.)
+</p>
+
+<p>
+I was hoping that Code would be it. After all, it has Visual Studio in it's name, is 
+produced by Microsoft (though I don't know if it's the same team that does the standard Visual 
+Studio),  and is hosted at <a href="http://code.visualstudio.com">code.visualstudio.com</a>. 
+</p>
+
+<p>
+But that's not the case. As soon as I downloaded it and started it up, I realized that Code 
+is NOT simply another version of Visual Studio. It's an entirely different product, and it shines in 
+its own way. It isn't supposed to look and feel like Visual Studio, and it probably isn't supposed to 
+play that role. It's a cross-platform basic IDE, and it is a great one.
+</p>
+
+<p>
+There are some familiar keyboard shortcuts (one of the first things I tried was Ctrl+K, Ctrl+C to 
+comment out a block of code and Ctrl+k, Ctrl+U to uncomment it) but there were some shortcuts 
+that weren't there (Ctrl+M, Ctrl+O). It didn't automatically close my HTML tags when I opened them, but it did 
+helpfully suggest the closing tag when I typed the opening angle-bracket.  
+</p>
+
+<p>
+Overall, Code reminds me of Sublime. Sublime was the front-runner in my IDE
+search, and I was using it until yesterday. Like Sublime, Code comes with a dark theme
+by default, has the sidebar on the left (Solution Explorer is usually on the right in Visual Studio),
+and allows you to search for files easily.
+
+But after using Code for a day, I can say that I think it will replace Sublime.
+It's simple to use, has caused me less trouble than Sublime has thus far, and it's 
+free. Plus it has tight git integration that I haven't tried yet, so what's not to like?
+</p>
+
+<p>
+Code is not perfect (of course), but that's mitigated by the fact that we're still on version
+0.3.0 and it's in preview. I expect it to improve a lot in the coming months.
+</p>
+
+<p>
+If the mood is right, I might put together a proper review after I've used it for some time.
+For now, I can say that I think I've found myself a good, well-rounded IDE for Linux. 
+At least for what I'm trying to do right now.    
+</p>
