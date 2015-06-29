@@ -132,3 +132,36 @@ div.side-padding{
 .sidebar .recent-posts {
     margin-top:20px;
 }
+
+ul.tldr > li {
+    font-size: 1.5em;
+}
+
+.icon-list {
+    padding:10px 20px;
+}
+
+.icon-list div {
+    font-size: 1.2em;
+}
+
+.icon-list a {
+    margin: 5px;
+}
+
+/*socialicious icons*/
+.icon-lg{
+    font-size: 25px;
+}
+
+/* fix the colors of the icons
+    so that they don't get changed to blue when they're iside an <a> tag*/
+.icon-github-sign {
+    color:black;
+}
+.icon-twitter-sign {
+    color:#33ccff;    
+}
+.icon-linkedin-sign {
+    color: #4875b4;
+}

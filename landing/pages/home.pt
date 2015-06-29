@@ -1,10 +1,30 @@
 <div metal:use-macro="layout">
 <div metal:fill-slot="content" >
-<p>         
-    Hello there. I'm Aaron Greenwald, and this is my small corner of the web.
-</p>
+<section>         
+    <div style="display:inline-block">
+        <img src="static/me.jpg" style="margin-right:15px;" class="pull-left"/>
+        <div>Hello there. I'm Aaron Greenwald, that's an unaltered photo of me, and this is my small corner of the web.</div>
+    </div>
+</section>
 <section>
-    <h3>About Me</h3>           
+    <h3>tldr;</h3>
+    <ul class="tldr">
+        <li>I <a href="/resume">code for a living</a></li>
+        <li>I <a href="/projects">code as a hobby</a></li>
+        <li>I <a href="/blog">blog</a> (infrequently)</li>
+        <li>I <a href="https://twitter.com/aaronjgreenwald">tweet</a> (even less frequently)</li>                      
+    </ul>        
+            <div class="icon-list">
+                <div>Here are some handy icons:</div>
+                <div style="text-align:center;margin-top:10px;">
+                    <a title="My linkedin profile" href="https://linkedin.com/in/greenwaldaaron"><span class="icon-linkedin-sign icon-lg" /></a> 
+                    <a title="My github profile" href="https://github.com/aarongreenwald"><span class="icon-github-sign icon-lg" /></a>
+                    <a title="My twitter profile" href="https://twitter.com/aaronjgreenwald"><span class="icon-twitter-sign icon-lg" /></a>
+                </div>  
+            </div>           
+    </section>
+<section>
+    <h3>The Details</h3>
     <p>
         I'm a software developer in the Washington, DC area. 
         The majority of my work experience has been in the .NET universe, but I've recently begun exploring
@@ -22,14 +42,12 @@
     </p> 
     <p>
         My (mostly complete) professional bio can be found on my <a href="/resume">resume</a> or on <a href="https://linkedin.com/in/greenwaldaaron">LinkedIn</a>,
-        and samples of my work can be found on <a href="http://github.com/aarongreenwald">GitHub</a> (see the <a href="/projects">Projects</a> page for context).
+        and samples of my work can be found on <a href="http://github.com/aarongreenwald">GitHub</a> (see <a href="/projects">projects</a> for context).
     </p>
 </section>
 <section>
     <h3>Contact Me</h3>
-
-    If you'd like to contact me about software, try contacting me through <a href="https://linkedin.com/in/greenwaldaaron">LinkedIn</a> or directly via 
-    <a class="email-address"> email</a>.
+    Because I recieve a lot of spam through LinkedIn, I don't usually monitor my inbox there. The best way to reach me is directly via <a class="email-address"> email</a>. (If you send spam to my email inbox, I will probably ignore you as well. Please don't.)
     If you're reading this on a mobile device, you can also download 
     my <a href="/static/aaron-greenwald.vcf">contact card</a>. Depending on how awesome your browser is,
     you may or may not have to open the downloaded file manually.        
