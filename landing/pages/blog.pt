@@ -19,7 +19,7 @@
          		<div class="post-title">${post.title}</div>
          		<div class="post-date">${post.date}</div>
          		<div class="post-content">${structure: post.content}</div>
-         		<div class="tags"><a tal:repeat="tag post.tags" href="/blog/tag/${tag}" title="View posts tagged '${tag}'">${tag}</a></div>
+         		<div class="tags"><a tal:repeat="tag post.tags" href="/blog/tag/${tag}" title="View posts tagged '${tag}'">${tag}</a></div>                
          	</div>
          	
      		<div class="post post-list" tal:repeat="post post_list">
@@ -38,10 +38,22 @@
          		He doesn't usually write about himself in third-person, but 
          		taglines are always awkward.
          	</div> 
-         	<!--<div tal:attributes="class 'recent-posts hide' if post_list else 'recent-posts'" >
-         		<div class="title">Recent Posts</div>
-         	</div>-->
          </div>
+         <div tal:attributes="class 'hide' if post_list else ''"> 
+            <div id="disqus_thread"></div>
+            <script>
+                /* * * CONFIGURATION VARIABLES * * */
+                var disqus_shortname = 'aarongreenwald';
+                
+                /* * * DON'T EDIT BELOW THIS LINE * * */
+                (function() {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            </script>
+            <noscript>Comments are not enabled unless JavaScript is enabled. Please enable JavaScript to access blog comments.</noscript>
+        </div>
     </div>
 </div>
 <style>

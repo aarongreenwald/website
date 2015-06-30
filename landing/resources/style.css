@@ -133,16 +133,19 @@ div.side-padding{
     margin-top:20px;
 }
 
+/*Home Page */
 ul.tldr > li {
     font-size: 1.5em;
 }
 
-.icon-list {
+.icon-list-container {
     padding:10px 20px;
+    font-size: 1.2em;
 }
 
-.icon-list div {
-    font-size: 1.2em;
+.icon-list {
+    text-align:center;
+    margin-top:10px;    
 }
 
 .icon-list a {
@@ -164,4 +167,9 @@ ul.tldr > li {
 }
 .icon-linkedin-sign {
     color: #4875b4;
+}
+
+.head-shot {
+    margin-right:15px;
+    float:left;
 }
