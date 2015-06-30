@@ -2,7 +2,7 @@
 <div metal:fill-slot="content" >
 <section>         
     <div style="display:inline-block">
-        <img src="static/me.jpg" style="margin-right:15px;" class="pull-left"/>
+        <img src="static/me.jpg" class="head-shot"/>
         <div>Hello there. I'm Aaron Greenwald, that's an unaltered photo of me, and this is my small corner of the web.</div>
     </div>
 </section>
@@ -14,15 +14,15 @@
         <li>I <a href="/blog">blog</a> (infrequently)</li>
         <li>I <a href="https://twitter.com/aaronjgreenwald">tweet</a> (even less frequently)</li>                      
     </ul>        
-            <div class="icon-list">
-                <div>Here are some handy icons:</div>
-                <div style="text-align:center;margin-top:10px;">
-                    <a title="My linkedin profile" href="https://linkedin.com/in/greenwaldaaron"><span class="icon-linkedin-sign icon-lg" /></a> 
-                    <a title="My github profile" href="https://github.com/aarongreenwald"><span class="icon-github-sign icon-lg" /></a>
-                    <a title="My twitter profile" href="https://twitter.com/aaronjgreenwald"><span class="icon-twitter-sign icon-lg" /></a>
-                </div>  
-            </div>           
-    </section>
+    <div class="icon-list-container">
+        <div>Here are some handy icons:</div>
+        <div class="icon-list">
+            <a title="My linkedin profile" href="https://linkedin.com/in/greenwaldaaron"><span class="icon-linkedin-sign icon-lg" /></a> 
+            <a title="My github profile" href="https://github.com/aarongreenwald"><span class="icon-github-sign icon-lg" /></a>
+            <a title="My twitter profile" href="https://twitter.com/aaronjgreenwald"><span class="icon-twitter-sign icon-lg" /></a>
+        </div>  
+    </div>          
+</section>
 <section>
     <h3>The Details</h3>
     <p>
@@ -54,4 +54,16 @@
 </section>  
 </div>
 </div>
+<script>
+    //make the home page fancier progressively
+    //find all sections except tldr and display none
+    //add a Read More About Me link on the bottom of the page or the end of text, whichever is later
+    //when that is clicked: hide the link
+    //     turn display to normal for all sections, and shrink the top section's height to zero
+    //     this will give a sliding down effect. Even better would be to scroll down to the details 
+    //     section so that they can still get back up
+    //TODO: Is the bootstrap cdn a bottleneck? Do I need it? I can probably bake it all into styles.css
+    //TODO: how slow is the image, and what do I need to do for accessibility and such?
+    //TODO: perhaps put the icons on every page as the footer
+</script>
         
