@@ -13,17 +13,9 @@
         <li>I <a href="/projects">code as a hobby</a></li>
         <li>I <a href="/blog">blog</a> (infrequently)</li>
         <li>I <a href="https://twitter.com/aaronjgreenwald">tweet</a> (even less frequently)</li>                      
-    </ul>        
-    <div class="icon-list-container">
-        <div>Here are some handy icons:</div>
-        <div class="icon-list">
-            <a title="My linkedin profile" href="https://linkedin.com/in/greenwaldaaron"><span class="icon-linkedin-sign icon-lg" /></a> 
-            <a title="My github profile" href="https://github.com/aarongreenwald"><span class="icon-github-sign icon-lg" /></a>
-            <a title="My twitter profile" href="https://twitter.com/aaronjgreenwald"><span class="icon-twitter-sign icon-lg" /></a>
-        </div>  
-    </div>          
+    </ul>            
 </section>
-<section>
+<section id="details">
     <h3>The Details</h3>
     <p>
         I'm a software developer in the Washington, DC area. 
@@ -45,13 +37,24 @@
         and samples of my work can be found on <a href="http://github.com/aarongreenwald">GitHub</a> (see <a href="/projects">projects</a> for context).
     </p>
 </section>
-<section>
+<section id="contact">
     <h3>Contact Me</h3>
     Because I recieve a lot of spam through LinkedIn, I don't usually monitor my inbox there. The best way to reach me is directly via <a class="email-address"> email</a>. (If you send spam to my email inbox, I will probably ignore you as well. Please don't.)
     If you're reading this on a mobile device, you can also download 
     my <a href="/static/aaron-greenwald.vcf">contact card</a>. Depending on how awesome your browser is,
     you may or may not have to open the downloaded file manually.        
-</section>  
+</section>
+<div style="margin-top:30px;"> 
+    <a style="font-size:1.2em" id='read-more'>About Me: The Long Version</a>
+</div> 
+
+    <div class="icon-list-container">
+        <div class="icon-list">
+            <a title="My linkedin profile" href="https://linkedin.com/in/greenwaldaaron"><span class="icon-linkedin-sign icon-lg" /></a> 
+            <a title="My github profile" href="https://github.com/aarongreenwald"><span class="icon-github-sign icon-lg" /></a>
+            <a title="My twitter profile" href="https://twitter.com/aaronjgreenwald"><span class="icon-twitter-sign icon-lg" /></a>
+        </div>  
+    </div>      
 </div>
 </div>
 <script>
@@ -65,5 +68,25 @@
     //TODO: Is the bootstrap cdn a bottleneck? Do I need it? I can probably bake it all into styles.css
     //TODO: how slow is the image, and what do I need to do for accessibility and such?
     //TODO: perhaps put the icons on every page as the footer
+    
+    //Finds y value of given object
+    function findPos(obj) {
+        var curtop = 0;
+        if (obj.offsetParent) {
+            do {
+                curtop += obj.offsetTop;
+            } while (obj = obj.offsetParent);
+        return [curtop];
+        }
+    }
+    
+    document.getElementById('details').style.display = 'none'
+    document.getElementById('contact').style.display = 'none'
+    document.getElementById('read-more').addEventListener('click', function(){
+        document.getElementById('details').style.display = 'block'
+        document.getElementById('contact').style.display = 'block'
+        window.scroll(0,findPos(document.getElementById("details")));
+        document.getElementById('read-more').style.display = 'none'
+    })
 </script>
         
