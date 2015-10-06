@@ -18,3 +18,4 @@ class BlogPost(object):
         except IOError as e:
             print(e)            
         return self
+
