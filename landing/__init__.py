@@ -8,6 +8,7 @@ def main(global_config, **settings):
     
     config.add_route('home', '/')
     config.add_route('resume', '/resume')
+    config.add_route('cv', '/cv')
     config.add_route('projects', '/projects')  
 
     config.add_route('blog', '/blog')
