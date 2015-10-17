@@ -13,7 +13,7 @@ def layout():
 @view_config(renderer="pages/home.pt", route_name="home")
 def home(request):    
     return {"layout": layout(),
-            "description": "Aaron Greenwald is a software developer/programmer in Tel Aviv, Israel. This is his personal website",
+            "description": "Aaron Greenwald is a software developer/programmer in Tel Aviv, Israel (formerly Washington, DC). This is his personal website",
             "title": "Home"}
 
 @view_config(renderer="pages/resume.pt", route_name="resume")

@@ -3,7 +3,7 @@
 <section>         
     <div style="display:inline-block">
         <img src="static/me.jpg" class="head-shot"/>
-        <div>Hello there. I'm Aaron Greenwald, that's an unaltered photo of me, and this is my small corner of the web.</div>
+        <div>Hello there. I'm Aaron Greenwald and this is my small corner of the web. Welcome to where the cool kids hang out.</div>
     </div>
 </section>
 <section>
@@ -17,19 +17,25 @@
 </section>
 <section id="details">
     <h3>The Details</h3>
-    <p>
-        I'm a software developer currently living in <s>Washington, DC</s> Tel Aviv, Israel.
-        I am currently focused primarily on web development, particularly front-end work in AngularJS. 
+    <p>        
+        I am currently focused primarily on web development, particularly frontend work in AngularJS. 
         In the past, I've worked on projects that included full-stack web development (mostly .NET and SQL Server on the backend) 
-        or desktop applications (WinForms). I've dabbled in nodejs and mongodb as well.         
-        
+        or desktop applications (WinForms). I've also dabbled in nodejs and mongodb a bit, and I'm interested in spending more time
+        with those technologies in the future.         
+     
         For my hobby projects, I currently favor a FOSS stack that includes PostgreSQL and Python 
-        (<a href="http://www.pylonsproject.org/">Pyramid</a>) in addition to AngularJS to develop web apps that 
-        can be hosted on Amazon AWS Linux instances. 
-    </p>
+        (<a href="http://www.pylonsproject.org/">Pyramid</a>) on the backend and AngularJS on the front 
+        to develop web apps that can be hosted on AWS Linux instances. 
+    </p>    
     <p>
-        My (mostly complete) professional bio can be found on my <a href="/cv">CV</a> or on <a href="https://linkedin.com/in/greenwaldaaron">LinkedIn</a>,
-        and samples of my work can be found on <a href="http://github.com/aarongreenwald">GitHub</a> (see <a href="/projects">projects</a> for context).
+        I recently moved myself to Tel Aviv, Israel from Washington, DC. 
+        Prior to living in DC, I did time in NYC and Baltimore. I have native-level fluency in English and a rapidly improving Hebrew, 
+        as well as a desire to improve my skills in a few other languages. 
+        I hold a B.Sc. in Mathematics from Touro College in NY.  
+    </p>    
+    <p>  
+        My (mostly) complete professional bio can be found on my <a href="/cv">CV</a> or on <a href="https://linkedin.com/in/greenwaldaaron">LinkedIn</a>,
+        and samples of my work can be found on <a href="http://github.com/aarongreenwald">GitHub</a> (see my <a href="/projects">projects</a> page for context).
     </p>
 </section>
 <section id="contact">
@@ -45,9 +51,9 @@
 
     <div class="icon-list-container">
         <div class="icon-list">
-            <a title="My linkedin profile" href="https://linkedin.com/in/greenwaldaaron"><span class="icon-linkedin-sign icon-lg" /></a> 
             <a title="My github profile" href="https://github.com/aarongreenwald"><span class="icon-github-sign icon-lg" /></a>
-            <a title="My twitter profile" href="https://twitter.com/aaronjgreenwald"><span class="icon-twitter-sign icon-lg" /></a>            
+            <a title="My twitter profile" href="https://twitter.com/aaronjgreenwald"><span class="icon-twitter-sign icon-lg" /></a>
+            <a title="My linkedin profile" href="https://linkedin.com/in/greenwaldaaron"><span class="icon-linkedin-sign icon-lg" /></a>                         
             <a title="My programmers (stackexchange) profile" href="http://programmers.stackexchange.com/users/124272/"><img src="http://sstatic.net/programmers/img/apple-touch-icon.png" style="height:35px;margin-top:-20px;"/></a>
             <!--<a title="My stackexchange profiles" href="http://stackexchange.com/users/124272/"><img src="http://sstatic.net/stackexchange/img/apple-touch-icon.png" style="height:35px;margin-top:-20px;"/></a>-->
             <!--<a title="My stackoverflow profile" href="http://stackoverflow.com/users/124272/"><img src="http://sstatic.net/stackoverflow/img/apple-touch-icon.png" style="height:35px;margin-top:-20px;"/></a>-->

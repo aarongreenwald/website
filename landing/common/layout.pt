@@ -14,7 +14,7 @@
     <body>  
         <nav class="navbar" role="navigation">                  
               <a tal:attributes="class 'active' if title=='Home' else ''" href="/">Home</a>
-              <a tal:attributes="class 'active' if title=='CV' else ''" href="/cv">CV</a>
+              <a tal:attributes="class 'active' if title=='CV' or title=='Resume' else ''" href="/cv">CV</a>
               <a tal:attributes="class 'active' if title=='Projects' else ''" href="/projects">Projects</a>
               <a tal:attributes="class 'active' if 'Blog' in title else ''"  href="/blog">Blog</a>
         </nav>

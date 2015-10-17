@@ -25,31 +25,35 @@
 <div class="job-entry">
     <div class="row">
         <div class="col-md-8">
-            <span class="title">Software Developer</span> - 
+            <span class="title">Software Developer (Lead)</span> - 
             <span class="employer"><a href="http://www.americancapital.com">American Capital</a></span>
         </div>
         <div class="col-md-4">                          
-            <span class="time-frame pull-right">October 2013 – Present</span>
+            <span class="time-frame pull-right">October 2013 – September 2015</span>
         </div>      
     </div>
     
 
     <div class = "details">
         <p>
-            Currently developing an internal web application for managing mission-critical 
+            Led development efforts on an internal web application for managing mission-critical 
             data connected with the company's portfolio holdings' finances. 
-            This new application will replace two legacy applications, 
+            This new application replaced two legacy applications, 
             bringing new data collection capabilities and a modern solution to a core business concern.
-            We are using AngularJS to build the front-end, and ASP.NET MVC to build the server-side
-            API. This combination allows us to provide a modern UX and a full-featured app 
+            We used AngularJS to build the front-end, and ASP.NET MVC to build the server-side
+            API. This combination allowed us to provide a modern UX and a full-featured app 
             in a shorter development time-frame.
+        </p>
+        <p>
+            Other projects included leading development on a time tracking application to facilitate 
+            billing and ongoing maintenance of various internal applications.
         </p>
         Technologies:
         <ul>      
             <li>AngularJS</li>
             <li>SQL Server (2008, 2012)</li>
             <li>.NET (C#, ASP.NET MVC 5 & Web API, WebForms)</li>
-            <li>JavaScript (jQuery), HTML, CSS (Bootstrap), Node, npm </li>
+            <li>JavaScript (jQuery), HTML, CSS (Bootstrap), nodejs, npm </li>
             <li>TFS 2013, git</li>
         </ul>
     </div>
