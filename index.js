@@ -39,10 +39,10 @@ const readfile = path => new Promise((resolve, reject) =>
   })
 );
 
-readdir('./landing/blog').then(posts => {
+readdir('./blog').then(posts => {
   const promises = [];
   posts.forEach(post => {
-    const processedPost = readfile(`./landing/blog/${post}`)
+    const processedPost = readfile(`./blog/${post}`)
       .then(data => processPost(post, data));
     promises.push(processedPost);
   });
@@ -52,7 +52,7 @@ readdir('./landing/blog').then(posts => {
 .then(result => posts = result)
 .catch(console.error);  
 
-app.use('/static', express.static('landing/resources'));
+app.use('/static', express.static('resources'));
 app.use(partials());
 
 app.set('views', './pages');
