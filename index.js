@@ -95,4 +95,4 @@ app.get('/blog/tag/:tag', (req, res) => res.render('blog', {
   showingTag: req.params.tag 
 }));
 
-app.listen(6543, () => console.log('listening on 6543'));
+app.listen(6547, () => console.log('listening on 6547'));
