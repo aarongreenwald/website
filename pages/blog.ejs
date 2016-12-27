@@ -1,0 +1,94 @@
+<div>
+    <div>
+        <div class="blog-title"><a href="/blog">My Coding Blog</a> 
+        	<div class="blog-tagline">because there weren't enough programming blogs out there yet</div>
+        </div>
+        <!--For SEO, use a combination of server-side and client-side rendering.
+        	Initially, send back either a list of posts or a single post. 
+        	Based on what comes back is what I'll display. 
+        	Once on the page, if clicking a link, just replace the content
+        	with JSON that comes back.  But then I need to change the url...maybe I need to 
+        	do everything statically? Start static and try to figure out how to load more data without 
+        	reloading everything but changing the url
+         -->
+         <div class="content">
+            <% if (showingTag) { %>
+                <div class="tag-notice">
+                    Showing posts tagged <span class="tag"><%=showingTag%></span> <a class="pull-right" href="/blog">view all</a>
+                </div>
+            <% } %>
+
+         	
+            <% if (!posts) { %>
+                <div class="post">
+                    <div class="post-title"><%=post.title%></div>
+                    <div class="post-date"><%=post.date%></div>
+                    <div class="post-content"><%- post.content%></div>
+                    <div style="margin-bottom:30px;" class="tags">                    
+                        <% post.tags.forEach(tag => { %> 
+                            <a href="/blog/tag/<%=tag%>" title="View posts tagged '<%=tag%>'"><%=tag%></a>
+                        <% }) %>                
+                    </div>                
+         	    </div>
+         	
+            <% } %>
+                     	
+             <% posts && posts.forEach(post => {%>
+                <div class="post post-list">
+                    <div class="post-title"><a href="/blog/<%=post.slug%>"><%=post.title%></a></div>
+                    <div class="post-date"><%=post.date%></div>
+                    <div class="post-content"><%- post.preview%> <a title="read more..." href="/blog/<%=post.slug%>">...</a>
+                        <div class="tags">
+                            <% post.tags.forEach(tag => { %> 
+                                <a href="/blog/tag/<%=tag%>" title="View posts tagged '<%=tag%>'"><%=tag%></a>
+                            <% }) %>
+                        </div>
+                    </div>
+                </div>
+             <% }) %>
+     		
+            <% if (!posts) { %>
+                <div style="margin:30px 0;width: 100%;text-align: center;">
+                    <button id="load-comments" class="btn btn-default" onclick="startDisqus();">Load Comments</button>
+                </div>
+                <div> 
+                    <div id="disqus_thread"></div>
+                    <script>
+                        /* * * CONFIGURATION VARIABLES * * */
+                        var disqus_shortname = 'aarongreenwald'
+                                        
+                        var startDisqus = (function() {
+                            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            
+                            document.getElementById('load-comments').style.display = 'none'
+                        })
+                                        
+                    </script>
+                    <noscript>Comments are not enabled unless JavaScript is enabled. Please enable JavaScript to access blog comments.</noscript>
+                </div>  	
+            <% } %>
+        
+          
+         </div>   	                  
+         <div class="sidebar"> 
+         	<div class="about">
+         		You're reading Aaron Greenwald's coding blog,
+         		where he writes infrequently about code, software and programming.
+         		He doesn't usually write about himself in third-person, but 
+         		taglines are always awkward.
+         	</div> 
+         </div>       
+    </div>
+</div>
+<style>
+@media screen only and (min-width:900px){
+   /*override the global #content positioning*/
+    #content {
+        margin-left:10vw;
+        max-width:80vw;
+        margin-right:10vw;
+    }   
+}
+</style>
