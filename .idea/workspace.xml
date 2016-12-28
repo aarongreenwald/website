@@ -23,7 +23,10 @@
     <option name="FILTER_BY_CURRENT_PROJECT" value="true" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b193dc98-3bf4-448b-b8b9-94173adeb54d" name="Default" comment="" />
+    <list default="true" id="b193dc98-3bf4-448b-b8b9-94173adeb54d" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/blog/sentry-new-relic-anodot-integration.md" afterPath="$PROJECT_DIR$/blog/sentry-new-relic-anodot-integration.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/style.css" afterPath="$PROJECT_DIR$/resources/style.css" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -43,16 +46,26 @@
         <entry file="file://$PROJECT_DIR$/blog/sentry-new-relic-anodot-integration.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="3097">
-                <caret line="134" column="75" lean-forward="false" selection-start-line="134" selection-start-column="75" selection-end-line="134" selection-end-column="75" />
+              <first_editor relative-caret-position="3667">
+                <caret line="147" column="0" lean-forward="true" selection-start-line="147" selection-start-column="0" selection-end-line="147" selection-end-column="0" />
                 <folding>
-                  <marker date="1482928296000" expanded="true" signature="6239:6741" ph="{&quot;SENTRY_AUTH&quot;: 'auth_token_for_sentry_api'...}" />
-                  <marker date="1482928296000" expanded="true" signature="6558:6739" ph="[...]" />
-                  <marker date="1482928296000" expanded="true" signature="6564:6649" ph="{&quot;name&quot;: 'MyFilter'...}" />
-                  <marker date="1482928296000" expanded="true" signature="6655:6735" ph="{&quot;name&quot;: 'TeamB'...}" />
+                  <marker date="1482932537000" expanded="true" signature="7031:7743" ph="{&quot;SENTRY_AUTH&quot;: 'auth_token_for_sentry_api'...}" />
+                  <marker date="1482932537000" expanded="true" signature="7560:7741" ph="[...]" />
+                  <marker date="1482932537000" expanded="true" signature="7566:7651" ph="{&quot;name&quot;: 'MyFilter'...}" />
+                  <marker date="1482932537000" expanded="true" signature="7657:7737" ph="{&quot;name&quot;: 'TeamB'...}" />
                 </folding>
               </first_editor>
               <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="845">
+              <caret line="103" column="20" lean-forward="false" selection-start-line="103" selection-start-column="20" selection-end-line="103" selection-end-column="20" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -104,11 +117,11 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/blog/tfs-gets-currentiteration-query-token" />
-        <option value="$PROJECT_DIR$/resources/style.css" />
         <option value="$PROJECT_DIR$/blog/tfs-monitor-keeping-track-of-tfs-builds-and-work-progress" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/index.js" />
         <option value="$PROJECT_DIR$/pages/blog.ejs" />
+        <option value="$PROJECT_DIR$/resources/style.css" />
         <option value="$PROJECT_DIR$/blog/sentry-new-relic-anodot-integration.md" />
       </list>
     </option>
@@ -333,12 +346,12 @@
       <updated>1482917741098</updated>
       <workItem from="1482917742433" duration="77000" />
       <workItem from="1482917841089" duration="106000" />
-      <workItem from="1482917952724" duration="8949000" />
+      <workItem from="1482917952724" duration="10612000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9132000" />
+    <option name="totallyTimeSpent" value="10795000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1173" extended-state="0" />
@@ -435,14 +448,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1025">
-          <caret line="96" column="5" lean-forward="true" selection-start-line="96" selection-start-column="5" selection-end-line="96" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/blog/tfs-gets-currentiteration-query-token">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -493,27 +498,35 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="845">
+          <caret line="103" column="20" lean-forward="false" selection-start-line="103" selection-start-column="20" selection-end-line="103" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/blog/sentry-new-relic-anodot-integration.md">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="600">
           <caret line="40" column="10" lean-forward="true" selection-start-line="40" selection-start-column="10" selection-end-line="40" selection-end-column="10" />
           <folding>
-            <marker date="1482928296000" expanded="true" signature="6239:6741" ph="{&quot;SENTRY_AUTH&quot;: 'auth_token_for_sentry_api'...}" />
-            <marker date="1482928296000" expanded="true" signature="6558:6739" ph="[...]" />
-            <marker date="1482928296000" expanded="true" signature="6564:6649" ph="{&quot;name&quot;: 'MyFilter'...}" />
-            <marker date="1482928296000" expanded="true" signature="6655:6735" ph="{&quot;name&quot;: 'TeamB'...}" />
+            <marker date="1482932537000" expanded="true" signature="7031:7743" ph="{&quot;SENTRY_AUTH&quot;: 'auth_token_for_sentry_api'...}" />
+            <marker date="1482932537000" expanded="true" signature="7560:7741" ph="[...]" />
+            <marker date="1482932537000" expanded="true" signature="7566:7651" ph="{&quot;name&quot;: 'MyFilter'...}" />
+            <marker date="1482932537000" expanded="true" signature="7657:7737" ph="{&quot;name&quot;: 'TeamB'...}" />
           </folding>
         </state>
       </provider>
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="3097">
-            <caret line="134" column="75" lean-forward="false" selection-start-line="134" selection-start-column="75" selection-end-line="134" selection-end-column="75" />
+          <first_editor relative-caret-position="3667">
+            <caret line="147" column="0" lean-forward="true" selection-start-line="147" selection-start-column="0" selection-end-line="147" selection-end-column="0" />
             <folding>
-              <marker date="1482928296000" expanded="true" signature="6239:6741" ph="{&quot;SENTRY_AUTH&quot;: 'auth_token_for_sentry_api'...}" />
-              <marker date="1482928296000" expanded="true" signature="6558:6739" ph="[...]" />
-              <marker date="1482928296000" expanded="true" signature="6564:6649" ph="{&quot;name&quot;: 'MyFilter'...}" />
-              <marker date="1482928296000" expanded="true" signature="6655:6735" ph="{&quot;name&quot;: 'TeamB'...}" />
+              <marker date="1482932537000" expanded="true" signature="7031:7743" ph="{&quot;SENTRY_AUTH&quot;: 'auth_token_for_sentry_api'...}" />
+              <marker date="1482932537000" expanded="true" signature="7560:7741" ph="[...]" />
+              <marker date="1482932537000" expanded="true" signature="7566:7651" ph="{&quot;name&quot;: 'MyFilter'...}" />
+              <marker date="1482932537000" expanded="true" signature="7657:7737" ph="{&quot;name&quot;: 'TeamB'...}" />
             </folding>
           </first_editor>
           <second_editor />
