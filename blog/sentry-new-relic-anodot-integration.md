@@ -4,7 +4,7 @@ tools monitor
 
 ## tldr; 
 
-By integrating [Sentry](https://sentry.io) data with [New Relic](https://newrelic.com) dashboards and [Anodot](https://anodot.com) anomaly detection, you can get both deep analysis of your React Native app’s errors AND easy to digest, high level dashboards/alerts that quickly tell you what’s going on. No sacrifices or tradeoffs. Want to jump to the technical bits? Skip to [here](#solution). Setup instructions for your own project are available in the [GitHub](https://github.com/wix/sentry-monitor) [README](https://github.com/wix/sentry-monitor/README.md).
+By integrating [Sentry](https://sentry.io) data with [New Relic](https://newrelic.com) dashboards and [Anodot](https://anodot.com) anomaly detection, you can get both deep analysis of your React Native app’s errors AND easy to digest, high level dashboards/alerts that quickly tell you what’s going on. No sacrifices or tradeoffs. Want to jump to the technical bits? Skip to [here](#solution). Setup instructions for your own project are available in the [GitHub](https://github.com/wix/sentry-monitor) [README](https://github.com/wix/sentry-monitor/blob/master/README.md).
 
 ***
 
@@ -70,7 +70,7 @@ Just kidding, I was just getting started. How was I going to run that script rel
  (Speaking of basic rules of software development: for every hour you spend hacking together some cool trick that does exactly what you want, budget five hours for making that POC generic, stable, and reliable enough for use in more than your very specific use-case.)
 
 
-So I spent a while working on that script to turn it into something more robust and. It’s still a work in progress, and I welcome your assistance in the form of issues and PRs on [GitHub](https://github.com/wix/sentry-monitor). You can head over to the [README](https://github.com/wix/sentry-monitor/README.md) there for the full instructions on how to get started, but here’s the basic idea:
+So I spent a while working on that script to turn it into something more robust and. It’s still a work in progress, and I welcome your assistance in the form of issues and PRs on [GitHub](https://github.com/wix/sentry-monitor). You can head over to the [README](https://github.com/wix/sentry-monitor/blob/master/README.md) there for the full instructions on how to get started, but here’s the basic idea:
 
 Create a simple node web server with the following snippet:
 

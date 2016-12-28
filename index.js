@@ -76,16 +76,20 @@ const strings = {
   homeDescription: 'Aaron Greenwald is a software developer/programmer in Tel Aviv, Israel (formerly Washington, DC). This is his personal website',
   blogDesc: `Aaron Greenwald's blog about software, coding, and related topics`,
   cvDesc: `Aaron Greenwald's resume/professional bio - software developer, programmer`,
-  projectsDesc: `Aaron Greenwald's coding projects and hobby software` 
+  workDesc: `Aaron Greenwald's coding projects and hobby software`,
+  talksDesc: `̄A selection of Aaron Greenwald's public appearances: talks and workshops`
 };
 
 app.get('/', (req, res) => res.render('home', {title: 'Home', description: strings.homeDescription}));
 
-app.get('/projects', (req, res) => res.render('projects', {title: 'Projects', description: strings.projectsDesc}));
-app.get('/cv', (req, res) => res.render('resume', {title: 'Resume', description: strings.cvDesc}));
-app.get('/resume', (req, res) => res.render('resume', {title: 'CV', description: strings.cvDesc}));
+app.get('/work', (req, res) => res.render('projects', {title: 'Work', description: strings.workDesc}));
+app.get('/cv', (req, res) => res.render('resume', {title: 'CV', description: strings.cvDesc}));
+app.get('/talks', (req, res) => res.render('talks', {title: 'Talks', description: strings.talksDesc}));
 app.get('/qr', (req, res) => res.render('qr', {layout: false}));
 
+
+app.get('/resume', (req, res) => res.redirect('/cv'));
+app.get('/projects', (req, res) => res.redirect('/work'));
 
 app.get('/blog', (req, res) => res.render('blog', {
   title: 'Blog', 
