@@ -136,6 +136,12 @@ pre {
     margin: 30px 0;
 }
 
+.post-content img {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+}
+
 .sidebar .about {
     font-style:italic;
 }

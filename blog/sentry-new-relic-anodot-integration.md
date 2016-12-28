@@ -63,6 +63,8 @@ Rule number one of using third party services: never put your data anywhere you 
 
 It took me only a few hours to whip up a script that uses the [Sentry API](https://docs.sentry.io/api/) to retrieve the last five minutes’ worth of data, filter and aggregate it, and report it to New Relic and Anodot using their respective APIs. Then another view hours to build my dashboards and alerts, and I’m done.
 
+![That Was Easy](https://cdn.meme.am/cache/instances/folder967/500x/33633967.jpg)
+
 Just kidding, I was just getting started. How was I going to run that script reliably? More importantly, how were YOU going to run that script if it had all my own variables hard-coded everywhere?
  
  (Speaking of basic rules of software development: for every hour you spend hacking together some cool trick that does exactly what you want, budget five hours for making that POC generic, stable, and reliable enough for use in more than your very specific use-case.)
@@ -113,6 +115,8 @@ The `debug` query parameter tells `sentry-monitor` not to actually send any data
 *Security Note:* you need the `WSM_AUTH_KEY` header if you're going to host the web server on a different server than the cron job and expose the web server publicly. The web server will reject any request that doesn't come with the secret key you set. If you do this, make sure you keep your key secret! If you are not exposing the web server to the outside and are hitting it from the same server, you can omit this header.
 
 ## Why So Complicated?
+
+<img alt="Why????" src="http://ragefaces.memesoftware.com/faces/large/annoyed-y-u-no-l.png" width="100%"/>
 
 Why did I do it this way? Why didn’t I just keep my first draft of the script and start it on a server with a `setInterval` of five minutes?
 
