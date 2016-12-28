@@ -1,6 +1,6 @@
 TFS Gets @CurrentIteration Query Token
 3/25/2015
-tfs tfs-monitor tools
+tfs tfs-monitor tools monitor
 
 <p>
 	This is big news. Since we started using the TFS Scrum template at work, I've always been frustrated that there is no way to write a query that filters by current iteration. You can filter to a specific iteration, but then you have to keep updating that query every time you end one sprint and start another. It's a very basic piece of functionality missing from the query language.

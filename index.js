@@ -2,18 +2,29 @@ const express = require('express');
 const partials = require('express-partials');
 const app = express();
 const fs = require('fs');
+const showdown = require('showdown');
+const converter = new showdown.Converter();
+converter.setFlavor('github');
 
 let posts = [];
 
 const processPost = (slug, data) => {
+  let md = false;
+  if (slug.substr(slug.length - 3, 3) === '.md') {
+    slug = slug.substr(0, slug.length - 3);
+    md = true;
+  }
   const split = data.split('\n');
   const title = split.shift();
   const date = split.shift();
   const tags = split.shift().split(' ');
-  const content = split.join('\n');
-  return {  
+  let content = split.join('\n');
+  if (md) {
+    content = converter.makeHtml(content);
+  }
+  return {
     slug,
-    preview: content.substr(0, 400),
+    preview: content.substr(0, 450),
     title,
     date,
     tags,
@@ -95,4 +106,4 @@ app.get('/blog/tag/:tag', (req, res) => res.render('blog', {
   showingTag: req.params.tag 
 }));
 
-app.listen(6547, () => console.log('listening on 6547'));
+app.listen(6540, () => console.log('Listening on 6540'));

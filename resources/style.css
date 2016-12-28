@@ -45,9 +45,11 @@ div.side-padding{
 .hide {
     display:none;
 }
+
 /************************Blog****************************/
+
 .blog-title {
-    font-size:18pt;
+    font-size:3em;
 }
 
 .blog-title a,
@@ -77,7 +79,6 @@ div.side-padding{
         width:calc(100% - 200px);
         padding-right:100px;
     }
-
 }
 
 .content .post {
@@ -85,7 +86,7 @@ div.side-padding{
 }
 
 .content .post .post-title {
-    font-size:14pt;
+    font-size:2em;
     margin-bottom:10px;
     float:left;
     margin-right:10px;
@@ -93,12 +94,19 @@ div.side-padding{
 
 .content .post .post-date {
     float:right;
+    font-size: 1.2em;
     margin-top:5px;
     margin-bottom:5px;
 }
 
 .content .post .post-content {
     display:inline-block;
+    line-height: 1.5em;
+    font-size: 1.2em;
+}
+
+hr {
+    border-color: #aaa
 }
 
 .content .tag-notice {
@@ -123,6 +131,10 @@ div.side-padding{
     font-style:italic;
     text-decoration:underline;
     margin-left:5px;
+}
+
+pre {
+    margin: 30px 0;
 }
 
 .sidebar .about {

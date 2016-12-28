@@ -1,8 +1,6 @@
 TFS Monitor: Keeping Track of TFS Builds and Work Progress
 3/23/2015
-tfs tfs-monitor tools
-
-
+tfs tfs-monitor tools monitor
 
 <p>Team Web Access, shipped with TFS, has improved a lot in the last few years. It offers a competitive alternative to Visual Studio for tracking your work items, queuing builds and more. But it has a few limitations that make it less than ideal for monitoring your team's progress as a whole.</p>
 
