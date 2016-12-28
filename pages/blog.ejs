@@ -30,7 +30,9 @@
                     <div class="post-title"><a href="/blog/<%=post.slug%>"><%=post.title%></a></div>
                     <div class="post-date"><%=post.formattedDate%></div>
                     <div class="post-content">
-                      <%- post.preview%>
+                      <div>
+                        <%- post.preview%>
+                      </div>
                       <a title="read more..." href="/blog/<%=post.slug%>">read more ...</a>
                       <div class="tags">
                           <% post.tags.forEach(tag => { %>

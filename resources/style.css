@@ -88,15 +88,14 @@ div.side-padding{
 .content .post .post-title {
     font-size:2em;
     margin-bottom:10px;
-    float:left;
     margin-right:10px;
 }
 
 .content .post .post-date {
-    float:right;
     font-size: 1.2em;
     margin-top:5px;
-    margin-bottom:5px;
+    font-style: italic;
+    margin-bottom:15px;
 }
 
 .content .post .post-content {

@@ -23,9 +23,10 @@ const processPost = (slug, data) => {
   if (md) {
     content = converter.makeHtml(content);
   }
+  const PREVIEW_LENGTH = 700;
   return {
     slug,
-    preview: content.substr(0, content.indexOf('.', 450) + 1),
+    preview: content.length > PREVIEW_LENGTH + 1 ? content.substr(0, content.indexOf('. ', PREVIEW_LENGTH) + 1) : content,
     title,
     date,
     formattedDate: moment(date).format('ll'),
