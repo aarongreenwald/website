@@ -146,4 +146,4 @@ Like any good open source project, this thing is just getting started. Here’s 
 * Multi-project support - we have more than just one project in our Sentry organization. The config should support multiple projects, each with their own filters
 * Better logging and error handling
 
-Want to help out? Try it yourself, and then head over to Github and report issues or open PRs. Your contribution is most welcome.
+Want to help out? Try it yourself, and then head over to Github and report issues or open PRs. Your contribution is most welcome. Questions? Comments? Tweet to me [@aaronjgreenwald](https://twitter.com/aaronjgreenwald).
