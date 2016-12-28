@@ -26,7 +26,7 @@ Remember that bit about a UI and API for you to keep track of your errors? Just 
 * Are errors trending up or trending down over the last few hours? days? weeks?
 * How many people are using your app?
 
-And if your app is as big as ours at [Wix](https://wix.engineering), and has multiple teams working on different features/modules within it, you want to be able to filter the events by relevance to your team. So to every one of those questions, add the qualifier “in my portion of the app’s code”.
+And if your app is as big as ours at [Wix](http://wix.engineering), and has multiple teams working on different features/modules within it, you want to be able to filter the events by relevance to your team. So to every one of those questions, add the qualifier “in my portion of the app’s code”.
 
 Unfortunately, I found that Sentry’s web app wasn’t great at answering these questions. It appears more geared toward answering questions specific to a single issue (a group of events that their algorithm considers to be caused by the same scenario/error):
 
@@ -45,9 +45,9 @@ When I walk into my office in the morning, I want to see a big number on the wal
 
 Here at Wix, we’re big on New Relic for monitoring. It’s a pretty robust tool, and we use it on our servers, our web clients, and in the native code of our mobile app for monitoring all kinds of things. Among other things, it allows us to build nice dashboards we can plaster on expensive monitors all around our offices that gives us broad overviews of whether we’re in good shape or not.
 
-Oh, and New Relic even has a mobile app for viewing your dashboard as well!
+Oh, and New Relic even has a [mobile app](https://play.google.com/store/apps/details?id=com.newrelic.insights&hl=en) for viewing your dashboard as well!
 
-<screenshot>
+![New Relic's android app, "Insights". Photo credit: New Relic, Inc](https://lh3.googleusercontent.com/jrFHpZNDGcIWgsEiXjOlpQwOthQk5PidHF6XcY5zcsLUOyLYQ4Lki5OTIgXK70agcg=h900-rw)
 
 How cool is that? I can obsessively monitor the data Sentry gathers from my app anytime, like when I'm sitting on the bus, talking to my Mom, or having sex. How great is that? (Just kidding. I’m a nerd, I don’t have sex.)
 
@@ -107,15 +107,28 @@ When you feel confident that the setup is correct for you, remove the `debug` qu
 
 Why did I do it this way? Why didn’t I just write the script and start it on a server with a `setInterval` of five minutes?
 
-Because I want reliable monitoring, and I want to be able to deploy the job to a cluster of internally maintained Wix servers. At Wix, we have lots of prebuilt infrastructure for deploying reliable web servers and I wanted to harness that. 
+Because I want reliable monitoring, and I want to be able to deploy the job to a cluster of internally maintained Wix servers. At Wix, we have lots of prebuilt infrastructure for deploying reliable web servers and I wanted to harness that.
+ 
+ As a rule, you cannot set jobs on web servers that are supposed to be deployed with redundancy. If you do, you'll quickly have more than one server running the job and duplicating your data.
 
-Consider what happens when I modify the code and want to deploy an update.
+Additionally, consider what happens when I modify the code and want to deploy an update. If I had a script that just ran every five minutes,
+ restarting the script would interrupt the intervals and restart them. Then I'd end up with duplicate data for part of one five minute period. I have more than enough errors in my app without my monitor falsely inflating the number, thank you very much. 
+ 
+ With the web server approach, I have a stable server cluster running my monitoring tool, integrated with our company's existing monitoring and system infrastructure, and I can deploy changes to it with no downtime and no hiccups to the interval. It runs every exactly every five minutes.
 
 ## So Why Not Just Use New Relic?
 
 If you read this entire post this should be obvious, but I’m putting this here because people keep asking me this question. Why do I need Sentry at all if New Relic is such hot shit? And why not report to New Relic directly from my application?
 
-Because I like Sentry. I like the in-depth view of issues, I like the way they are easy to integrate, and I don’t want to have twice as much traffic between my users’ mobile devices and monitoring servers.
+Because I like Sentry. I like the in-depth view of issues, I like the way they are easy to integrate, and I don’t want to have twice as much traffic between my users’ mobile devices and monitoring servers. I like being able to see that there's something wrong from my New Relic dashboard or an Anodot alert and then follow the link to the Sentry issue page, where I can begin to understand why this issue is happening and what I can do about it.
+ 
+ That's why.
+ 
+## Results
+ 
+A picture's worth a thousand words, right?
+  
+<img src="/static/blog/new_relic_dashboard.jpg" alt="My New Relic Dashboard" style="width: 100%;"/>
 
 ## Next Steps 
 

@@ -3,14 +3,6 @@
         <div class="blog-title"><a href="/blog">My Coding Blog</a> 
         	<div class="blog-tagline">because there weren't enough programming blogs out there yet</div>
         </div>
-        <!--For SEO, use a combination of server-side and client-side rendering.
-        	Initially, send back either a list of posts or a single post. 
-        	Based on what comes back is what I'll display. 
-        	Once on the page, if clicking a link, just replace the content
-        	with JSON that comes back.  But then I need to change the url...maybe I need to 
-        	do everything statically? Start static and try to figure out how to load more data without 
-        	reloading everything but changing the url
-         -->
          <div class="content">
             <% if (showingTag) { %>
                 <div class="tag-notice">
@@ -22,9 +14,9 @@
             <% if (!posts) { %>
                 <div class="post">
                     <div class="post-title"><%=post.title%></div>
-                    <div class="post-date"><%=post.date%></div>
-                    <div class="post-content"><%- post.content%></div>
-                    <div style="margin-bottom:30px;" class="tags">                    
+                    <div class="post-date"><%=post.formattedDate%></div>
+                    <div class="post-content"><%-post.content%></div>
+                    <div style="margin-bottom:30px;" class="tags">
                         <% post.tags.forEach(tag => { %> 
                             <a href="/blog/tag/<%=tag%>" title="View posts tagged '<%=tag%>'"><%=tag%></a>
                         <% }) %>                
@@ -36,13 +28,15 @@
              <% posts && posts.forEach(post => {%>
                 <div class="post post-list">
                     <div class="post-title"><a href="/blog/<%=post.slug%>"><%=post.title%></a></div>
-                    <div class="post-date"><%=post.date%></div>
-                    <div class="post-content"><%- post.preview%> <a title="read more..." href="/blog/<%=post.slug%>">...</a>
-                        <div class="tags">
-                            <% post.tags.forEach(tag => { %> 
-                                <a href="/blog/tag/<%=tag%>" title="View posts tagged '<%=tag%>'"><%=tag%></a>
-                            <% }) %>
-                        </div>
+                    <div class="post-date"><%=post.formattedDate%></div>
+                    <div class="post-content">
+                      <%- post.preview%>
+                      <a title="read more..." href="/blog/<%=post.slug%>">read more ...</a>
+                      <div class="tags">
+                          <% post.tags.forEach(tag => { %>
+                              <a href="/blog/tag/<%=tag%>" title="View posts tagged '<%=tag%>'"><%=tag%></a>
+                          <% }) %>
+                      </div>
                     </div>
                 </div>
              <% }) %>
@@ -76,14 +70,13 @@
          	<div class="about">
          		You're reading Aaron Greenwald's coding blog,
          		where he writes infrequently about code, software and programming.
-         		He doesn't usually write about himself in third-person, but 
-         		taglines are always awkward.
+         		Read more about him (me, actually) <a href="/">here</a>.
          	</div> 
          </div>       
     </div>
 </div>
 <style>
-@media screen only and (min-width:900px){
+@media screen only and (min-width:900px) {
    /*override the global #content positioning*/
     #content {
         margin-left:10vw;

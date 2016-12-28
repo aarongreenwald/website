@@ -5,6 +5,7 @@ const fs = require('fs');
 const showdown = require('showdown');
 const converter = new showdown.Converter();
 converter.setFlavor('github');
+const moment = require('moment');
 
 let posts = [];
 
@@ -16,7 +17,7 @@ const processPost = (slug, data) => {
   }
   const split = data.split('\n');
   const title = split.shift();
-  const date = split.shift();
+  const date = new Date(split.shift());
   const tags = split.shift().split(' ');
   let content = split.join('\n');
   if (md) {
@@ -24,9 +25,10 @@ const processPost = (slug, data) => {
   }
   return {
     slug,
-    preview: content.substr(0, 450),
+    preview: content.substr(0, content.indexOf('.', 450) + 1),
     title,
     date,
+    formattedDate: moment(date).format('ll'),
     tags,
     content
   };
@@ -59,7 +61,7 @@ readdir('./blog').then(posts => {
   });
   return Promise.all(promises);    
 })
-.then(result => result.sort((a, b) => new Date(a.date) < new Date(b.date) ? 1 : -1))
+.then(result => result.sort((a, b) => a.date < b.date ? 1 : -1))
 .then(result => posts = result)
 .catch(console.error);  
 
