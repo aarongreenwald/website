@@ -47,11 +47,11 @@ Here at Wix, we’re big on [New Relic](https://newrelic.com) for monitoring. It
 
 Oh, and New Relic even has a [mobile app](https://play.google.com/store/apps/details?id=com.newrelic.insights&hl=en) for viewing your dashboard as well!
 
-![New Relic's android app, "Insights". Photo credit: New Relic, Inc](https://lh3.googleusercontent.com/jrFHpZNDGcIWgsEiXjOlpQwOthQk5PidHF6XcY5zcsLUOyLYQ4Lki5OTIgXK70agcg=h900-rw)
+![New Relic's android app, "Insights". Photo credit: New Relic, Inc](https://lh3.googleusercontent.com/jrFHpZNDGcIWgsEiXjOlpQwOthQk5PidHF6XcY5zcsLUOyLYQ4Lki5OTIgXK70agcg=h600-rw)
 
-*(Photo credit: New Relic, Inc)*
+<span class="img-caption">(Photo credit: New Relic, Inc)</span>
 
-How cool is that? I can obsessively monitor the data Sentry gathers from my app anytime, like when I'm sitting on the bus, talking to my Mom, or having sex. Seriously, how great *is* that? (Just kidding. I’m a nerd, we don’t have sex.)
+How cool is that? I can obsessively monitor the data Sentry gathers from my app anytime, like when I'm sitting on the bus, talking to my mom, or having sex. Seriously, how great *is* that? (Just kidding. I’m a nerd, we don’t have sex.)
 
 What I’d really like, then, is a way to get my Sentry data into New Relic so that I could build a dashboard like the one you see above for my JS errors and warnings.
 
@@ -116,7 +116,7 @@ The `debug` query parameter tells `sentry-monitor` not to actually send any data
 
 ## Why So Complicated?
 
-<img alt="Why????" src="http://ragefaces.memesoftware.com/faces/large/annoyed-y-u-no-l.png" width="100%"/>
+<img alt="Why????" src="//res.cloudinary.com/drjhfq56w/image/fetch/q_20,w_500/https://s-media-cache-ak0.pinimg.com/originals/d2/7f/7a/d27f7a2d8e427055dc6114f9a3e02c62.jpg"/>
 
 Why did I do it this way? Why didn’t I just keep my first draft of the script and start it on a server with a `setInterval` of five minutes?
 
@@ -139,7 +139,8 @@ Because I like Sentry. I like the in-depth view of issues, I like the way they a
  
 A picture's worth a thousand words, right?
   
-<img src="/static/blog/new_relic_dashboard.jpg" alt="My New Relic Dashboard" style="width: 100%;"/>
+<img src="/static/blog/new_relic_dashboard-min.jpg" alt="My New Relic Dashboard" style="width: 100%;"/>
+<span class="img-caption">That's my actual dashboard. I measure Super Important Stuff <sup>TM</sup></span>
 
 ## Next Steps 
 

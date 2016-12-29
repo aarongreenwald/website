@@ -104,6 +104,15 @@ div.side-padding{
     font-size: 1.2em;
 }
 
+.content .post .post-content span.img-caption {
+    font-style: italic;
+    font-size: .8em;
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
 hr {
     border-color: #aaa
 }
