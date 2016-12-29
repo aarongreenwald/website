@@ -8,7 +8,7 @@ By integrating [Sentry](https://sentry.io) data with [New Relic](https://newreli
 
 ***
 
-Congratulations. You just built an app that totally revolutionizes the way humans (don’t) interact with one another and are poised to become the next Mark Zuckerberg. Your app doesn’t just *use* all the buzzwords of 2016, it creates new ones. And because you use React Native, your app is ready to ship for Android and iOS from day one.
+Congratulations! You just built an app that totally revolutionizes the way humans (don’t) interact with one another and are poised to become the next Mark Zuckerberg. Your app doesn’t just *use* all the buzzwords of 2016, it creates new ones. And because you use React Native, your app is ready to ship for Android and iOS from day one.
 
 Except that your app is shit. Not because it promises to further the decline of humanity (it does) or because it is entirely useless to anyone who doesn’t live in your little sociopolitical bubble of privilege (it is), but because it’s a brand new app and all new code has tons of bugs.
 
@@ -16,7 +16,7 @@ That your app is full of bugs isn’t the problem. That’s normal. The problem 
 
 ## Enter Sentry 
 
-Fortunately for us, there are quite a few monitoring tools out there. These usually come with an SDK you can add to your app that reports errors or events of some kind to their server, and a UI (and hopefully API) for you to keep track of what’s going on in the wild. For a variety of reasons, our team likes [Sentry](https://sentry.io). It’s fairly easy to work with, easy to set up, and has nice support for JS code. We use it inside React Native to report errors, warnings, and various events inside the JS portion of our React Native app.
+Fortunately for us, there are quite a few monitoring tools out there. These usually come with an SDK you can add to your app that reports errors or events of some kind to their server, and a UI (and hopefully API) for you to keep track of what’s going on in the wild. For a variety of reasons, our team (the mobile team at [Wix](http://wix.engineering)) likes [Sentry](https://sentry.io). It’s fairly easy to work with, easy to set up, and has nice support for JS code. We use it inside React Native to report errors, warnings, and various events inside the JS portion of our React Native app.
 
 ## The Problem 
 
@@ -26,7 +26,7 @@ Remember that bit about a UI and API for you to keep track of your errors? Just 
 * Are errors trending up or trending down over the last few hours? days? weeks?
 * How many people are using your app?
 
-And if your app is as big as ours at [Wix](http://wix.engineering), and has multiple teams working on different features/modules within it, you want to be able to filter the events by relevance to your team. So to every one of those questions, add the qualifier “in my portion of the app’s code”.
+And if your app is as big as ours at Wix, and has multiple teams working on different features/modules within it, you want to be able to filter the events by relevance to your team. So to every one of those questions, add the qualifier “in my portion of the app’s code”.
 
 Unfortunately, I found that Sentry’s web app wasn’t great at answering these questions. It appears more geared toward answering questions specific to a single issue (a group of events that their algorithm considers to be caused by the same scenario/error):
 
@@ -39,7 +39,7 @@ Unfortunately, I found that Sentry’s web app wasn’t great at answering these
 
 In other words, Sentry’s web app is focused on drilling in to a specific issue/error and studying the events that occurred that match that issue. That’s a really important thing to have, but it’s only half of what I need.
 
-When I walk into my office in the morning, I want to see a big number on the wall that represents our error count in the last hour. I’d like to see a graph that shows the error trend in the last few hours compared with last week at the same time (since usage is often cyclical by day of week) and maybe a longer term trend graph.
+When I walk into my office in the morning, I want to see a big number on the wall that represents our error count in the last hour. I’d like to see a graph that shows the error trend in the last few hours compared with last week at the same time (since usage is often cyclical by day of week). And maybe throw in a longer term trend graph, because, why not? I also like to see some color. Maybe green when things are good, yellow when they're so-so, and red when they're positively SCARY. I don't want to have to look at my monitor too closely, I want it to jump out at me every time I walk by it. 
 
 ## Enter New Relic 
 
@@ -51,14 +51,14 @@ Oh, and New Relic even has a [mobile app](https://play.google.com/store/apps/det
 
 <span class="img-caption">(Photo credit: New Relic, Inc)</span>
 
-How cool is that? I can obsessively monitor the data Sentry gathers from my app anytime, like when I'm sitting on the bus, talking to my mom, or having sex. Seriously, how great *is* that? (Just kidding. I’m a nerd, we don’t have sex.)
+How cool is that? I can obsessively monitor my app's production performance anytime, like when I'm sitting on the bus, talking to my mom, or having sex. Seriously, how great *is* that? (Just kidding. I’m a nerd, we don’t have sex.)
 
 What I’d really like, then, is a way to get my Sentry data into New Relic so that I could build a dashboard like the one you see above for my JS errors and warnings.
 
 
-## Oh, And Anodot is Cool Too
+## What About Alerts?
 
-Another tool we like to use at Wix is [Anodot](https://anodot.com), an "anomaly detection" tool. That's a fancy way of saying that you report data to them, and (among other things) they monitor that data and learn to identify a break in the trend (anomalies). You can set up alerts that will notify you if you have a jump in errors, for example. If only there was a way to get my Sentry events into Anodot...
+Another tool we like to use at Wix is [Anodot](https://anodot.com), an "anomaly detection" tool. That's a fancy way of saying that you report data to them, and (among other things) their algorithms monitor that data and learn to identify the trends they follow. You can set up alerts that will notify you if you when the trends are broken (anomalies), which means you might get notified if you have a jump in errors, for example. They also have dashboard support, but I'm mostly interested in their alert system at this point. After all, I don't really obsessively check the New Relic app while I'm having sex. An email, though, well...that would get my attention. If only there was a way to get my Sentry events into Anodot...
 
 <a name="solution" /></a>
 
@@ -66,16 +66,16 @@ Another tool we like to use at Wix is [Anodot](https://anodot.com), an "anomaly 
 
 Rule number one of using third party services: never put your data anywhere you can’t access via an HTTP API of sorts.
 
-It took me only a few hours to whip up a script that uses the [Sentry API](https://docs.sentry.io/api/) to retrieve the last five minutes’ worth of data, filter and aggregate it, and report it to New Relic and Anodot using their respective APIs. Then another view hours to build my dashboards and alerts, and I’m done.
+It took me only a few hours to whip up a script that uses the [Sentry API](https://docs.sentry.io/api/) to retrieve the last five minutes’ worth of data, filter and aggregate it, and report it to New Relic and Anodot using their respective APIs. Then another few hours to build my dashboards and alerts, and I was done.
 
 ![That Was Easy](https://cdn.meme.am/cache/instances/folder967/500x/33633967.jpg)
 
-Just kidding, I was just getting started. How was I going to run that script reliably? More importantly, how were YOU going to run that script if it had all my own variables hard-coded everywhere?
+Just kidding, I was just getting started. How was I going to run that script reliably? More importantly, how were YOU going to run that script if it had all my own configuration hard-coded everywhere?
  
  (Speaking of basic rules of software development: for every hour you spend hacking together some cool trick that does exactly what you want, budget five hours for making that POC generic, stable, and reliable enough for use in more than your very specific use-case.)
 
 
-So I spent a while working on that script to turn it into something more robust and. It’s still a work in progress, and I welcome your assistance in the form of issues and PRs on [GitHub](https://github.com/wix/sentry-monitor). You can head over to the [README](https://github.com/wix/sentry-monitor/blob/master/README.md) there for the full instructions on how to get started, but here’s the basic idea:
+So I spent a while working on that script to turn it into something more robust and generic. It’s still a work in progress, and I welcome your assistance in the form of issues and PRs on [GitHub](https://github.com/wix/sentry-monitor). You can head over to the [README](https://github.com/wix/sentry-monitor/blob/master/README.md) there for the full instructions on how to get started, but here’s the basic idea:
 
 Create a simple node web server with the following snippet:
 
@@ -113,11 +113,11 @@ Create a cron job that uses `curl` to send a `POST` request to your server every
 
     */5 * * * * curl http://localhost:3000/?debug=true -X "WSM_AUTH_KEY: optional_secret_key" -H POST
     
-The `debug` query parameter tells `sentry-monitor` not to actually send any data anywhere, and instead to log it to the console
-    and return the data in the response. After you do enough dry runs that you're confident your config is correct, remove the 
+The `debug` query parameter tells `sentry-monitor` to not actually send any data anywhere, and instead to log it to the console
+    and return the data in the response. After you do enough dry runs that you're confident your config is correct, don't forget to remove the 
     query parameter.
 
-*Security Note:* you need the `WSM_AUTH_KEY` header if you're going to host the web server on a different server than the cron job and expose the web server publicly. The web server will reject any request that doesn't come with the secret key you set. If you do this, make sure you keep your key secret! If you are not exposing the web server to the outside and are hitting it from the same server, you can omit this header.
+*Security Note:* you need the `WSM_AUTH_KEY` header if you're going to host the web server on a different server than the cron job and expose the web server publicly. The web server will reject any request that doesn't come with the secret key you set. If you do this, make sure you keep your key secret! If you are not exposing the web server to the outside but instead are hitting it from the same server, you can omit this header.
 
 ## Why So Complicated?
 
@@ -125,20 +125,22 @@ The `debug` query parameter tells `sentry-monitor` not to actually send any data
 
 Why did I do it this way? Why didn’t I just keep my first draft of the script and start it on a server with a `setInterval` of five minutes?
 
-Because I want reliable monitoring, and I want to be able to deploy the job to a cluster of internally maintained Wix servers. At Wix, we have lots of prebuilt infrastructure for deploying reliable web servers with redundancy and I wanted to harness that infra. As a rule, you cannot set jobs on web servers that are supposed to be deployed with redundancy. If you do, you'll quickly have more than one server running the job and duplicating your data.
+Because I want reliable monitoring. I want to be able to deploy the job to a cluster of already professionally maintained Wix servers. At Wix, we have lots of prebuilt infrastructure for deploying reliable web servers with redundancy and I wanted to harness that infra. Plus, it's a basic principle of server development that you cannot set jobs on web servers that are supposed to be deployed with redundancy. If you do, you'll quickly have more than one server running the job without you realizing it. In our case, that would result in duplicate data.
 
 Additionally, consider what happens when I modify the code and want to deploy an update. If I had a script that just ran every five minutes,
  restarting the script would interrupt the interval calculation. Then I'd end up with duplicate data for part of one five minute period. I have more than enough errors in my app without my monitor falsely inflating the number, thank you very much. 
  
- With the web server approach, I have a stable server cluster running my monitoring tool, integrated with our company's existing monitoring and system infrastructure, and I can deploy changes to it with no downtime and no hiccups to the interval. It runs every exactly every five minutes one some server or another...somewhere. I just deploy my updates and they're picked up the next time the job runs.
+ With the web server approach, I have a stable server cluster running my monitoring tool, integrated with our company's existing monitoring and system infrastructure, and I can deploy changes to it with no downtime and no hiccups to the interval. It runs every exactly every five minutes one some (probably virtual) server or another...somewhere. I just deploy my updates and they're picked up the next time the job runs.
 
 ## So Why Not Just Use New Relic?
 
-If you read this entire post this should be obvious, but I’m putting this here because people keep asking me this question. Why do I need Sentry at all if New Relic is such hot shit? And why not report to New Relic directly from my application?
+If you got to this point without skipping this should be obvious, but I’m putting this here because people keep asking me this question. Why do I need Sentry at all if New Relic and Anodot are such hot stuff? Why not just report to them directly from my application?
 
 Because I like Sentry. I like the in-depth view of issues, I like the way they are easy to integrate, and I don’t want to have twice as much traffic between my users’ mobile devices and monitoring servers. I like being able to see that there's something wrong from my New Relic dashboard or an Anodot alert and then follow the link to the Sentry issue page, where I can begin to understand why this issue is happening and what I can do about it.
  
- That's why.
+ That's why. Ok?
+ 
+ No stop asking silly questions. 
  
 ## Results
  
@@ -157,3 +159,5 @@ Like any good open source project, this thing is just getting started. Here’s 
 * Better logging and error handling
 
 Want to help out? Try it yourself, and then head over to Github and report issues or open PRs. Your contribution is most welcome. Questions? Comments? Tweet to me [@aaronjgreenwald](https://twitter.com/aaronjgreenwald).
+
+*P.S. I don't actually check my email during sex either. That is, I wouldn't if I wasn't a nerd and this wasn't just a theoretical question. Whatever.* 
