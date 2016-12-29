@@ -8,9 +8,9 @@ By integrating [Sentry](https://sentry.io) data with [New Relic](https://newreli
 
 ***
 
-Congratulations! You just built an app that totally revolutionizes the way humans (don’t) interact with one another and are poised to become the next Mark Zuckerberg. Your app doesn’t just *use* all the buzzwords of 2016, it creates new ones. And because you use React Native, your app is ready to ship for Android and iOS from day one.
+Congratulations! You just built an app that totally revolutionizes the way humans interact with one another and are poised to become the next Mark Zuckerberg. Your app doesn’t just *use* all the buzzwords of 2016, it creates new ones. And because you use React Native, your app is ready to ship for Android and iOS from day one.
 
-Except that your app is shit. Not because it promises to further the decline of humanity (it does) or because it is entirely useless to anyone who doesn’t live in your little sociopolitical bubble of privilege (it is), but because it’s a brand new app and all new code has tons of bugs.
+Except that your app is shit. Not necessarily because you're a bad developer (you might be, but I don't know you), but because it’s a brand new app and all new code has tons of bugs.
 
 That your app is full of bugs isn’t the problem. That’s normal. The problem is that you have no way of knowing just how buggy it is if you don’t monitor errors, crashes, business KPIs, and gather general BI. The fundamental principle of [devops](https://en.wikipedia.org/wiki/DevOps) is that your work isn’t finished when you ship, it’s just getting started.
 
@@ -20,7 +20,7 @@ Fortunately for us, there are quite a few monitoring tools out there. These usua
 
 ## The Problem 
 
-Remember that bit about a UI and API for you to keep track of your errors? Just collecting data isn’t very helpful if you don’t look at it. And if you have a flood of data, you will have a tendency to ignore it. You must have a good way of filtering, aggregating, and visualizing the data so you can digest it quickly. You want some kind of dashboard you can put on the wall that you’ll see all the time. It should help you immediately answer some questions, like:
+Remember that bit I mentioned about how monitoring tools usually come with a UI and API for you to keep track of your errors? Just collecting data isn’t very helpful if you don’t look at it. And if you have a flood of data, you will have a tendency to ignore it. You must have a good way of filtering, aggregating, and visualizing the data so you can digest it quickly. You want some kind of dashboard you can put on the wall that you’ll see all the time. It should help you immediately answer some questions, like:
 
 * That feature we just released - did it cause a jump in errors?
 * Are errors trending up or trending down over the last few hours? days? weeks?
@@ -125,9 +125,9 @@ The `debug` query parameter tells `sentry-monitor` to not actually send any data
 
 Why did I do it this way? Why didn’t I just keep my first draft of the script and start it on a server with a `setInterval` of five minutes?
 
-Because I want reliable monitoring. I want to be able to deploy the job to a cluster of already professionally maintained Wix servers. At Wix, we have lots of prebuilt infrastructure for deploying reliable web servers with redundancy and I wanted to harness that infra. Plus, it's a basic principle of server development that you cannot set jobs on web servers that are supposed to be deployed with redundancy. If you do, you'll quickly have more than one server running the job without you realizing it. In our case, that would result in duplicate data.
+Because I want reliable monitoring. At Wix, we have lots of prebuilt infrastructure for deploying reliable web servers with redundancy and I wanted to harness that infra. It's a basic principle of server development that you cannot set jobs on web servers that are supposed to be deployed with redundancy. If you do, you'll quickly have more than one server running the job without you realizing it. In our case, that would result in duplicate data. 
 
-Additionally, consider what happens when I modify the code and want to deploy an update. If I had a script that just ran every five minutes,
+And consider what happens when I modify the code and want to deploy an update. If I had a script that just ran every five minutes,
  restarting the script would interrupt the interval calculation. Then I'd end up with duplicate data for part of one five minute period. I have more than enough errors in my app without my monitor falsely inflating the number, thank you very much. 
  
  With the web server approach, I have a stable server cluster running my monitoring tool, integrated with our company's existing monitoring and system infrastructure, and I can deploy changes to it with no downtime and no hiccups to the interval. It runs every exactly every five minutes one some (probably virtual) server or another...somewhere. I just deploy my updates and they're picked up the next time the job runs.
@@ -140,7 +140,7 @@ Because I like Sentry. I like the in-depth view of issues, I like the way they a
  
  That's why. Ok?
  
- No stop asking silly questions. 
+ Now stop asking silly questions. 
  
 ## Results
  
@@ -158,6 +158,6 @@ Like any good open source project, this thing is just getting started. Here’s 
 * Multi-project support - we have more than just one project in our Sentry organization. The config should support multiple projects, each with their own filters
 * Better logging and error handling
 
-Want to help out? Try it yourself, and then head over to Github and report issues or open PRs. Your contribution is most welcome. Questions? Comments? Tweet to me [@aaronjgreenwald](https://twitter.com/aaronjgreenwald).
+Want to help out? Try it yourself, and then head over to the [GitHub repo](https://github.com/wix/sentry-monitor) and report issues or open PRs. Your contribution is most welcome. Questions? Comments? Tweet to me [@aaronjgreenwald](https://twitter.com/aaronjgreenwald).
 
 *P.S. I don't actually check my email during sex either. That is, I wouldn't if I wasn't a nerd and this wasn't just a theoretical question. Whatever.* 
