@@ -195,7 +195,20 @@ ul.tldr > li {
     color: #4875b4;
 }
 
+.intro {
+    display: flex;
+}
+
 .head-shot {
     margin-right:15px;
+    object-fit: cover;
+    border-radius: 50%;
     float:left;
+    height: 100px;
+    /*zoom: .2;*/
+}
+
+.hello {
+    align-self: center;
+    max-width: 400px;
 }

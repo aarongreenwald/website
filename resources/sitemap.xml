@@ -9,10 +9,13 @@
 	  <loc>http://www.aarongreenwald.com</loc>
 	</url>
 	<url>
-	  <loc>http://www.aarongreenwald.com/resume</loc>
+	  <loc>http://www.aarongreenwald.com/cv</loc>
 	</url>
 	<url>
-	  <loc>http://www.aarongreenwald.com/projects</loc>
+	  <loc>http://www.aarongreenwald.com/work</loc>
+	</url>
+	<url>
+		<loc>http://www.aarongreenwald.com/talks</loc>
 	</url>
 	<url>
 	  <loc>http://www.aarongreenwald.com/blog</loc>

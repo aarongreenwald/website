@@ -82,14 +82,14 @@ const strings = {
 
 app.get('/', (req, res) => res.render('home', {title: 'Home', description: strings.homeDescription}));
 
-app.get('/work', (req, res) => res.render('projects', {title: 'Work', description: strings.workDesc}));
-app.get('/cv', (req, res) => res.render('resume', {title: 'CV', description: strings.cvDesc}));
+app.get('/projects', (req, res) => res.redirect(301, '/work'));
+app.get('/resume', (req, res) => res.redirect(301, '/cv'));
+
+app.get('/work', (req, res) => res.render('work', {title: 'Work', description: strings.workDesc}));
+app.get('/cv', (req, res) => res.render('cv', {title: 'CV', description: strings.cvDesc}));
 app.get('/talks', (req, res) => res.render('talks', {title: 'Talks', description: strings.talksDesc}));
 app.get('/qr', (req, res) => res.render('qr', {layout: false}));
 
-
-app.get('/resume', (req, res) => res.redirect('/cv'));
-app.get('/projects', (req, res) => res.redirect('/work'));
 
 app.get('/blog', (req, res) => res.render('blog', {
   title: 'Blog', 
