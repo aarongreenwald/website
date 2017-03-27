@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Testing &amp; React Native: Lessons from the Battlefield</title>
+	<meta name="description" content="Slides for talk about Testing React Native applications">
+	<meta name="author" content="Aaron Greenwald">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<base href="/slides/" />
+
+	<!-- Theme used for syntax highlighting of code -->
+	<!--<link rel="stylesheet" href="revealjs/lib/css/zenburn.css">-->
+	<!--<link href="/static/socialicious/css/socialicious.css" rel="stylesheet">-->
+
+	<!--general theme -->
+	<script>
+      const accessible=window.location.search.indexOf('accessible') !== -1;
+      if (!accessible) {
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'revealjs/css/reveal.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+        const theme = document.createElement('link');
+        theme.rel = 'stylesheet';
+        theme.type = 'text/css';
+        theme.href = 'theme/agreenwald.css';
+        theme.id = 'theme';
+        document.getElementsByTagName('head')[0].appendChild(theme);
+      }
+	</script>
+
+
+	<!-- Printing and PDF exports -->
+	<script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'revealjs/css/print/pdf.css' : 'revealjs/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+	</script>
+
+	<!--[if lt IE 9]>
+	<script src="revealjs/lib/js/html5shiv.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+
+<div class="reveal">
+	<div class="slides">
+		<section class="title-page">
+			<h1 class="title">Testing &amp; React Native</h1>
+				<h4 class="subtitle">Lessons from the Battlefield</h4>
+				<p class="author">
+					Aaron Greenwald
+				</p>
+				<small class="links">
+					<a href="mailto:aaron@aarongreenwald.com">
+						<!--<i class="icon icon-mail"></i>-->
+						aaron@aarongreenwald.com
+					</a>
+					|
+					<a href="https://twitter.com/aaronjgreenwald">
+						<!--<i class="icon icon-twitter-sign"></i>-->
+						@aaronjgreenwald
+					</a>
+					|
+					<a href="https://github.com/aarongreenwald">
+						<!--<i class="icon icon-github-sign"></i>-->
+						github.com/aarongreenwald
+					</a>
+				</small>
+
+				<aside class="notes" data-markdown>
+					** Abstract**
+
+					_Wix has been about cutting edge web development for a while, and we're all about TDD.
+					When we started mobile with RN, we struggled to replicate our test-heavy workflow that we'd grown to love.
+					We lacked tooling, best practices, and general know-how.
+
+					In this talk, you'll hear about what works and what doesn't.
+					You'll find out what methods we tried and rejected so you won't have to make the same mistakes,
+					and you'll get pointers toward approaches that we've found work so you can get started on the right foot.
+
+					A high-level talk that covers some philosophy, architecture, practical tips you can use, and interesting tidbits._
+
+					**About Me**
+				</aside>
+
+		</section>
+
+		<section data-state="chapter-title">
+			01 / Once Upon A Time
+			<aside class="notes" data-markdown>
+				* We were web developers.
+				* We had a process that worked and that we could rely on
+				* We believed in it
+				* TDD, CI, CD, Rollbacks, devops, etc...especially TDD
+				* We liked our lives
+			</aside>
+		</section>
+		<section>
+			Survey
+			<aside class="notes" data-markdown>
+				* RN Experience
+				* Testing Experience/Attitude
+			</aside>
+		</section>
+		<section>
+			The Testing Pyramid
+			<aside class="notes" data-markdown>
+				* A Quick detour
+			</aside>
+		</section>
+		<section>
+			Unit Testing
+		</section>
+		<section>
+			Component Testing
+		</section>
+		<section>
+			Integration/UI Automation
+		</section>
+
+		<section data-state="chapter-title">
+			02 / Valiant &amp; Brave
+
+			<aside class="notes">
+				Welcome to React Native
+
+				It’s brand new and doesn’t quite work yet.
+			</aside>
+		</section>
+		<section>
+			<div>React Native 0.13</div>
+			<div>
+				<span class="fragment">Android?</span>
+				<span class="fragment">Yeah, ok</span>
+			</div>
+
+		</section>
+
+		<section data-state="chapter-title">
+			03 / Ferocious Enemies
+		</section>
+		<section>
+			Unit Testing
+			<aside class="notes">
+				This is easy. I can even test Redux! Jasmine, mocha, whatever. I don’t care.
+				## TODO - code sample.
+			</aside>
+		</section>
+		<section>
+            <i>(Yes, they're ugly. We can do better.)</i>
+		</section>
+
+		<section>
+			Component Testing
+			<aside class="notes">
+				Component tests with enzyme came with tons of boilerplate - next slide is a code sample. Compare with a code sample of a test from the angular world
+			</aside>
+
+
+		</section>
+		<section>
+			Integration/UI Automation
+
+			<aside class="notes">
+				Appium was slow and flaky. And the tests looked like a mess
+			</aside>
+		</section>
+
+		<section data-state="chapter-title">
+			04 / Taming the Beasts
+
+			<aside class="notes">
+				First of all, how we’re structured at wix (different ppl are in different teams) and disclaimer: I represent only my own team
+			</aside>
+		</section>
+		<section>
+			Unit Testing
+
+			<aside data-markdown class="notes">
+				Enzyme Drivers
+
+				Check out my new redux tests!
+			</aside>
+
+
+
+		</section>
+		<section>
+			Component Testing
+
+			<aside data-markdown class="notes">
+				Enzyme Drivers
+
+				What about Jest?
+			</aside>
+
+		</section>
+		<section>
+			Integration/UI Automation
+			<aside data-markdown class="notes">
+				Detox - here’s where it gets interesting
+			</aside>
+		</section>
+        <section>
+            Detox
+            <aside data-markdown class="notes">
+                ## TODO: How detox works
+            </aside>
+        </section>
+
+		<section data-state="chapter-title">
+			05 / Current Status
+		</section>
+		<section>
+			<p>Stability</p>
+			<p class="fragment">Lots of Options</p>
+			<p class="fragment">Few Excuses</p>
+		</section>
+
+		<section data-background="#000">
+			<!-- This section intentionally left blank -->
+			<aside data-markdown class="notes">
+				Key Takeaways:
+
+				* If you're just starting out, what I laid out - detox, enzyme, and whatever on the unit testing is a good starting point.
+				* There are many ways to test RN apps, and although it's definitely harder than the web, the tooling is getting better and there aren't any excuses to not test.
+				* If you're good at testing, please help the community make these tools more mature.
+
+			</aside>
+		</section>
+		<section>
+			Thank You
+			<small class="links">
+				<a href="mailto:aaron@aarongreenwald.com">aaron@aarongreenwald.com</a> |
+				<a href="https://twitter.com/aaronjgreenwald">@aaronjgreenwald</a> |
+				<a href="https://github.com/aarongreenwald">github.com/aarongreenwald</a>
+			</small>
+		</section>
+	</div>
+</div>
+
+<script src="revealjs/lib/js/head.min.js"></script>
+<script src="revealjs/js/reveal.js"></script>
+
+<script>
+  const present=window.location.search.indexOf('present') !== -1;
+  if (!accessible) {
+    Reveal.initialize({
+      controls: !present,
+      progress: true,
+      history: true,
+      center: true,
+      transition: 'none', // none/fade/slide/convex/concave/zoom
+      dependencies: [
+        { src: 'revealjs/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+        { src: 'revealjs/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: 'revealjs/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+//        { src: 'revealjs/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+        { src: 'revealjs/plugin/zoom-js/zoom.js', async: true },
+        { src: 'revealjs/plugin/notes/notes.js', async: true }
+      ]
+    });
+  }
+
+
+</script>
+
+</body>
+</html>

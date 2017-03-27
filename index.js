@@ -67,6 +67,8 @@ readdir('./blog').then(posts => {
 .catch(console.error);  
 
 app.use('/static', express.static('resources'));
+app.use('/slides', express.static('slides'));
+
 app.use(partials());
 
 app.set('views', './pages');
@@ -100,7 +102,7 @@ app.get('/blog', (req, res) => res.render('blog', {
 
 app.get('/blog/:slug', (req, res) => res.render('blog', {
   title: 'Blog', 
-  description: strings.blogDesc, 
+  description: strings.blogDesc,
   posts: null,
   post: posts.find(p => p.slug === req.params.slug), 
   showingTag: null 
