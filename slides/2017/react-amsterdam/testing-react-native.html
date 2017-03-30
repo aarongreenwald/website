@@ -91,30 +91,74 @@
 				</aside>
 
 		</section>
-
+        <section>
+            Survey
+            <aside class="notes" data-markdown>
+                * RN Experience
+                * Testing Experience/Attitude
+            </aside>
+        </section>
 		<section data-state="chapter-title">
 			01 / Once Upon A Time
 			<aside class="notes" data-markdown>
 				* We were web developers.
+                * Angular was popular
 				* We had a process that worked and that we could rely on
 				* We believed in it
 				* TDD, CI, CD, Rollbacks, devops, etc...especially TDD
 				* We liked our lives
 			</aside>
 		</section>
-		<section>
-			Survey
-			<aside class="notes" data-markdown>
-				* RN Experience
-				* Testing Experience/Attitude
-			</aside>
-		</section>
-		<section>
-			The Testing Pyramid
-			<aside class="notes" data-markdown>
-				* A Quick detour
-			</aside>
-		</section>
+
+        <section>
+            <aside class="notes" data-markdown>
+                * A Quick detour
+            </aside>
+
+            The Testing Pyramid
+
+            <style>
+                .testing-pyramid {
+                    padding-top: 2em !important;
+                }
+                .zone {
+                    height: 3em;
+                    vertical-align: bottom;
+                    position: relative;
+                }
+                .zone span {
+                    position:absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+
+                }
+                .zone:nth-child(1) {
+                    background-color: yellow;
+                    clip-path: polygon(50% 0, 62.5% 100%, 37.5% 100%);
+                    -webkit-clip-path: polygon(50% 0, 62.5% 100%, 37.5% 100%);
+                }
+                .zone:nth-child(2) {
+                    background-color: red;
+                    clip-path: polygon(37.5% 0, 62.5% 0, 75% 100%, 25% 100%);
+                    -webkit-clip-path: polygon(37.5% 0, 62.5% 0, 75% 100%, 25% 100%);
+                }
+                .zone:nth-child(3) {
+                    background-color: yellowgreen;
+                    clip-path: polygon(25% 0, 75% 0, 87.5% 100%, 12.5% 100%);
+                    -webkit-clip-path: polygon(25% 0, 75% 0, 87.5% 100%, 12.5% 100%);
+
+                }
+            </style>
+            <div class="testing-pyramid">
+                <div class="zone fragment"><span>E2E</span></div>
+                <div class="zone fragment"><span>Component</span></div>
+                <div class="zone fragment"><span>Unit</span></div>
+            </div><!-- Closes .pyramid -->
+            <aside class="notes" data-markdown>
+                * A Quick detour
+            </aside>
+        </section>
 		<section>
 			Unit Testing
 		</section>
