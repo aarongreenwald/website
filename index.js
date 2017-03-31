@@ -67,6 +67,8 @@ readdir('./blog').then(posts => {
 .catch(console.error);  
 
 app.use('/static', express.static('resources'));
+//serve static directory from disk for Let'sEncrypt's ssl verification
+app.use('/.well-known', express.static('/var/www/html'));
 app.use(partials());
 
 app.set('views', './pages');
