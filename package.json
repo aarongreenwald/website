@@ -5,15 +5,17 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "watch": "nodemon --watch blog --watch resources --watch pages --watch index.js --ext js,ejs,md",
+    "start": "npm run build; node index.js",
+    "prebuild": "mkdir slides/revealjs/; cp -r ./node_modules/reveal.js/css ./node_modules/reveal.js/js ./node_modules/reveal.js/lib ./node_modules/reveal.js/plugin ./slides/revealjs",
+    "build": "node-sass --recursive --output ./slides/theme --source-map true --source-map-contents ./slides/theme",
+    "watch": "nodemon -w slides/theme -w resources -w pages -w blog -w index.js --ext js,ejs,md,scss --ignore node_modules -x 'npm run start' ",
     "test": "eslint ."
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/aarongreenwald/website.git"
   },
-  "author": "",
+  "author": "Aaron Greenwald",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/aarongreenwald/website/issues"
@@ -24,12 +26,14 @@
     "express": "^4.14.0",
     "express-partials": "^0.3.0",
     "moment": "^2.17.1",
+    "reveal.js": "^3.4.1",
     "showdown": "^1.5.4"
   },
   "devDependencies": {
     "babel-eslint": "^7.1.1",
     "eslint": "^3.12.2",
     "eslint-config-wix": "^1.1.3",
+    "node-sass": "^4.5.1",
     "nodemon": "^1.11.0"
   }
 }

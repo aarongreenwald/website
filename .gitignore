@@ -8,4 +8,6 @@ user_access.csv
 *.sublime-*
 node_modules
 
-.idea/
+.idea
+
+slides/revealjs

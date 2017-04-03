@@ -1,0 +1,82 @@
+@import "../revealjs/css/theme/white";
+
+$blue: #2298ef;
+
+html.chapter-title {
+	.reveal .slide-background {
+		background-color: $blue;
+	}
+
+	section {
+		color: white;
+		//padding: 0.25em;
+		font-weight: 700 !important;
+        //height: 2em;
+		//font-size: 2em;
+		text-align: center;
+		//line-height: 1.8;
+	}
+}
+
+.reveal {
+
+	.title-page {
+
+        h1 {
+          font-size: 1.6em;
+          font-weight: 800;
+          color: $blue;
+        }
+
+		text-align: left;
+		padding-left: 20px;
+		.author {
+			font-size: .8em;
+		}
+	}
+
+	.links {
+		justify-content: space-between;
+		padding-top: 7em;
+		display: flex;
+
+		i.icon {
+			vertical-align: middle;
+		}
+
+		a {
+			color: $blue;
+			font-size: .8em;
+		}
+	}
+
+	.list-header {
+		margin-bottom: 3em !important;
+		margin-top: -3em !important;
+	}
+
+
+	.caption {
+		position: fixed;
+		bottom: 0;
+		right: 0;
+		color: #ccc !important;
+		font-size: 0.35em !important;
+	}
+
+	.aside {
+		font-size: .8em;
+		font-style: italic;
+	}
+
+}
+
+
+.background-img body {
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center center;
+	background-color: #000000;
+	color: #fff;
+}
+

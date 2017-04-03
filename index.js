@@ -3,6 +3,7 @@ const partials = require('express-partials');
 const app = express();
 const fs = require('fs');
 const showdown = require('showdown');
+const compression = require('compression');
 const converter = new showdown.Converter();
 converter.setFlavor('github');
 const moment = require('moment');
@@ -66,7 +67,10 @@ readdir('./blog').then(posts => {
 .then(result => posts = result)
 .catch(console.error);  
 
+
+app.use(compression());
 app.use('/static', express.static('resources'));
+app.use('/slides', express.static('slides'));
 //serve static directory from disk for Let'sEncrypt's ssl verification
 app.use('/.well-known', express.static('/var/www/html/.well-known'));
 app.use(partials());
@@ -102,7 +106,7 @@ app.get('/blog', (req, res) => res.render('blog', {
 
 app.get('/blog/:slug', (req, res) => res.render('blog', {
   title: 'Blog', 
-  description: strings.blogDesc, 
+  description: strings.blogDesc,
   posts: null,
   post: posts.find(p => p.slug === req.params.slug), 
   showingTag: null 
