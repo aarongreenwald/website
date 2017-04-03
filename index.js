@@ -73,7 +73,6 @@ app.use('/static', express.static('resources'));
 app.use('/slides', express.static('slides'));
 //serve static directory from disk for Let'sEncrypt's ssl verification
 app.use('/.well-known', express.static('/var/www/html/.well-known'));
-
 app.use(partials());
 
 app.set('views', './pages');
