@@ -49,5 +49,34 @@ html.chapter-title {
 			font-size: .8em;
 		}
 	}
+
+	.list-header {
+		margin-bottom: 3em !important;
+		margin-top: -3em !important;
+	}
+
+
+	.caption {
+		position: fixed;
+		bottom: 0;
+		right: 0;
+		color: #ccc !important;
+		font-size: 0.35em !important;
+	}
+
+	.aside {
+		font-size: .8em;
+		font-style: italic;
+	}
+
+}
+
+
+.background-img body {
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center center;
+	background-color: #000000;
+	color: #fff;
 }
 
