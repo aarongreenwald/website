@@ -11,7 +11,7 @@
 	<base href="/slides/" />
 
 	<!-- Theme used for syntax highlighting of code -->
-	<!--<link rel="stylesheet" href="revealjs/lib/css/zenburn.css">-->
+	<link rel="stylesheet" href="revealjs/lib/css/zenburn.css">
 	<!--<link href="/static/socialicious/css/socialicious.css" rel="stylesheet">-->
 
 	<!--general theme -->
@@ -30,24 +30,11 @@
         theme.id = 'theme';
         document.getElementsByTagName('head')[0].appendChild(theme);
       }
-	</script>
-
-
-	<!-- Printing and PDF exports -->
-	<script>
-      const link = document.createElement( 'link' );
-      link.rel = 'stylesheet';
-      link.type = 'text/css';
-      link.href = window.location.search.match( /print-pdf/gi ) ? 'revealjs/css/print/pdf.css' : 'revealjs/css/print/paper.css';
-      document.getElementsByTagName( 'head' )[0].appendChild( link );
-	</script>
+    </script>
 
 	<script src="revealjs/lib/js/head.min.js"></script>
 	<script src="revealjs/js/reveal.js"></script>
 
-	<!--[if lt IE 9]>
-	<script src="revealjs/lib/js/html5shiv.js"></script>
-	<![endif]-->
 </head>
 
 <body>
@@ -60,22 +47,7 @@
 				<p class="author">
 					Aaron Greenwald
 				</p>
-				<small class="links">
-					<a href="mailto:aaron@aarongreenwald.com">
-						<!--<i class="icon icon-mail"></i>-->
-						aaron@aarongreenwald.com
-					</a>
-					|
-					<a href="https://twitter.com/aaronjgreenwald">
-						<!--<i class="icon icon-twitter-sign"></i>-->
-						@aaronjgreenwald
-					</a>
-					|
-					<a href="https://github.com/aarongreenwald">
-						<!--<i class="icon icon-github-sign"></i>-->
-						github.com/aarongreenwald
-					</a>
-				</small>
+                <div class="template-instance links"></div>
 
 				<aside class="notes" data-markdown>
 					** Abstract**
@@ -162,20 +134,14 @@
 		</section>
 		<section>
 			Testing
-			<div class="testing-pyramid-instance"></div>
+			<div class="template-instance testing-pyramid"></div>
 
 		</section>
 
 		<section>
-			<div class="testing-pyramid-instance focus unit no-fragment"></div>
+			<div class="template-instance testing-pyramid focus unit no-fragment"></div>
 			<aside class="notes">
 				This is easy. I can even test Redux! Jasmine, mocha, whatever. I don’t care.
-				## TODO - code sample.
-
-				<!--<section>-->
-				<!--<i>(Yes, they're ugly. We can do better.)</i>-->
-				<!--</section>-->
-
 			</aside>
 		</section>
 
@@ -186,50 +152,182 @@
 			[Better Code Sample]
 		</section>
 		<section>
-			<div class="testing-pyramid-instance focus component no-fragment"></div>
-			<aside class="notes">
-			</aside>
-
-
+			<div class="template-instance testing-pyramid focus component no-fragment"></div>
 		</section>
 		<section>Enzyme</section>
-		<section>[Boilerplate]</section>
-		<section>[Angular Comparison]</section>
-		<section>Enzyme Drivers</section>
-		<section>[Better Tests]</section>
 		<section>
+            <pre>
+                <code>
+                    Boilerplate
+                </code>
+            </pre>
+        </section>
+		<section>
+            <pre>
+                <code>
+                        Angular Comparison
+                </code>
+            </pre>
+        </section>
+		<section>Enzyme Drivers</section>
+		<section>
+            <pre>
+                <code>
+  beforeEach(() => {
+    initDriver();
+  });
+  it('should render footer when loading', () => {
+    driver.render({contacts: [], isLoading: true});
+    let footer = driver.renderFooter();
+    expect(footer.props.testID)
+                    .toEqual('activity-indicator');
+
+    driver.render({contacts: [], isLoading: false});
+    footer = driver.renderFooter();
+    expect(footer).toBe(null);
+  });
+                </code>
+            </pre>
+        </section>
+        <section>
+            <pre>
+                <code>
+  function initDriver() {
+    driver = new ContactListDriver({
+      path: 'contact-list/contact-list.mobile.component',
+      mocks: {
+        'mobx-react/native': {observer: x => x},
+        './some-component': createMockReactComponent(),
+        'wix-react-native-ui-lib': uiLibMock
+      }
+    });
+  }
+                </code>
+            </pre>
+        </section>
+
+        <section>
+            <pre>
+                <code>
+
+class ContactListDriver extends RNDriver {
+  get contacts() {
+    return this.propsOf('contacts').dataSource._dataBlob;
+  }
+  ...
+
+  renderFooter() {
+    return this.propsOf('contacts').renderFooter();
+  }
+}
+                </code>
+            </pre>
+        </section>
+
+
+        <section>
 			Jest
 		</section>
 		<section>
-			<div class="testing-pyramid-instance focus e2e no-fragment"></div>
-
-			<aside class="notes">
-				Appium was slow and flaky. And the tests looked like a mess
-
-				Detox - here’s where it gets interesting
-
-				## TODO: How detox works
-
-			</aside>
+			<div class="template-instance testing-pyramid focus e2e no-fragment"></div>
 		</section>
 
 		<section>Appium</section>
+		<section>
+			<pre>
+				<code>
+xit('should not allow sending an empty message',
+                    test.specAsync(async () => {
+
+  //check that the value is not sent if the message is empty
+  await driver.safeClick('sendButton');
+  await test.expectElementToNotExist('activity-guid');
+  await test.expectElementToNotExist('activity-1001');
+
+  //now type something, delete it and try to send
+  //again to check that it is not sent either
+  await driver.typeOnKeyboard('a');
+  await driver.tapKeyboardDelete(1);
+  await driver.sleep(500);
+  await driver.safeClick('sendButton', 1000);
+  await test.expectElementToNotExist('activity-guid');
+  await test.expectElementToNotExist('activity-1001');
+}));
+				</code>
+			</pre>
+		</section>
+        <section>
+			<pre>
+				<code>
+  wd.addPromiseChainMethod('typeOnKeyboard', function (val) {
+    let t = this.execute(
+       'target.frontMostApp().keyboard()'
+       ).sleep(750);
+    for (let i = 0; i < val.length; i++) {
+      t = t.sleep(150).execute(
+        `target
+          .frontMostApp()
+          .keyboard()
+          .typeString('${val[i]}')`
+      );
+    }
+    return t;
+  });
+				</code>
+			</pre>
+        </section>
+        <section>
+			<pre>
+				<code>
+...
+expectElementToNotExist: async testId => {
+  let element;
+  for (let i = 0; i < 20; i++) {
+    element = await driver.getElementIfExists(testId, 50);
+    if (element) {
+        // if it's still there check back in a little bit
+        await driver.sleep(50);
+    } else {
+      element = undefined;
+      break;
+    }
+  }
+  expect({element, testId}).not.toBeAValidElement();
+},
+...
+
+				</code>
+			</pre>
+        </section>
+		<section>
+			<div>WD</div>
+			<div class="fragment">IWD</div>
+			<div class="fragment">WTF</div>
+		</section>
 		<section>
 			<div class="list-header">Most Important Thing<sup><small>TM</small></sup></div>
 			<div class="fragment">Stable</div>
 			<div class="fragment">Fast</div>
 		</section>
-		<section>
-			WD, IWD, WTF
-		</section>
-		<section>
-			[Oh, and ugly code for appium tests]
-		</section>
 		<section>Reframing the Problem</section>
-		<section>E2E vs UI Automation</section>
+		<section><s>E2E</s> UI Automation</section>
 		<section>
-			[Detox Gifs - two, side by side]
+			<div class="list-header">
+                github.com/wix/<b style="color:orange">detox</b>
+            </div>
+            <div class="fragment">
+                Stable
+            </div>
+            <div class="fragment">
+                Fast
+            </div>
+            <div class="fragment">
+                RN-Friendly
+            </div>
 		</section>
+        <section>
+            [Detox Gifs]
+        </section>
 
 		<section data-state="chapter-title">
 			04 / Now What??
@@ -261,12 +359,8 @@
 		</section>
 		<section>
 			Thank You
-			<small class="links">
-				<a href="mailto:aaron@aarongreenwald.com">aaron@aarongreenwald.com</a> |
-				<a href="https://twitter.com/aaronjgreenwald">@aaronjgreenwald</a> |
-				<a href="https://github.com/aarongreenwald">github.com/aarongreenwald</a>
-			</small>
-		</section>
+            <div class="template-instance links"></div>
+        </section>
 	</div>
 </div>
 
@@ -275,7 +369,7 @@
   if (!accessible) {
     Reveal.initialize({
       controls: !present,
-      progress: true,
+      progress: !present,
       history: true,
       center: true,
       transition: 'none', // none/fade/slide/convex/concave/zoom
@@ -283,7 +377,7 @@
         { src: 'revealjs/lib/js/classList.js', condition: function() { return !document.body.classList; } },
         { src: 'revealjs/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
         { src: 'revealjs/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-//        { src: 'revealjs/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+        { src: 'revealjs/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
         { src: 'revealjs/plugin/zoom-js/zoom.js', async: true },
         { src: 'revealjs/plugin/notes/notes.js', async: true }
       ]
@@ -297,6 +391,25 @@
 		<div class="zone fragment"><span>Component</span></div>
 		<div class="zone fragment"><span>Unit</span></div>
 	</div>
+</div>
+
+<div class="template" id="links">
+    <small class="links">
+        <a href="mailto:aaron@aarongreenwald.com">
+            <!--<i class="icon icon-mail"></i>-->
+            aaron@aarongreenwald.com
+        </a>
+        |
+        <a href="https://twitter.com/aaronjgreenwald">
+            <!--<i class="icon icon-twitter-sign"></i>-->
+            @aaronjgreenwald
+        </a>
+        |
+        <a href="https://github.com/aarongreenwald">
+            <!--<i class="icon icon-github-sign"></i>-->
+            github.com/aarongreenwald
+        </a>
+    </small>
 </div>
 
 <style>
@@ -320,12 +433,12 @@
 
 	}
 	.zone:nth-child(1) {
-		background-color: yellow;
+		background-color: lightblue;
 		clip-path: polygon(50% 0, 62.5% 100%, 37.5% 100%);
 		-webkit-clip-path: polygon(50% 0, 62.5% 100%, 37.5% 100%);
 	}
 	.zone:nth-child(2) {
-		background-color: red;
+		background-color: lightcoral;
 		clip-path: polygon(37.5% 0, 62.5% 0, 75% 100%, 25% 100%);
 		-webkit-clip-path: polygon(37.5% 0, 62.5% 0, 75% 100%, 25% 100%);
 	}
@@ -341,7 +454,7 @@
 	}
 
 	.focus .zone {
-		opacity: 0.3 !important;
+		opacity: 0.25 !important;
 	}
 
 	.focus.unit .zone:last-child {
@@ -384,18 +497,21 @@
 		background-image: url(//blog.altoros.com/wp-content/uploads/2014/05/angularjs-logo.png);
 	}
 
-
-
 </style>
 
 <script>
-  let template = document.getElementById('testing-pyramid').innerHTML;
-  document.querySelectorAll('.testing-pyramid-instance').forEach(tp => {
-    if (tp.classList.contains('no-fragment')) {
-      template = template.split('fragment').join('');
-	}
-    tp.innerHTML = template;
+
+  document.querySelectorAll('.template').forEach(template => {
+    const templateName = template.id;
+    document.querySelectorAll(`.${templateName}.template-instance`).forEach(instance => {
+      let html = template.innerHTML;
+      if (instance.classList.contains('no-fragment')) {
+        html = html.split('fragment').join('');
+      }
+      instance.innerHTML = html;
+    });
   });
+
 </script>
 
 </body>

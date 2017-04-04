@@ -311,7 +311,10 @@ html.chapter-title section {
 
 .reveal .links {
   justify-content: space-between;
-  padding-top: 7em;
+  position: fixed;
+  bottom: 4em;
+  left: 0;
+  right: 0;
   display: flex; }
   .reveal .links i.icon {
     vertical-align: middle; }
@@ -320,8 +323,10 @@ html.chapter-title section {
     font-size: .8em; }
 
 .reveal .list-header {
-  margin-bottom: 3em !important;
-  margin-top: -3em !important; }
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 2.5em; }
 
 .reveal .caption {
   position: fixed;
@@ -333,6 +338,13 @@ html.chapter-title section {
 .reveal .aside {
   font-size: .8em;
   font-style: italic; }
+
+.reveal pre {
+  box-shadow: none;
+  white-space: pre-wrap; }
+
+.reveal pre code {
+  max-height: 100%; }
 
 .background-img body {
   background-repeat: no-repeat;

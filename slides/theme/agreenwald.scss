@@ -37,7 +37,10 @@ html.chapter-title {
 
 	.links {
 		justify-content: space-between;
-		padding-top: 7em;
+		position: fixed;
+		bottom: 4em;
+		left: 0;
+		right: 0;
 		display: flex;
 
 		i.icon {
@@ -51,8 +54,10 @@ html.chapter-title {
 	}
 
 	.list-header {
-		margin-bottom: 3em !important;
-		margin-top: -3em !important;
+		position: fixed;
+		left: 0;
+		right: 0;
+		top: 2.5em;
 	}
 
 
@@ -67,6 +72,17 @@ html.chapter-title {
 	.aside {
 		font-size: .8em;
 		font-style: italic;
+	}
+
+
+
+	pre {
+		box-shadow: none;
+		white-space: pre-wrap;
+	}
+
+	pre code {
+		max-height: 100%;
 	}
 
 }
