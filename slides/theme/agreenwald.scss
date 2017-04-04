@@ -74,16 +74,29 @@ html.chapter-title {
 		font-style: italic;
 	}
 
-
-
 	pre {
 		box-shadow: none;
 		white-space: pre-wrap;
+		width: 100%;
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 
 	pre code {
 		max-height: 100%;
+		padding: 0 15px;
 	}
+
+	section div {
+		line-height: 1.7em;
+	}
+
 
 }
 
@@ -92,7 +105,7 @@ html.chapter-title {
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: center center;
-	background-color: #000000;
-	color: #fff;
+	background-color: #222;
+	color: #ddd;
 }
 

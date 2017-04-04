@@ -122,18 +122,16 @@
 
 		<section>
 			<div>React Native 0.13</div>
-			<div>
-				<span class="fragment">Android Support</span>
-				<span class="fragment"><i>Yeah, ok</i></span>
-			</div>
+            <div class="fragment">Android Support</div>
+            <div class="fragment"><i>(Yeah, ok)</i></div>
 			<div class="fragment">Fast & Furious Development</div>
 
 		</section>
 		<section data-state="chapter-title">
 			03 / Taming the Wild
 		</section>
+        <section>How Can We TDD?</section>
 		<section>
-			Testing
 			<div class="template-instance testing-pyramid"></div>
 
 		</section>
@@ -145,63 +143,68 @@
 			</aside>
 		</section>
 
-		<section>
-			[Code Sample]
-		</section>
-		<section>
-			[Better Code Sample]
-		</section>
+		<!--<section>-->
+			<!--[Code Sample]-->
+		<!--</section>-->
+		<!--<section>-->
+			<!--[Better Code Sample]-->
+		<!--</section>-->
 		<section>
 			<div class="template-instance testing-pyramid focus component no-fragment"></div>
 		</section>
 		<section>Enzyme</section>
-		<section>
-            <pre>
-                <code>
-                    Boilerplate
-                </code>
-            </pre>
+
+
+        <section>
+            Shallow vs Deep Rendering
         </section>
-		<section>
-            <pre>
-                <code>
-                        Angular Comparison
-                </code>
-            </pre>
+        <section>
+            Boilerplate
+            <!--<pre>-->
+            <!--<code>-->
+            <!--Boilerplate-->
+            <!--</code>-->
+            <!--</pre>-->
         </section>
+        <!--<section>-->
+        <!--<pre>-->
+        <!--<code>-->
+        <!--Angular Comparison-->
+        <!--</code>-->
+        <!--</pre>-->
+        <!--</section>-->
 		<section>Enzyme Drivers</section>
 		<section>
             <pre>
                 <code>
-  beforeEach(() => {
-    initDriver();
-  });
-  it('should render footer when loading', () => {
-    driver.render({contacts: [], isLoading: true});
-    let footer = driver.renderFooter();
-    expect(footer.props.testID)
-                    .toEqual('activity-indicator');
+beforeEach(() => {
+  initDriver();
+});
+it('should render footer when loading', () => {
+  driver.render({contacts: [], isLoading: true});
+  let footer = driver.renderFooter();
+  expect(footer.props.testID).toEqual('activity-indicator');
 
-    driver.render({contacts: [], isLoading: false});
-    footer = driver.renderFooter();
-    expect(footer).toBe(null);
-  });
+  driver.render({contacts: [], isLoading: false});
+  footer = driver.renderFooter();
+  expect(footer).toBe(null);
+});
                 </code>
             </pre>
         </section>
         <section>
             <pre>
                 <code>
-  function initDriver() {
-    driver = new ContactListDriver({
-      path: 'contact-list/contact-list.mobile.component',
-      mocks: {
-        'mobx-react/native': {observer: x => x},
-        './some-component': createMockReactComponent(),
-        'wix-react-native-ui-lib': uiLibMock
-      }
-    });
-  }
+function initDriver() {
+  driver = new ContactListDriver({
+    path: 'contact-list/contact-list.mobile.component',
+    mocks: {
+      'mobx-react/native': {observer: x => x},
+      './some-component': createMockReactComponent(),
+      'wix-react-native-ui-lib': uiLibMock
+    }
+  });
+}
                 </code>
             </pre>
         </section>
@@ -223,11 +226,15 @@ class ContactListDriver extends RNDriver {
                 </code>
             </pre>
         </section>
-
-
         <section>
-			Jest
-		</section>
+            Mocks, Mocks, Mocks
+        </section>
+        <section>
+            Architecture Matters
+        </section>
+        <section>
+            Jest
+        </section>
 		<section>
 			<div class="template-instance testing-pyramid focus e2e no-fragment"></div>
 		</section>
@@ -259,20 +266,20 @@ xit('should not allow sending an empty message',
         <section>
 			<pre>
 				<code>
-  wd.addPromiseChainMethod('typeOnKeyboard', function (val) {
-    let t = this.execute(
-       'target.frontMostApp().keyboard()'
-       ).sleep(750);
-    for (let i = 0; i < val.length; i++) {
-      t = t.sleep(150).execute(
-        `target
-          .frontMostApp()
-          .keyboard()
-          .typeString('${val[i]}')`
-      );
-    }
-    return t;
-  });
+wd.addPromiseChainMethod('typeOnKeyboard', function (val) {
+  let t = this.execute(
+     'target.frontMostApp().keyboard()'
+     ).sleep(750);
+  for (let i = 0; i < val.length; i++) {
+    t = t.sleep(150).execute(
+      `target
+        .frontMostApp()
+        .keyboard()
+        .typeString('${val[i]}')`
+    );
+  }
+  return t;
+});
 				</code>
 			</pre>
         </section>
@@ -364,27 +371,6 @@ expectElementToNotExist: async testId => {
 	</div>
 </div>
 
-<script>
-  const present=window.location.search.indexOf('present') !== -1;
-  if (!accessible) {
-    Reveal.initialize({
-      controls: !present,
-      progress: !present,
-      history: true,
-      center: true,
-      transition: 'none', // none/fade/slide/convex/concave/zoom
-      dependencies: [
-        { src: 'revealjs/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-        { src: 'revealjs/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-        { src: 'revealjs/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-        { src: 'revealjs/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-        { src: 'revealjs/plugin/zoom-js/zoom.js', async: true },
-        { src: 'revealjs/plugin/notes/notes.js', async: true }
-      ]
-    });
-  }
-</script>
-
 <div class="template" id="testing-pyramid">
 	<div class="testing-pyramid">
 		<div class="zone fragment"><span>E2E</span></div>
@@ -418,7 +404,7 @@ expectElementToNotExist: async testId => {
 	}
 
 	.testing-pyramid {
-		 padding-top: 2em !important;
+		 /*padding-top: 2em !important;*/
 	 }
 	.zone {
 		height: 3em;
@@ -512,6 +498,27 @@ expectElementToNotExist: async testId => {
     });
   });
 
+</script>
+
+<script>
+  const present=window.location.search.indexOf('present') !== -1;
+  if (!accessible) {
+    Reveal.initialize({
+      controls: !present,
+      progress: !present,
+      history: true,
+      center: true,
+      transition: 'none', // none/fade/slide/convex/concave/zoom
+      dependencies: [
+        { src: 'revealjs/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+        { src: 'revealjs/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: 'revealjs/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: 'revealjs/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+        { src: 'revealjs/plugin/zoom-js/zoom.js', async: true },
+        { src: 'revealjs/plugin/notes/notes.js', async: true }
+      ]
+    });
+  }
 </script>
 
 </body>

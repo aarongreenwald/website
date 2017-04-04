@@ -341,16 +341,29 @@ html.chapter-title section {
 
 .reveal pre {
   box-shadow: none;
-  white-space: pre-wrap; }
+  white-space: pre-wrap;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
 
 .reveal pre code {
-  max-height: 100%; }
+  max-height: 100%;
+  padding: 0 15px; }
+
+.reveal section div {
+  line-height: 1.7em; }
 
 .background-img body {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center center;
-  background-color: #000000;
-  color: #fff; }
+  background-color: #222;
+  color: #ddd; }
 
 /*# sourceMappingURL=agreenwald.css.map */
