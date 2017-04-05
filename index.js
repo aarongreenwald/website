@@ -1,72 +1,8 @@
 const express = require('express');
-const partials = require('express-partials');
 const app = express();
-const fs = require('fs');
-const showdown = require('showdown');
+const partials = require('express-partials');
 const compression = require('compression');
-const converter = new showdown.Converter();
-converter.setFlavor('github');
-const moment = require('moment');
-
-let posts = [];
-
-const processPost = (slug, data) => {
-  let md = false;
-  if (slug.substr(slug.length - 3, 3) === '.md') {
-    slug = slug.substr(0, slug.length - 3);
-    md = true;
-  }
-  const split = data.split('\n');
-  const title = split.shift();
-  const date = new Date(split.shift());
-  const tags = split.shift().split(' ');
-  let content = split.join('\n');
-  if (md) {
-    content = converter.makeHtml(content);
-  }
-  const PREVIEW_LENGTH = 700;
-  return {
-    slug,
-    preview: content.length > PREVIEW_LENGTH + 1 ? content.substr(0, content.indexOf('. ', PREVIEW_LENGTH) + 1) : content,
-    title,
-    date,
-    formattedDate: moment(date).format('ll'),
-    tags,
-    content
-  };
-};  
-
-const readdir = path => new Promise((resolve, reject) => 
-  fs.readdir(path, (err, result) => {
-    if (err) {
-      reject(err);
-    }    
-    resolve(result);
-  })
-);
-
-const readfile = path => new Promise((resolve, reject) => 
-  fs.readFile(path, 'utf-8', (err, result) => {
-    if (err) {
-      reject(err);
-    }    
-    resolve(result);
-  })
-);
-
-readdir('./blog').then(posts => {
-  const promises = [];
-  posts.forEach(post => {
-    const processedPost = readfile(`./blog/${post}`)
-      .then(data => processPost(post, data));
-    promises.push(processedPost);
-  });
-  return Promise.all(promises);    
-})
-.then(result => result.sort((a, b) => a.date < b.date ? 1 : -1))
-.then(result => posts = result)
-.catch(console.error);  
-
+const blog = require('./blog-data');
 
 app.use(compression());
 app.use('/static', express.static('resources'));
@@ -98,24 +34,24 @@ app.get('/qr', (req, res) => res.render('qr', {layout: false}));
 
 
 app.get('/blog', (req, res) => res.render('blog', {
-  title: 'Blog', 
-  description: strings.blogDesc, 
-  posts, 
-  showingTag: null 
+  title: 'Blog',
+  description: strings.blogDesc,
+  posts: blog.posts,
+  showingTag: null
 }));
 
 app.get('/blog/:slug', (req, res) => res.render('blog', {
   title: 'Blog', 
   description: strings.blogDesc,
   posts: null,
-  post: posts.find(p => p.slug === req.params.slug), 
+  post: blog.posts.find(p => p.slug === req.params.slug),
   showingTag: null 
 }));
 
 app.get('/blog/tag/:tag', (req, res) => res.render('blog', {
   title: 'Blog', 
   description: strings.blogDesc, 
-  posts: posts.filter(p => p.tags.indexOf(req.params.tag) !== -1),   
+  posts: blog.posts.filter(p => p.tags.indexOf(req.params.tag) !== -1),
   showingTag: req.params.tag 
 }));
 
