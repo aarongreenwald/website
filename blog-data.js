@@ -24,7 +24,10 @@ const processPost = (slug, data) => {
   return {
     slug,
     preview: content.length > PREVIEW_LENGTH + 1 ? content.substr(0, content.indexOf('. ', PREVIEW_LENGTH) + 1) : content,
-    description: null, //TODO
+    //TODO * 3
+    description: null,
+    twitterCardImageUrl: null,
+    twitterCardDescription: null,
     title,
     date,
     formattedDate: moment(date).format('ll'),

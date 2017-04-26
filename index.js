@@ -45,6 +45,9 @@ app.get('/blog/:slug', (req, res) => {
     navPage: 'Blog',
     title: post.title,
     twitterCardImageUrl: post.twitterCardImageUrl || 'https://avatars3.githubusercontent.com/u/6300588?v=4&s=450',
+    //only twitter should default to blogDesc, not standard description
+    //because google doesn't like that
+    twitterCardDescription: post.description || strings.blogDesc,
     description: post.description,
     post
   }));
@@ -58,7 +61,12 @@ app.get('/blog/tag/:tag', (req, res) => res.render('blog', PageValues({
 })));
 
 const PageValues = opts => Object.assign({
-  navPage: opts.title, //default page to title, sometimes multiple titles are included in one page (Blog)
+  //default page to title,
+  //field exists sometimes multiple titles are included in one page (Blog)
+  navPage: opts.title || null,
+  //default twitterCardDescription to page description if it's not overridden in opts
+  twitterCardDescription: opts.description || null,
+  //default twitterCardImageUrl to headshot if it's not overridden in opts
   twitterCardImageUrl: 'https://avatars3.githubusercontent.com/u/6300588?v=4&s=450',
   //some fields the ejs expects and will fail without
   description: null,
