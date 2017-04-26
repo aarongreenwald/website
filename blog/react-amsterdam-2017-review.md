@@ -12,9 +12,9 @@ The super-short version: I had a great time and I hope to go again. And if you m
 
 It was yuuuuge. I heard through the grapevine that the organizers originally expected only a few hundred people, and turnout was somewhere well above one thousand. But if the organizers weren't originally planning to handle such a large crowd, it didn't show. They scaled very well, and ran an incredibly smooth and professional event. Special shoutout to team members [Diana Trubnikova](https://www.linkedin.com/in/dianatrubnikova/) and [Robert Haritonov](https://twitter.com/operatino), who helped me with logistics, arrangements, and all around did an amazing job making the event run so smoothly.
 
-There were two tracks, running parallel all day in two separate rooms. In the main hall was the React track, focusing on all things React that didn't fit in the second track: React Native. As a React Native developer and speaker, I spent most of my time in the React Native track, but I did pop in to the main hall now and again to appreciate the immensity of the event. Words cannot do justice to just how big it was, and even Donald Trump would probably have been without words to describe the magnitude of React Amsterdam. <a href="https://youtu.be/7UIE_MRAhEA?t=49s">And he has the best words.</a> 
+There were two tracks, running parallel all day in two separate rooms. In the main hall was the React track, focusing on all things React that didn't fit in the second track: React Native. As a React Native developer and speaker, I spent most of my time in the React Native track, but I did pop in to the main hall now and again to appreciate the immensity of the event. Words cannot do justice to just how big it was, and even Donald Trump would probably have been without words to describe the magnitude of React Amsterdam. [And he has the best words.](https://youtu.be/7UIE_MRAhEA?t=49s) 
 
-So no words. But there were lots of pictures, which you can find on twitter. <a href="https://twitter.com/mxstbr/status/855357245873426432">Here's one.</a> <a href="https://twitter.com/aaronjgreenwald/status/855339134877138945">And here's another.</a> <a href="https://twitter.com/codehipsters/status/855455282658463744">And another.</a> You get the point.
+So no words. But there were lots of pictures, which you can find on Twitter. [Here's one.](https://twitter.com/mxstbr/status/855357245873426432)[And here's another.](https://twitter.com/aaronjgreenwald/status/855339134877138945) [And another.](https://twitter.com/codehipsters/status/855455282658463744 You get the point.
 
 
 
@@ -40,7 +40,7 @@ As you most certainly know, the main point of a conference is the acquisition of
 
 ## My Talk
 
-I talked about Testing & React Native. I tried to tell the story of our experience at Wix trying to TDD our React Native app - the challenges, the solutions, where we stand now.
+I talked about Testing & React Native. I told the story of our experience at Wix trying to TDD our React Native app - the challenges, the solutions, where we stand now.
 
 Personally, I feel I've had better performances. Sometimes I get off stage and feel like I did my best and delivered a great talk, and sometimes I feel like I could have done better. But that's for the audience to decide. I hope I properly conveyed my perspective on the state of React Native testing: that although it's not perfect, it's made a lot of progress, and that there are many workable options. 
 
@@ -60,9 +60,9 @@ In other words, I didn't listen to as many of the other talks as I would have li
 
 Even so, I did hear significant parts of quite a few talks, and I want to highlight two of them that I really liked. 
 
-Ram from Microsoft spoke about CI/CD and the deployment lifecycle in React Native. This is a topic I really care about, and I'm glad to hear about the progress his team at Microsoft has made in this area. It's definitely worth a listen.
+[Ram](https://twitter.com/nparashuram) from Microsoft spoke about CI/CD and the deployment lifecycle in React Native. This is a topic I really care about, and I'm glad to hear about the progress his team at Microsoft has made in this area. It's definitely worth a listen.
 
-Tal Kol gave us perspective on React Native performance. This is critical to any RN developer to understand, and is definitely worth a listen if you are working with React Native.
+[Tal Kol](https://twitter.com/koltal) gave us perspective on React Native performance. This is critical to any RN developer to understand, and is definitely worth a listen if you are working with React Native.
 
 Other talks I managed to get to and really enjoyed were Gant Laborde's talk about React Native dev tools and Mike Grabowski's talk on Universal React. 
 
@@ -70,6 +70,8 @@ Other talks I managed to get to and really enjoyed were Gant Laborde's talk abou
 
 The most valuable part of conference attendance, in my opinion, is not the talks but the informal conversations you can have with experts in the field. After all, you can always watch the talks on YouTube afterwards. But the opportunity to meet innovators and leaders in the community? That's what conferences are all about. 
 
-For me, it was an honor to get to be part of React Amsterdam this year, because it gave me an opportunity to meet people whose names I recognized but never met. Michel Westrate, for example, is the creator of mobx. Mike Grabowski heads callstack.io, and Gant Laborde is a speaker and author I've seen around. Max Stoiber is another big name in  the community I've seen on Twitter and finally got to meet. And then there's Ken Wheeler, who's one of the most fun people I've met in a while. And a great speaker. Of course that's just a partial list of the awesomeness packed into one shipyard for a day. Those are just some of the names I recognize that I can now add a face to. Of course, I met a whole bunch of new people I hadn't recognized prior and am now following on twitter. 
+For me, it was an honor to get to be part of React Amsterdam this year, because it gave me an opportunity to meet people whose names I recognized but never met. [Michel Westrate](https://twitter.com/mweststrate), for example, is the creator of mobx. [Mike Grabowski](https://twitter.com/grabbou) heads [callstack.io](https://callstack.io/), and [Gant Laborde](https://twitter.com/GantLaborde) is a speaker and author I've seen around. [Max Stoiber](https://twitter.com/mxstbr) is another big name in  the community I've seen on Twitter and finally got to meet. And then there's [Ken Wheeler](https://twitter.com/ken_wheeler), who's one of the most fun people I've met in a while. And a great speaker. 
 
-So there you have it. All in all, a great experience. Follow me on twitter to keep up to date with future adventures!
+Of course that's just a partial list of the awesomeness packed into one shipyard for a day. Those are just some of the names I recognize that I can now add a face to. Of course, I met a whole bunch of new people I hadn't recognized prior and am now following on Twitter. 
+
+So there you have it. All in all, a great experience. [Follow me on Twitter](https://twitter.com/aaronjgreenwald) to keep up to date with future adventures!
