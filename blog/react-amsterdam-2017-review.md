@@ -12,6 +12,12 @@ The super-short version: I had a great time and I hope to go again. And if you m
 
 It was yuuuuge. I heard through the grapevine that the organizers originally expected only a few hundred people, and turnout was somewhere well above one thousand. But if the organizers weren't originally planning to handle such a large crowd, it didn't show. They scaled very well, and ran an incredibly smooth and professional event. Special shoutout to team members [Diana Trubnikova](https://www.linkedin.com/in/dianatrubnikova/) and [Robert Haritonov](https://twitter.com/operatino), who helped me with logistics, arrangements, and all around did an amazing job making the event run so smoothly.
 
+There were two tracks, running parallel all day in two separate rooms. In the main hall was the React track, focusing on all things React that didn't fit in the second track: React Native. As a React Native developer and speaker, I spent most of my time in the React Native track, but I did pop in to the main hall now and again to appreciate the immensity of the event. Words cannot do justice to just how big it was, and even Donald Trump would probably have been without words to describe the magnitude of React Amsterdam. <a href="https://youtu.be/7UIE_MRAhEA?t=49s">And he has the best words.</a> 
+
+So no words. But there were lots of pictures, which you can find on twitter. <a href="https://twitter.com/mxstbr/status/855357245873426432">Here's one.</a> <a href="https://twitter.com/aaronjgreenwald/status/855339134877138945">And here's another.</a> <a href="https://twitter.com/codehipsters/status/855455282658463744>And another.</a> You get the point.
+
+
+
 ### Speaker Treatment
 
 If you're considering responding to a CFP from the Frontend Amsterdam organization, I can only say positive things about the experience. Let me summarize it thusly: I slept on a boat. How cool is that? Very cool. Right? Right.
@@ -36,9 +42,13 @@ As you most certainly know, the main point of a conference is the acquisition of
 
 I talked about Testing & React Native. I tried to tell the story of our experience at Wix trying to TDD our React Native app - the challenges, the solutions, where we stand now.
 
-Personally, I feel I've had better performances. But that's for the audience to decide. I hope I properly conveyed my perspective on the state of React Native testing: that although it's not perfect, it's made a lot of progress, and that there are many workable options. 
+Personally, I feel I've had better performances. Sometimes I get off stage and feel like I did my best and delivered a great talk, and sometimes I feel like I could have done better. But that's for the audience to decide. I hope I properly conveyed my perspective on the state of React Native testing: that although it's not perfect, it's made a lot of progress, and that there are many workable options. 
 
 I do believe that at this point, there's no excuse for not testing a React Native app. Especially if you architect your app properly, you should be able to get reasonable coverage without making yourself crazy. And I'm big on detox, the UI Automation framework my colleagues at Wix are working on. Although I'm not involved in the development of this library, I do use it and see the power it brings to UI Automation testing on mobile.
+ 
+ After the talk, some of the audience came to discuss my talk with me, and we had a nice discussion about the place of Enzyme shallow rendering in a developers testing toolkit. They made good points, and I want to clarify that it was not my intention to be entirely negative about Enzyme testing in React Native. In fact, I do write Enzyme component tests at work and I find them helpful, even though I wish I could do a full mount instead of just shallow rendering. 
+ 
+ At the same time, I do believe that for someone just getting started, it's better to focus their efforts on detox testing and vanilla JS tests at the outset.
  
 Special thanks to [Mikhail Larchanka](https://twitter.com/MLarchanka) for helping me with the rehearsal before the conference. My delivery wasn't perfect, but it was definitely greatly improved by the rehearsal and his feedback.  
 
