@@ -14,7 +14,7 @@ It was yuuuuge. I heard through the grapevine that the organizers originally exp
 
 There were two tracks, running parallel all day in two separate rooms. In the main hall was the React track, focusing on all things React that didn't fit in the second track: React Native. As a React Native developer and speaker, I spent most of my time in the React Native track, but I did pop in to the main hall now and again to appreciate the immensity of the event. Words cannot do justice to just how big it was, and even Donald Trump would probably have been without words to describe the magnitude of React Amsterdam. <a href="https://youtu.be/7UIE_MRAhEA?t=49s">And he has the best words.</a> 
 
-So no words. But there were lots of pictures, which you can find on twitter. <a href="https://twitter.com/mxstbr/status/855357245873426432">Here's one.</a> <a href="https://twitter.com/aaronjgreenwald/status/855339134877138945">And here's another.</a> <a href="https://twitter.com/codehipsters/status/855455282658463744>And another.</a> You get the point.
+So no words. But there were lots of pictures, which you can find on twitter. <a href="https://twitter.com/mxstbr/status/855357245873426432">Here's one.</a> <a href="https://twitter.com/aaronjgreenwald/status/855339134877138945">And here's another.</a> <a href="https://twitter.com/codehipsters/status/855455282658463744">And another.</a> You get the point.
 
 
 
