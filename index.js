@@ -15,10 +15,10 @@ app.set('views', './pages');
 app.set('view engine', 'ejs');
 
 const strings = {
-  homeDescription: 'Aaron Greenwald is a software developer/programmer in Tel Aviv, Israel (formerly Washington, DC). This is his personal website',
-  blogDesc: `Aaron Greenwald's blog about software, coding, and related topics`,
-  cvDesc: `Aaron Greenwald's resume/professional bio - software developer, programmer`,
-  workDesc: `Aaron Greenwald's coding projects and hobby software`,
+  homeDescription: 'Official website of Aaron Greenwald, a software developer/programmer in Tel Aviv, Israel (formerly Washington, DC).',
+  blogDesc: `Aaron Greenwald's sparsely populated blog about software, coding, and more. Sometimes sarcastic, occasionally entertaining, always enlightening.`,
+  cvDesc: `Aaron Greenwald's resume/professional bio - software developer, programmer.`,
+  workDesc: `Aaron Greenwald's coding projects and hobby software.`,
   talksDesc: `̄A selection of Aaron Greenwald's public appearances: talks and workshops`
 };
 
@@ -34,23 +34,29 @@ app.get('/qr', (req, res) => res.render('qr', {layout: false}));
 
 
 app.get('/blog', (req, res) => res.render('blog', {
+  page: 'Blog',
   title: 'Blog',
   description: strings.blogDesc,
   posts: blog.posts,
   showingTag: null
 }));
 
-app.get('/blog/:slug', (req, res) => res.render('blog', {
-  title: 'Blog', 
-  description: strings.blogDesc,
-  posts: null,
-  post: blog.posts.find(p => p.slug === req.params.slug),
-  showingTag: null 
-}));
+app.get('/blog/:slug', (req, res) => {
+  const post = blog.posts.find(p => p.slug === req.params.slug);
+  res.render('blog', {
+    page: 'Blog',
+    title: post.title,
+    description: post.description,
+    posts: null,
+    post,
+    showingTag: null
+  })
+});
 
 app.get('/blog/tag/:tag', (req, res) => res.render('blog', {
+  page: 'Blog',
   title: 'Blog', 
-  description: strings.blogDesc, 
+  description: `Posts tagged "${req.params.tag}" from Aaron Greenwald's coding blog`,
   posts: blog.posts.filter(p => p.tags.indexOf(req.params.tag) !== -1),
   showingTag: req.params.tag 
 }));

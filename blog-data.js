@@ -24,6 +24,7 @@ const processPost = (slug, data) => {
   return {
     slug,
     preview: content.length > PREVIEW_LENGTH + 1 ? content.substr(0, content.indexOf('. ', PREVIEW_LENGTH) + 1) : content,
+    description: null, //TODO
     title,
     date,
     formattedDate: moment(date).format('ll'),
