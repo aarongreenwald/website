@@ -22,43 +22,48 @@ const strings = {
   talksDesc: `̄A selection of Aaron Greenwald's public appearances: talks and workshops`
 };
 
-app.get('/', (req, res) => res.render('home', {title: 'Home', page: null, description: strings.homeDescription}));
+app.get('/', (req, res) => res.render('home', PageValues({title: 'Home', description: strings.homeDescription})));
 
 app.get('/projects', (req, res) => res.redirect(301, '/work'));
 app.get('/resume', (req, res) => res.redirect(301, '/cv'));
 
-app.get('/work', (req, res) => res.render('work', {title: 'Work', page: null, description: strings.workDesc}));
-app.get('/cv', (req, res) => res.render('cv', {title: 'CV', page: null, description: strings.cvDesc}));
-app.get('/talks', (req, res) => res.render('talks', {title: 'Talks', page: null, description: strings.talksDesc}));
+app.get('/work', (req, res) => res.render('work', PageValues({title: 'Work', description: strings.workDesc})));
+app.get('/cv', (req, res) => res.render('cv', PageValues({title: 'CV', description: strings.cvDesc})));
+app.get('/talks', (req, res) => res.render('talks', PageValues({title: 'Talks', description: strings.talksDesc})));
 app.get('/qr', (req, res) => res.render('qr', {layout: false}));
 
 
-app.get('/blog', (req, res) => res.render('blog', {
-  page: 'Blog',
+app.get('/blog', (req, res) => res.render('blog', PageValues({
   title: 'Blog',
   description: strings.blogDesc,
-  posts: blog.posts,
-  showingTag: null
-}));
+  posts: blog.posts
+})));
 
 app.get('/blog/:slug', (req, res) => {
   const post = blog.posts.find(p => p.slug === req.params.slug);
-  res.render('blog', {
-    page: 'Blog',
+  res.render('blog', PageValues({
+    navPage: 'Blog',
     title: post.title,
+    twitterCardImageUrl: post.twitterCardImageUrl || 'https://avatars3.githubusercontent.com/u/6300588?v=4&s=450',
     description: post.description,
-    posts: null,
-    post,
-    showingTag: null
-  })
+    post
+  }));
 });
 
-app.get('/blog/tag/:tag', (req, res) => res.render('blog', {
-  page: 'Blog',
-  title: 'Blog', 
+app.get('/blog/tag/:tag', (req, res) => res.render('blog', PageValues({
+  title: 'Blog',
   description: `Posts tagged "${req.params.tag}" from Aaron Greenwald's coding blog`,
   posts: blog.posts.filter(p => p.tags.indexOf(req.params.tag) !== -1),
   showingTag: req.params.tag 
-}));
+})));
+
+const PageValues = opts => Object.assign({
+  navPage: opts.title, //default page to title, sometimes multiple titles are included in one page (Blog)
+  twitterCardImageUrl: 'https://avatars3.githubusercontent.com/u/6300588?v=4&s=450',
+  //some fields the ejs expects and will fail without
+  description: null,
+  posts: null,
+  showingTag: null,
+}, opts);
 
 app.listen(6540, () => console.log('Listening on 6540'));
