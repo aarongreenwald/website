@@ -22,14 +22,14 @@ const strings = {
   talksDesc: `̄A selection of Aaron Greenwald's public appearances: talks and workshops`
 };
 
-app.get('/', (req, res) => res.render('home', {title: 'Home', description: strings.homeDescription}));
+app.get('/', (req, res) => res.render('home', {title: 'Home', page: null, description: strings.homeDescription}));
 
 app.get('/projects', (req, res) => res.redirect(301, '/work'));
 app.get('/resume', (req, res) => res.redirect(301, '/cv'));
 
-app.get('/work', (req, res) => res.render('work', {title: 'Work', description: strings.workDesc}));
-app.get('/cv', (req, res) => res.render('cv', {title: 'CV', description: strings.cvDesc}));
-app.get('/talks', (req, res) => res.render('talks', {title: 'Talks', description: strings.talksDesc}));
+app.get('/work', (req, res) => res.render('work', {title: 'Work', page: null, description: strings.workDesc}));
+app.get('/cv', (req, res) => res.render('cv', {title: 'CV', page: null, description: strings.cvDesc}));
+app.get('/talks', (req, res) => res.render('talks', {title: 'Talks', page: null, description: strings.talksDesc}));
 app.get('/qr', (req, res) => res.render('qr', {layout: false}));
 
 
