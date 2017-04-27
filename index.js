@@ -5,19 +5,22 @@ const compression = require('compression');
 const blog = require('./blog-data');
 const ip2country = require('ip2country');
 const uap = require('ua-parser-js');
+const fs = require('fs');
 
 app.use(compression());
 app.use('/static', express.static('resources'));
 app.use((req, res, next) => {
-  console.log({
-    timestamp: new Date(),
+  const ip = req.headers['x-forwarded-for'] || req.ip;
+  const log = {
+    timestamp: (new Date()).getTime(),
     path: req.path,
     query: req.query,
     user_agent: uap(req.headers['user-agent']),
-    referrer: req.headers['referer'] || req.headers['referrer'] || null,
-    ip: req.ip,
-    country: ip2country(req.ip)
-  });
+    referrer: req.headers['referer'] || req.headers['referrer'],
+    ip,
+    country: ip2country(ip)
+  };
+  fs.appendFile('./access_logs.log', JSON.stringify(log) + '\n', err => { if (err) console.error(err) });
   next();
 });
 
