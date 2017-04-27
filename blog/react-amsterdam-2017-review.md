@@ -8,13 +8,13 @@ The super-short version: I had a great time and I hope to go again. And if you m
 
 ## The Event
 
-<img alt="Huge Conference!" src="//i.imgflip.com/1nuovm.jpg"/>
+<img alt="Huge Conference!" src="//i.imgflip.com/1nuovm.jpg" width="100%"/>
 
 It was yuuuuge. I heard through the grapevine that the organizers originally expected only a few hundred people, and turnout was somewhere well above one thousand. But if the organizers weren't originally planning to handle such a large crowd, it didn't show. They scaled very well, and ran an incredibly smooth and professional event. Special shoutout to team members [Diana Trubnikova](https://www.linkedin.com/in/dianatrubnikova/) and [Robert Haritonov](https://twitter.com/operatino), who helped me with logistics, arrangements, and all around did an amazing job making the event run so smoothly.
 
 There were two tracks, running parallel all day in two separate rooms. In the main hall was the React track, focusing on all things React that didn't fit in the second track: React Native. As a React Native developer and speaker, I spent most of my time in the React Native track, but I did pop in to the main hall now and again to appreciate the immensity of the event. Words cannot do justice to just how big it was, and even Donald Trump would probably have been without words to describe the magnitude of React Amsterdam. [And he has the best words.](https://youtu.be/7UIE_MRAhEA?t=49s) 
 
-So no words. But there were lots of pictures, which you can find on Twitter. [Here's one.](https://twitter.com/mxstbr/status/855357245873426432)[And here's another.](https://twitter.com/aaronjgreenwald/status/855339134877138945) [And another.](https://twitter.com/codehipsters/status/855455282658463744 You get the point.
+So no words. But there were lots of pictures, which you can find on Twitter. [Here's one.](https://twitter.com/mxstbr/status/855357245873426432) [And here's another.](https://twitter.com/aaronjgreenwald/status/855339134877138945) [And another.](https://twitter.com/codehipsters/status/855455282658463744) You get the point.
 
 
 
