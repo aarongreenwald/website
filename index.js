@@ -3,9 +3,24 @@ const app = express();
 const partials = require('express-partials');
 const compression = require('compression');
 const blog = require('./blog-data');
+const ip2country = require('ip2country');
+const uap = require('ua-parser-js');
 
 app.use(compression());
 app.use('/static', express.static('resources'));
+app.use((req, res, next) => {
+  console.log({
+    timestamp: new Date(),
+    path: req.path,
+    query: req.query,
+    user_agent: uap(req.headers['user-agent']),
+    referrer: req.headers['referer'] || req.headers['referrer'] || null,
+    ip: req.ip,
+    country: ip2country(req.ip)
+  });
+  next();
+});
+
 app.use('/slides', express.static('slides'));
 //serve static directory from disk for Let'sEncrypt's ssl verification
 app.use('/.well-known', express.static('/var/www/html/.well-known'));
