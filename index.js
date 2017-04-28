@@ -11,16 +11,24 @@ app.use(compression());
 app.use('/static', express.static('resources'));
 app.use((req, res, next) => {
   const ip = req.headers['x-forwarded-for'] || req.ip;
+  const ua = req.headers['user-agent'];
   const log = {
     timestamp: (new Date()).getTime(),
     path: req.path,
     query: req.query,
-    user_agent: uap(req.headers['user-agent']),
+    user_agent: uap(ua),
     referrer: req.headers['referer'] || req.headers['referrer'],
     ip,
     country: ip2country(ip)
   };
-  fs.appendFile('./access_logs.log', JSON.stringify(log) + '\n', err => { if (err) console.error(err) });
+
+  const isBot = ua.includes('Twitterbot') || ua.includes('uptimerobot');
+  const logPath = isBot ? process.env.BOT_LOGS : process.env.ACCESS_LOGS;
+  if (logPath) {
+    fs.appendFile(logPath, JSON.stringify(log) + '\n', err => { if (err) console.error(err) });
+  } else {
+    console.log(log);
+  }
   next();
 });
 
