@@ -1,6 +1,7 @@
 const fs = require('fs');
 const moment = require('moment');
 const chart = require('chart');
+const {isBot} = require('../logger');
 
 const [, , logFile, daysIncluded] = process.argv;
 fs.readFile(logFile, (err, data) => {
