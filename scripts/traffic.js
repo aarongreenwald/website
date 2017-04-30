@@ -61,7 +61,7 @@ const countby = (data, predicate) => ({
 });
 
 const ignore = ({user_agent, path}) => isBot({ua: user_agent.ua, path}) ||
-  ignoredPaths.some(ignoredPath => x.path.includes(ignoredPath));
+  ignoredPaths.some(ignoredPath => path.includes(ignoredPath));
 
 const ignoredPaths = [
   'favicon.ico',
