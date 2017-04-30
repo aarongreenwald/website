@@ -4,8 +4,22 @@ const fs = require('fs');
 
 
 const isBot = ({ua, path}) => {
-  const botUA = ['Twitterbot', 'uptimerobot'];
-  const botPaths = ['robots.txt', 'wp-login', 'cgi-bin', 'a2billing'];
+  const botUA = [
+    'Twitterbot',
+    'uptimerobot',
+    'http://www.linkdex.com/',
+    'http://www.bing.com/bingbot.htm',
+    'http://www.google.com/bot.htm',
+    'http://www.baidu.com/search/spider.html'
+  ];
+  const botPaths = [
+    'robots.txt',
+    'wp-login',
+    'cgi-bin',
+    'a2billing',
+    '.well-known/',
+    '.php'
+  ];
   return botUA.some(x => ua.includes(x)) || botPaths.some(x => path.includes(x));
 };
 
