@@ -1,19 +1,45 @@
 const fs = require('fs');
 const moment = require('moment');
+const chart = require('chart');
 
-fs.readFile(process.argv[2], (err, data) => {
-  data = data.toString().split('\n').map(log => {
-    try {
-      return JSON.parse(log)
-    } catch (e) {}
-  })
-    .filter(x => x && x.timestamp)
-    .filter(x => x.timestamp > (new Date()).getTime() - (1000 * 60 * 60 * 24 * (process.argv[3] || 7)))
-    .filter(x => !ignore(x));
+const [, , logFile, daysIncluded] = process.argv;
+fs.readFile(logFile, (err, data) => {
+  if (err) {
+    console.error(err);
+    return;
+  }
 
-  console.log(countby(data, 'ip').sort());
-  console.log(countby(data, x => moment(x.timestamp).format('ll')).sort());
+  data = data
+    .toString()
+    .split('\n')
+    .map(log => {
+      try {
+        return JSON.parse(log)
+      } catch (e) {}
+    })
+    .filter(x =>
+      x &&
+      x.timestamp &&
+      x.timestamp > (new Date()).getTime() - (1000 * 60 * 60 * 24 * (daysIncluded || 7)) &&
+      !ignore(x)
+    );
+
+  console.log('IP Addresses with Most Traffic');
+  console.log('==============================');
+  console.log(countby(data, 'ip').sort().slice(0, 5));
+  console.log('By Date');
+  console.log('==============================');
+  console.log(countby(data, x => moment(x.timestamp).format('ll'))._data);
+  const chartData = countby(data, x => moment(x.timestamp).startOf('day').toDate().getTime())._data;
+  console.log(chart(Object.keys(chartData).sort().map(key => chartData[key]), {
+    width: 80,
+    pointChar: '█',
+  }));
+  console.log('By Page');
+  console.log('==============================');
   console.log(countby(data, 'path').sort());
+  console.log('By Country');
+  console.log('==============================');
   console.log(countby(data, 'country').sort());
 
 });
@@ -33,11 +59,14 @@ const countby = (data, predicate) => ({
   }
 });
 
-const ignore = x => {
-  const hasIgnoredPath = ignoredPaths.some(ignoredPath => x.path.indexOf(ignoredPath) !== -1);
-  const hasIgnoredUA = ignoredUA.some(iua => x.user_agent.ua.indexOf(iua) !== -1);
-  return hasIgnoredPath || hasIgnoredUA
-};
+const ignore = ({user_agent, path}) => isBot({ua: user_agent.ua, path}) ||
+  ignoredPaths.some(ignoredPath => x.path.includes(ignoredPath));
 
-const ignoredPaths = ['robots.txt', 'wp-login', 'cgi-bin', 'favicon.ico'];
-const ignoredUA = ['Twitterbot', 'uptimerobot'];
+const ignoredPaths = [
+  'favicon.ico',
+  '.js',
+  '.css',
+  '.json',
+  '.jpg',
+  '.png',
+];

@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/aarongreenwald/website#readme",
   "dependencies": {
+    "chart": "jstrace/chart",
     "compression": "^1.6.2",
     "ejs": "^2.5.5",
     "express": "^4.14.0",
