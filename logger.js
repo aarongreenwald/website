@@ -15,6 +15,7 @@ const isBot = ({ua, path}) => {
   const botPaths = [
     'robots.txt',
     'wp-login',
+    'wp-content',
     'cgi-bin',
     'a2billing',
     '.well-known/',
