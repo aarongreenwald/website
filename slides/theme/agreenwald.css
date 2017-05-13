@@ -366,4 +366,50 @@ html.chapter-title section {
   background-color: #222;
   color: #ddd; }
 
+div.arrow-shape-container div.arrow-shape {
+  width: 4.2em;
+  height: 1.5em;
+  background-color: #2298ef;
+  margin: 0 1.25em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-self: center; }
+  div.arrow-shape-container div.arrow-shape div {
+    line-height: 1em;
+    font-size: .8em;
+    color: #fff; }
+
+div.arrow-shape-container div.arrow-shape::before {
+  content: "";
+  position: absolute;
+  left: -1.25em;
+  border: 1.25em solid transparent;
+  border-right-color: #2298ef; }
+
+div.arrow-shape-container div.arrow-shape::after {
+  content: "";
+  position: absolute;
+  left: 5.45em;
+  border: 1.25em solid transparent;
+  border-left-color: #2298ef; }
+
+div.arrow-shape-container.large div.arrow-shape {
+  width: 7em;
+  height: 4em;
+  margin: 0 2.5em; }
+  div.arrow-shape-container.large div.arrow-shape div {
+    font-size: .8em; }
+
+div.arrow-shape-container.large div.arrow-shape::before {
+  left: -2.5em;
+  border-width: 2.5em; }
+
+div.arrow-shape-container.large div.arrow-shape::after {
+  left: 9.5em;
+  border-width: 2.5em; }
+
+.template {
+  display: none; }
+
 /*# sourceMappingURL=agreenwald.css.map */

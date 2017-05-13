@@ -9,12 +9,8 @@ html.chapter-title {
 
 	section {
 		color: white;
-		//padding: 0.25em;
 		font-weight: 700 !important;
-        //height: 2em;
-		//font-size: 2em;
 		text-align: center;
-		//line-height: 1.8;
 	}
 }
 
@@ -100,7 +96,6 @@ html.chapter-title {
 
 }
 
-
 .background-img body {
 	background-repeat: no-repeat;
 	background-size: contain;
@@ -108,4 +103,89 @@ html.chapter-title {
 	background-color: #222;
 	color: #ddd;
 }
+
+div.arrow-shape-container {
+	$arrowHeight: 1.5em;
+	$arrowBarWidth: 4.2em;
+	$arrowTriangleLipHeight: .25em;
+
+	$arrowHeightLarge: 4em;
+	$arrowBarWidthLarge: 7em;
+	$arrowTriangleLipHeightLarge: .25em;
+
+	$arrowTriangleHeight: ($arrowHeight / 2) + ($arrowTriangleLipHeight * 2);
+	$arrowTriangleHeightLarge: ($arrowHeightLarge / 2) + ($arrowTriangleLipHeightLarge * 2);
+	$arrowColor: $blue;
+
+
+	div.arrow-shape {
+		width: $arrowBarWidth;
+		height: $arrowHeight;
+		background-color: $arrowColor;
+		margin: 0 $arrowTriangleHeight;
+		display: flex;
+        flex-direction: column;
+		justify-content: space-around;
+		align-self: center;
+
+		div {
+          	line-height: 1em;
+			font-size: .8em;
+		  	color: #fff;
+        }
+	}
+
+
+	div.arrow-shape::before {
+		content: "";
+		position: absolute;
+		left: -$arrowTriangleHeight;
+		border: $arrowTriangleHeight solid transparent;
+		border-right-color: $arrowColor;
+	}
+
+	div.arrow-shape::after {
+		content: "";
+		position: absolute;
+		left: $arrowTriangleHeight + $arrowBarWidth;
+		border: $arrowTriangleHeight solid transparent;
+		border-left-color: $arrowColor;
+	}
+
+
+	&.large {
+
+		div.arrow-shape {
+			width: $arrowBarWidthLarge;
+			height: $arrowHeightLarge;
+			margin: 0 $arrowTriangleHeightLarge;
+
+			div {
+				font-size: .8em;
+			}
+
+		}
+
+
+		div.arrow-shape::before {
+
+			left: -$arrowTriangleHeightLarge;
+			border-width: $arrowTriangleHeightLarge;
+		}
+
+		div.arrow-shape::after {
+
+			left: $arrowTriangleHeightLarge + $arrowBarWidthLarge;
+			border-width: $arrowTriangleHeightLarge;
+
+		}
+
+	}
+
+}
+
+.template {
+	display: none;
+}
+
 
