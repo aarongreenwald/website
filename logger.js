@@ -10,11 +10,19 @@ const isBot = ({ua, path}) => {
     'http://www.linkdex.com/',
     'http://www.bing.com/bingbot.htm',
     'http://www.google.com/bot.htm',
-    'http://www.baidu.com/search/spider.html'
+    'http://www.baidu.com/search/spider.html',
+    'http://www.semrush.com/bot.html',
+    'http://mj12bot.com/',
+    'http://help.yahoo.com/help/us/ysearch/slurp',
+    'http://napoveda.seznam.cz/en/seznambot-intro/',
+    'http://help.coccoc.com/searchengine',
+    'http://ahrefs.com/robot/',
+    'http://OpenLinkProfiler.org/bot'
   ];
   const botPaths = [
     'robots.txt',
     'wp-login',
+    'wp-includes',
     'wp-content',
     'cgi-bin',
     'a2billing',
