@@ -59,7 +59,7 @@
         </section>
 
         <section>
-            <div>Wait...this isn't new</div>
+            <div class="fragment">Wait...this isn't new</div>
             <div class="fragment">
             <pre>
                 <code>
@@ -91,10 +91,10 @@ let [
             Write Once, Run Anywhere
         </section>
         <section>
-            Write Once, Run <span style="color:orange">Nowhere</span>
+            Write Once, Run <span class="underline small">Nowhere</span>
         </section>
         <section>
-            <span style="color:cadetblue">Learn Once, Write Anywhere</span>
+            <span class="underline">Learn Once, Write Anywhere</span>
         </section>
         <section data-state="chapter-title">
             03 / How it Works
@@ -277,10 +277,6 @@ let [
         background-image: url(2017/riga-dev-days/homer.png);
     }
 
-    .fragment.fade-past:not(.current-fragment) {
-        color: #bbb;
-    }
-
     div.box-shape {
         border: 1px solid #444;
         border-radius: .5em;
@@ -314,6 +310,21 @@ let [
         box-shadow: none;
     }
 
+    .underline:after {
+        content: url(/slides/2017/riga-dev-days/underline.png);
+        position: fixed;
+        left: 0;
+        margin-top: 1em;
+        right: 0;
+        transform: scale(.8);
+    }
+
+    .underline.small:after {
+        margin-top: .5em;
+        left: auto;
+        right: 0;
+        transform: scaleX(.3) scaleY(.5);
+    }
 
 </style>
 

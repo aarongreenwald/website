@@ -189,3 +189,10 @@ div.arrow-shape-container {
 }
 
 
+.fragment.fade-past:not(.current-fragment) {
+	color: #bbb;
+}
+
+.blue {
+	color: $blue;
+}

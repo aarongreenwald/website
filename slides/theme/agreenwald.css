@@ -412,4 +412,10 @@ div.arrow-shape-container.large div.arrow-shape::after {
 .template {
   display: none; }
 
+.fragment.fade-past:not(.current-fragment) {
+  color: #bbb; }
+
+.blue {
+  color: #2298ef; }
+
 /*# sourceMappingURL=agreenwald.css.map */
