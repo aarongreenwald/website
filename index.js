@@ -7,6 +7,7 @@ const logger = require('./logger');
 
 app.use(compression());
 app.use('/static', express.static('resources'));
+
 app.use((req, res, next) => {
   logger.log(req);
   next();
