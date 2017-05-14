@@ -352,9 +352,18 @@ let [
     });
   }
 
+
   //always show first fragment immediately
   Reveal.addEventListener('slidechanged', Reveal.nextFragment);
 
+  //when going backwards, hiding the first fragment should continue to move to the previous slide
+  //this isn't quite right as a general rule, because fragmenthidden could theoretically happen
+  //when trying to navigate forward.
+  Reveal.addEventListener('fragmenthidden', () => {
+    if (!Reveal.availableFragments().prev) {
+      Reveal.navigatePrev();
+    }
+  });
 </script>
 
 </body>
