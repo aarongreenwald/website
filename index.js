@@ -13,7 +13,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use('/slides', express.static('slides'));
+app.use('/slides', express.static('slides', { maxAge: (60 * 60 * 24 * 90)}));
 //serve static directory from disk for Let'sEncrypt's ssl verification
 app.use('/.well-known', express.static('/var/www/html/.well-known'));
 app.use(partials());
