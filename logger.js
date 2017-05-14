@@ -7,6 +7,7 @@ const isBot = ({ua, path}) => {
   const botUA = [
     'Twitterbot',
     'uptimerobot',
+    'uptimebot',
     'http://www.linkdex.com/',
     'http://www.bing.com/bingbot.htm',
     'http://www.google.com/bot.htm',
@@ -17,7 +18,11 @@ const isBot = ({ua, path}) => {
     'http://napoveda.seznam.cz/en/seznambot-intro/',
     'http://help.coccoc.com/searchengine',
     'http://ahrefs.com/robot/',
-    'http://OpenLinkProfiler.org/bot'
+    'http://OpenLinkProfiler.org/bot',
+    'Google-Site-Verification/',
+    'Netcraft SSL Server Survey - contact info@netcraft.com',
+    'http://yandex.com/bots',
+    'DuckDuckGo-Favicons-Bot/1.0'
   ];
   const botPaths = [
     'robots.txt',

@@ -70,4 +70,5 @@ const ignoredPaths = [
   '.json',
   '.jpg',
   '.png',
+  '.gif',
 ];
