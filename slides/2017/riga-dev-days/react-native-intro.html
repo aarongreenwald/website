@@ -172,12 +172,12 @@ let [
             <div>but we hate writing them</div>
         </section>
         <section>
-            <p class="fragment">Smoother transition from the web</p>
-            <p class="fragment">Use the richest ecosystem there is</p>
-            <p class="fragment">Develop quickly</p>
-            <p class="fragment">Deploy like you're on the web</p>
-            <p class="fragment">Learn once, write anywhere</p>
-            <p class="fragment">Reuse code</p>
+            <p class="fragment fade-past">Smoother transition from the web</p>
+            <p class="fragment fade-past">Use the richest ecosystem there is</p>
+            <p class="fragment fade-past">Develop quickly</p>
+            <p class="fragment fade-past">Deploy like you're on the web</p>
+            <p class="fragment fade-past">Learn once, write anywhere</p>
+            <p class="fragment fade-past">Reuse code</p>
         </section>
         <section>
             <div>We need native mobile apps</div>
@@ -200,25 +200,22 @@ let [
             06 / It's Still Not Web Development
         </section>
         <section>
-            <div class="fragment">
+            <div class="fragment fade-past">
                 You can't always code push
             </div>
-            <div class="fragment">
+            <div class="fragment fade-past">
                 Styling is different
             </div>
-            <div class="fragment">
+            <div class="fragment fade-past">
                 Platform-specific thinking
             </div>
-            <div class="fragment">
+            <div class="fragment fade-past">
                 Debugging isn't the same
             </div>
 
         </section>
         <section data-state="chapter-title">
             07 / Should I Use It?
-        </section>
-        <section>
-            I think so
         </section>
         <section>
             Results speak for themselves
@@ -239,13 +236,13 @@ let [
         </section>
 
         <section>
-            <div class="fragment">
+            <div class="fragment fade-past">
                 Learn Once, Write Anywhere
             </div>
-            <div class="fragment">
+            <div class="fragment fade-past">
                 UX of Native <> DX of Web
             </div>
-            <div class="fragment">
+            <div class="fragment fade-past">
                 <div class="template-instance links"></div>
             </div>
 
@@ -280,7 +277,7 @@ let [
         background-image: url(2017/riga-dev-days/homer.png);
     }
 
-    .fragment:not(.current-fragment) {
+    .fragment.fade-past:not(.current-fragment) {
         color: #bbb;
     }
 
@@ -354,6 +351,9 @@ let [
       ]
     });
   }
+
+  //always show first fragment immediately
+  Reveal.addEventListener('slidechanged', Reveal.nextFragment);
 
 </script>
 
