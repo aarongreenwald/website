@@ -54,8 +54,13 @@
             01 / Meet React Native
         </section>
         <section>
-            <div class="fragment">A framework for building native apps with React</div>
-            <div class="fragment">Very popular, and increasingly stable</div>
+            <div class="fragment">
+                A framework for building native apps with React
+                <div style="display: flex;justify-content: flex-end;font-style: italic;font-size:.7em">
+                    <span>- Facebook</span>
+                </div>
+            </div>
+            <div class="fragment">Very popular, <s>but young and unstable</s> <add>and increasingly stable</add></div>
         </section>
 
         <section>
@@ -143,11 +148,11 @@ let [
                 </div>
                 <div style="display: flex; flex-direction: column-reverse">
                     <div class="fragment">
-                        <img src="2017/riga-dev-days/blue-arrow.png" style="transform: rotate(20deg)">
+                        <img src="2017/riga-dev-days/blue-arrow.png" style="transform: rotate(20deg) translateY(-1.5em)">
                         <img src="2017/riga-dev-days/device.jpg" style="height: 4em;"/>
                     </div>
                     <div class="fragment">
-                        <img src="2017/riga-dev-days/blue-arrow.png" style="transform: rotate(-15deg)">
+                        <img src="2017/riga-dev-days/blue-arrow.png" style="transform: rotate(-15deg) translateY(.8em)">
                         <img src="2017/riga-dev-days/chrome.png" style="height: 4em;"/>
                     </div>
 
@@ -216,6 +221,8 @@ let [
         </section>
         <section data-state="chapter-title">
             07 / Should I Use It?
+
+            Umm...it depends
         </section>
         <section>
             Results speak for themselves
@@ -242,8 +249,11 @@ let [
             <div class="fragment fade-past">
                 UX of Native <> DX of Web
             </div>
-            <div class="fragment fade-past">
+            <div class="fragment">
                 <div class="template-instance links"></div>
+
+                <div class="disclaimer">Icons created by <a href="http://www.flaticon.com/authors/dave-gandy" title="Dave Gandy">Dave Gandy</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> and licensed under <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+
             </div>
 
         </section>
@@ -254,20 +264,22 @@ let [
 <div class="template" id="links">
     <small class="links">
         <a href="mailto:aaron@aarongreenwald.com">
-            <!--<i class="icon icon-mail"></i>-->
+            <img src="2017/riga-dev-days/mail.svg" />
             aaron@aarongreenwald.com
         </a>
         |
         <a href="https://twitter.com/aaronjgreenwald">
-            <!--<i class="icon icon-twitter-sign"></i>-->
+            <img src="2017/riga-dev-days/twitter.svg" />
             @aaronjgreenwald
         </a>
         |
+
         <a href="https://github.com/aarongreenwald">
-            <!--<i class="icon icon-github-sign"></i>-->
+            <img src="2017/riga-dev-days/github.svg" />
             github.com/aarongreenwald
         </a>
     </small>
+
 </div>
 
 <style>
@@ -325,6 +337,33 @@ let [
         right: 0;
         transform: scaleX(.3) scaleY(.5);
     }
+
+    s {
+        text-decoration: none;
+        background-color: pink;
+    }
+
+    s:before {
+        content: "- "
+    }
+
+    add {
+        background-color: lightgreen;
+    }
+
+    add:before {
+        content: "+ "
+    }
+
+    .reveal section .disclaimer {
+        font-size: .3em;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        font-style: italic;
+    }
+
+
 
 </style>
 

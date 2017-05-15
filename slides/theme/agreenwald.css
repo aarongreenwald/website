@@ -316,11 +316,16 @@ html.chapter-title section {
   left: 0;
   right: 0;
   display: flex; }
-  .reveal .links i.icon {
-    vertical-align: middle; }
   .reveal .links a {
     color: #2298ef;
     font-size: .8em; }
+  .reveal .links img {
+    border: none;
+    box-shadow: none;
+    margin: 0 .4em;
+    background: none;
+    width: 1.5em;
+    height: 1.5em; }
 
 .reveal .list-header {
   position: fixed;
