@@ -1,12 +1,27 @@
 body {
     background-color: #fff;
-}   
-a { cursor: pointer;}
+    font-size: 1.08em;
+    line-height: 1.6em;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: #333;
+    margin: 0;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+* {
+    box-sizing: border-box;
+}
+a {
+    cursor: pointer;
+    color: #428bca;
+    text-decoration: none
+}
 
 .navbar {
     background-color:#eeeeee;
     min-height:40px;    
     height:40px;
+    margin-bottom: 15px;
 }
 
 .navbar > a {
@@ -33,135 +48,23 @@ div.side-padding{
     padding-left:30px;
     padding-right:30px;
 }
-@media only screen and (min-width : 768px) {
-    #content {
-        margin-left:20vw;
-        max-width:60vw;
-    }
-}
+
 #content {
+    max-width: 900px;
     padding:8px;
 }
 .hide {
     display:none;
 }
 
-/************************Blog****************************/
-
-.blog-title {
-    font-size:3em;
-}
-
-.blog-title a,
-.blog-title a:hover {
-    color:black;
-    text-decoration:none;
-}
-
-.blog-tagline {
-    font-style:italic;
-    font-size:10pt;
-}
-
-.sidebar{
-    display: inline-block;
-    margin-top: 20px;
-}
-
-@media only screen and (min-width:900px){
-    .sidebar{
-        float:right;
-        width:200px;
-    }
-
-    .content {
-        float:left;
-        width:calc(100% - 200px);
-        padding-right:100px;
-    }
-}
-
-.content .post {
-    margin-top:30px;
-}
-
-.content .post .post-title {
-    font-size:2em;
-    margin-bottom:10px;
-    margin-right:10px;
-}
-
-.content .post .post-date {
-    font-size: 1.2em;
-    margin-top:5px;
-    font-style: italic;
-    margin-bottom:15px;
-}
-
-.content .post .post-content {
-    display:inline-block;
-    line-height: 1.6em;
-    font-size: 1.2em;
-}
-
-.content .post .post-content span.img-caption {
-    font-style: italic;
-    font-size: .8em;
-    display: table;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-
 hr {
     border-color: #aaa
-}
-
-.content .tag-notice {
-    margin-top:10px;
-    border:1px solid #ddd;
-    padding:15px;
-    background-color:#eee;
-    border-radius:5px;
-}
-
-.content .tag-notice .tag {
-    font-style:italic;
-    font-size:12pt;
-}
-
-.tags {
-    float:right;
-}
-
-.tags a {
-    color:#666;
-    font-style:italic;
-    text-decoration:underline;
-    margin-left:5px;
-}
-
-pre {
-    margin: 30px 0;
-}
-
-.post-content img {
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-}
-
-.sidebar .about {
-    font-style:italic;
-}
-
-.sidebar .recent-posts {
-    margin-top:20px;
 }
 
 /*Home Page */
 ul.tldr > li {
     font-size: 1.5em;
+    line-height: 1.5em;
 }
 
 .icon-list-container {

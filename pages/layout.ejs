@@ -12,13 +12,11 @@
         <meta name="twitter:title" content="<%= title %>" />
         <meta name="twitter:description" content="<%= twitterCardDescription %>" />
         <meta name="twitter:image" content="<%= twitterCardImageUrl %>" />
-
-        <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
         <link href="/static/style.css" rel="stylesheet">
 
       <title><%= title %> | Aaron Greenwald</title>
     </head>
-    <body>  
+    <body>
         <nav class="navbar" role="navigation">                  
           <a class="<%= (navPage==='Home' ? 'active' : '') %>" href="/">Home</a>
           <a class="<%= (navPage==='Work' ? 'active' : '') %>" href="/work">Work</a>
@@ -26,9 +24,10 @@
           <a class="<%= (navPage==='Talks' ? 'active' : '') %>" href="/talks">Talks</a>
           <a class="<%= (navPage==='Blog' ? 'active' : '') %>"  href="/blog">Blog</a>
         </nav>
-        
-        <div id="content">
+        <div style="display: flex;flex-direction: row;justify-content: center">
+          <div id="content">
             <%- body %>
+          </div>
         </div>
 
         <script>

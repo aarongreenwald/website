@@ -13,22 +13,31 @@
             div.job-entry > div.details {               
                 margin-bottom: 35px;
             }
-            @media (max-width: 990px) {
-                .row .col-md-4 > .time-frame.pull-right {
-                    float: none !important;
-                    font-style:italic;                  
+            .row {
+                display: flex;
+                flex-direction: row;
+            }
+            .grow {
+                flex: 1;
+            }
+            .right {
+                align-self: flex-end;
+            }
+            @media (max-width: 1000px) {
+                .row {
+                    display: block;
                 }
             }               
 </style>
 
 <div class="job-entry">
     <div class="row">
-        <div class="col-md-8">
+        <div class="grow">
             <span class="title">Software Developer</span> -
             <span class="employer"><a href="http://www.wix.com">Wix.com</a></span>
         </div>
-        <div class="col-md-4">
-            <span class="time-frame pull-right">October 2015 – Present</span>
+        <div>
+            <span class="time-frame right">October 2015 – Present</span>
         </div>
     </div>
     <div class = "details">
@@ -39,12 +48,12 @@
 
 <div class="job-entry">
     <div class="row">
-        <div class="col-md-8">
+        <div class="grow">
             <span class="title">Software Developer (Lead)</span> - 
             <span class="employer"><a href="http://www.americancapital.com">American Capital</a></span>
         </div>
-        <div class="col-md-4">                          
-            <span class="time-frame pull-right">October 2013 – September 2015</span>
+        <div>                          
+            <span class="time-frame right">October 2013 – September 2015</span>
         </div>      
     </div>
     
@@ -76,12 +85,12 @@
 
 <div class="job-entry">     
     <div class="row">
-        <div class="col-md-8">
+        <div class="grow">
             <span class="title">Software Developer/Analyst</span> - 
             <span class="employer"><a href="http://www.geico.com">GEICO</a></span>
         </div>
-        <div class="col-md-4">
-            <span class="time-frame pull-right">July 2012 – October 2013</span>
+        <div>
+            <span class="time-frame right">July 2012 – October 2013</span>
         </div>      
     </div>
     <div class = "details">
@@ -121,12 +130,12 @@
 
 <div class="job-entry">
     <div class="row">
-        <div class="col-md-8">
+        <div class="grow">
             <span class="title">Technical Support</span> - 
             <span class="employer"><a href="http://www.dynamicdataconcepts.com">Dynamic Data Concepts</a></span>
         </div>
-        <div class="col-md-4">
-            <span class="time-frame pull-right">May 2011 - June 2012</span>     
+        <div>
+            <span class="time-frame right">May 2011 - June 2012</span>     
         </div>      
     </div>      
     <div class = "details">         
