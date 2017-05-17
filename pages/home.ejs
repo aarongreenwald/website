@@ -1,5 +1,4 @@
-<div>
-<div>
+<div class="home">
 <section>         
     <div class="intro">
         <img src="https://avatars3.githubusercontent.com/u/6300588?v=4&s=450" class="head-shot" alt="My Head :)"/>
@@ -40,8 +39,7 @@
         My (mostly) complete professional bio can be found on my <a href="/cv">CV</a> or on <a href="https://linkedin.com/in/greenwaldaaron">LinkedIn</a>,
         and samples of my work can be found on <a href="https://github.com/aarongreenwald">GitHub</a>.
     </p>
-</section>
-<section id="contact">
+
     <h3>Contact Me</h3>
     Because I recieve a lot of spam through LinkedIn, I don't usually monitor my inbox there. The best way to reach me is directly via <a class="email-address"> email</a>. (If you send spam to my email inbox, I will probably ignore you as well. Please don't.)
     If you're reading this on a mobile device, you can also download 
@@ -57,27 +55,37 @@
             <a title="My twitter profile" href="https://twitter.com/aaronjgreenwald"><span class="icon-twitter-sign icon-lg" /></a>
             <a title="My linkedin profile" href="https://linkedin.com/in/greenwaldaaron"><span class="icon-linkedin-sign icon-lg" /></a>
             <a title="My programmers (stackexchange) profile" href="https://programmers.stackexchange.com/users/124272/">
-                <img src="//cdn.sstatic.net/Sites/stackoverflow/company/img/logos/se/se-icon.png?v=93426798a1d4" style="height:32px;margin-top:-16px;"/>
+                <img src="//cdn.sstatic.net/Sites/stackoverflow/company/img/logos/se/se-icon.png?v=93426798a1d4" style="height:32px;transform: translateY(3px);"/>
             </a>
         </div>
     </div>
 </div>
-</div>
+<style>
+
+    .hide {
+        overflow-y: hidden;
+        max-height: 0;
+
+    }
+
+    .show {
+        overflow-y: hidden;
+        max-height: 999px;
+        transition: max-height ease-in .5s ;
+    }
+
+    .home {
+        /*align-items: center;*/
+        display: flex;
+        flex-direction: column;
+    }
+
+</style>
 <script>
-    //make the home page fancier progressively
-    //find all sections except tldr and display none
-    //add a Read More About Me link on the bottom of the page or the end of text, whichever is later
-    //when that is clicked: hide the link
-    //     turn display to normal for all sections, and shrink the top section's height to zero
-    //     this will give a sliding down effect. Even better would be to scroll down to the details 
-    //     section so that they can still get back up
-    //TODO: Is the bootstrap cdn a bottleneck? Do I need it? I can probably bake it all into styles.css
-    //TODO: how slow is the image, and what do I need to do for accessibility and such?
-    //TODO: perhaps put the icons on every page as the footer
-    
+
     //Finds y value of given object
     function findPos(obj) {
-        var curtop = 0;
+        const curtop = 0;
         if (obj.offsetParent) {
             do {
                 curtop += obj.offsetTop;
@@ -86,13 +94,12 @@
         }
     }
     
-    document.getElementById('details').style.display = 'none'
-    document.getElementById('contact').style.display = 'none'
+    document.getElementById('details').className = 'hide';
     document.getElementById('read-more').addEventListener('click', function(){
-        document.getElementById('details').style.display = 'block'
-        document.getElementById('contact').style.display = 'block'
+        document.getElementById('details').className = 'show';
+        document.getElementById('read-more').style.display = 'none';
         window.scroll(0,findPos(document.getElementById("details")));
-        document.getElementById('read-more').style.display = 'none'
+
     })
 </script>
         
