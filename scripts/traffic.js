@@ -3,7 +3,11 @@ const moment = require('moment');
 const chart = require('chart');
 const {isBot} = require('../logger');
 
-const [, , logFile, daysIncluded] = process.argv;
+const opts = require('minimist')(process.argv.slice(2));
+const [logFile] = opts._;
+const pageFilter = opts.p;
+const daysIncluded = opts.d || 7;
+
 fs.readFile(logFile, (err, data) => {
   if (err) {
     console.error(err);
@@ -21,9 +25,11 @@ fs.readFile(logFile, (err, data) => {
     .filter(x =>
       x &&
       x.timestamp &&
-      x.timestamp > (new Date()).getTime() - (1000 * 60 * 60 * 24 * (daysIncluded || 7)) &&
+      x.timestamp > (new Date()).getTime() - (1000 * 60 * 60 * 24 * daysIncluded) &&
+      (!pageFilter || x.path.includes(pageFilter)) &&
       !ignore(x)
-    );
+    )
+  ;
 
   console.log('IP Addresses with Most Traffic');
   console.log('==============================');
