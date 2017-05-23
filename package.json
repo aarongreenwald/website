@@ -6,9 +6,9 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run build; node index.js",
-    "prebuild": "mkdir slides/revealjs/; cp -r ./node_modules/reveal.js/css ./node_modules/reveal.js/js ./node_modules/reveal.js/lib ./node_modules/reveal.js/plugin ./slides/revealjs",
-    "build": "node-sass --recursive --output ./slides/theme --source-map true --source-map-contents ./slides/theme",
-    "watch": "nodemon -w slides/theme -w resources -w pages -w blog -w index.js --ext js,ejs,md,scss --ignore node_modules -x 'npm run start' ",
+    "prebuild": "mkdir slides-statics/revealjs/; cp -r ./node_modules/reveal.js/css ./node_modules/reveal.js/js ./node_modules/reveal.js/lib ./node_modules/reveal.js/plugin ./slides-statics/revealjs",
+    "build": "node-sass --recursive --output ./slides-statics/theme --source-map true --source-map-contents ./slides-statics/theme",
+    "watch": "nodemon -w slides-statics/theme -w resources -w pages -w blog -w index.js --ext js,ejs,md,scss --ignore node_modules -x 'npm run start' ",
     "test": "eslint ."
   },
   "repository": {

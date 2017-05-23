@@ -4,48 +4,38 @@ const partials = require('express-partials');
 const compression = require('compression');
 const blog = require('./blog-data');
 const logger = require('./logger');
+const {pages, talks} = require('./constants');
 
 app.use(compression());
 app.use('/static', express.static('resources'));
+app.use('/slides-statics', express.static('slides-statics', { maxAge: (60 * 60 * 24 * 90)}));
 
 app.use((req, res, next) => {
   logger.log(req);
   next();
 });
-
-app.use('/slides', express.static('slides', { maxAge: (60 * 60 * 24 * 90)}));
 //serve static directory from disk for Let'sEncrypt's ssl verification
 app.use('/.well-known', express.static('/var/www/html/.well-known'));
 app.use(partials());
-
 app.set('views', './pages');
 app.set('view engine', 'ejs');
 
-const strings = {
-  homeDescription: 'Official website of Aaron Greenwald, a software developer/programmer in Tel Aviv, Israel (formerly Washington, DC).',
-  blogDesc: `Aaron Greenwald's sparsely populated blog about software, coding, and more. Sometimes sarcastic, occasionally entertaining, always enlightening.`,
-  cvDesc: `Aaron Greenwald's resume/professional bio - software developer, programmer.`,
-  workDesc: `Aaron Greenwald's coding projects and hobby software.`,
-  talksDesc: `̄A selection of Aaron Greenwald's public appearances: talks and workshops`
-};
-
-app.get('/', (req, res) => res.render('home', PageValues({title: 'Home', description: strings.homeDescription})));
-
+app.get('/', (req, res) => res.render('home', PageValues({title: 'Home', description: pages.homeDescription})));
 app.get('/projects', (req, res) => res.redirect(301, '/work'));
 app.get('/resume', (req, res) => res.redirect(301, '/cv'));
-
-app.get('/work', (req, res) => res.render('work', PageValues({title: 'Work', description: strings.workDesc})));
-app.get('/cv', (req, res) => res.render('cv', PageValues({title: 'CV', description: strings.cvDesc})));
-app.get('/talks', (req, res) => res.render('talks', PageValues({title: 'Talks', description: strings.talksDesc})));
+app.get('/work', (req, res) => res.render('work', PageValues({title: 'Work', description: pages.workDesc})));
+app.get('/cv', (req, res) => res.render('cv', PageValues({title: 'CV', description: pages.cvDesc})));
+app.get('/talks', (req, res) => res.render('talks', PageValues({title: 'Talks', description: pages.talksDesc})));
 app.get('/qr', (req, res) => res.render('qr', {layout: false}));
 
+app.get('/slides/:year/:event/:talk.html', (req, res) => res.redirect(301, req.path.replace('.html', '')));
+app.get('/slides/:year/:event/:talk', (req, res) => res.render(req.path.slice(1), getSlidePageValues(req.params)));
 
 app.get('/blog', (req, res) => res.render('blog', PageValues({
   title: 'Blog',
-  description: strings.blogDesc,
+  description: pages.blogDesc,
   posts: blog.posts
 })));
-
 app.get('/blog/:slug', (req, res) => {
   const post = blog.posts.find(p => p.slug === req.params.slug);
   res.render('blog', PageValues({
@@ -54,12 +44,11 @@ app.get('/blog/:slug', (req, res) => {
     twitterCardImageUrl: post.twitterCardImageUrl || 'https://avatars3.githubusercontent.com/u/6300588?v=4&s=450',
     //only twitter should default to blogDesc, not standard description
     //because google doesn't like that
-    twitterCardDescription: post.description || strings.blogDesc,
+    twitterCardDescription: post.description || pages.blogDesc,
     description: post.description,
     post
   }));
 });
-
 app.get('/blog/tag/:tag', (req, res) => res.render('blog', PageValues({
   title: 'Blog',
   description: `Posts tagged "${req.params.tag}" from Aaron Greenwald's coding blog`,
@@ -68,6 +57,7 @@ app.get('/blog/tag/:tag', (req, res) => res.render('blog', PageValues({
 })));
 
 const PageValues = opts => Object.assign({
+  title: opts.title || null,
   //default page to title,
   //field exists sometimes multiple titles are included in one page (Blog)
   navPage: opts.title || null,
@@ -80,5 +70,16 @@ const PageValues = opts => Object.assign({
   posts: null,
   showingTag: null,
 }, opts);
+const SlidePageValues = opts => Object.assign({
+  layout: 'slides/slide-template'
+}, PageValues(opts));
+const getSlidePageValues = ({year, event, talk}) => {
+  const {title, description} = talks[year][event][talk];
+  return SlidePageValues({
+    title,
+    description
+  });
+
+};
 
 app.listen(6540, () => console.log('Listening on 6540'));
