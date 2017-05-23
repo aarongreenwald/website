@@ -99,6 +99,27 @@ html.chapter-title {
 		line-height: 1.7em;
 	}
 
+	@for $i from 0 through 50 {
+
+		section.scatter {
+			//position:fixed;
+			//left: 0;
+			//right: 0;
+			//top: 0 !important;
+			//bottom: 0;
+		}
+
+		$float: left, right;
+		$colors: #f3b878, #ad7ce4, #ff868b, #156680, #7cffd8;
+
+		section.scatter div:nth-of-type(#{$i}) {
+			font-size: .7 + (random(100) / 100) + em;
+			padding: .1em 0.5 + random(5) / 20 + em;
+			float: nth($float, random(length($float)));
+			color: nth($colors, random(length($colors)));
+		}
+	}
+
 
 }
 
@@ -202,3 +223,4 @@ div.arrow-shape-container {
 .blue {
 	color: $blue;
 }
+
