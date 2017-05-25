@@ -1,0 +1,20 @@
+{
+  "Aaron": {
+    "role": "developer",
+    "company": "wix",
+    "benefits": [
+      {
+        "type": "food",
+        "name": "breakfast"
+      },
+      {
+        "type": "food",
+        "name": "dinner"
+      },
+      {
+        "type": "money",
+        "amount": "$100,000,000"
+      }
+    ]
+  }
+}
