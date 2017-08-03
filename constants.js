@@ -25,6 +25,12 @@ const talks = {
         title: 'Geekspeak for Humans: Translating Technobabble to Human Language',
         description: 'Slides for talk - Geekspeak for Humans'
       }
+    },
+    ['rn-eu']: {
+      ['scaling-rn']: {
+        title: 'Scaling React Native Development: Making it Work',
+        description: 'Slides for talk at React Native EU conference'
+      }
     }
   }
 };

@@ -1,0 +1,59 @@
+<div class="reveal">
+  <div class="slides">
+    <section class="title-page">
+      <h1 class="title">Scaling React Native Development</h1>
+      <p class="author">
+        Aaron Greenwald
+      </p>
+      <div class="template-instance links"></div>
+
+      <aside class="notes" data-markdown>
+        ** Abstract**
+
+        _React Native is great for developing large applications across multiple teams, but only if you architect your app well.
+        See the code and architecture that allows us to have disconnected teams working on separate modules
+        but delivering a cohesive product that users feel is just one unified app.
+
+        How many developers do you have working on your React Native app? One? Less than five? 15?
+        What if you had over 40? React Native is a good fit for developing large applications across multiple teams in a company,
+        but only if you architect your app correctly.
+
+        Less than two years ago, I could count all of the developers working on our app on one hand.
+        Now, I don’t even know everyone’s names.
+        Learn how we architected the Wix app in a way that allows us to have multiple teams on multiple continents
+        working on separate modules but delivering a cohesive product that users feel is just one unified app.
+
+        When we first started building the Wix mobile app with React Native, the team was very small.
+        But we knew we’d expand it very quickly, and we knew we’d need a way to allow an increasing
+        number of developers to start adding functionality very quickly. Making it even more complicated,
+        many of these developers would not be part of the “core team” - they’d come from other parts of the company,
+        with their own development schedule, roadmap, and management structures. So it was important to create an architecture
+        that would be friendly to distributed development, both in code and in process. At the same time,
+        it was important to make sure the app would not feel like a frankestein-like mashup of disconnected modules.
+
+        What we came up with is still in production today (although we’ve certainly iterated upon it).
+        I’d like to present it to the community so that others can learn from our experience,
+        particularly companies that are large and are considering using React Native to build apps by reusing
+        existing web developers that are already distributed in separate departments and business functions._
+      </aside>
+
+    </section>
+    <section>
+      Survey
+      <aside class="notes" data-markdown>
+        * RN Experience
+        * Team Size
+      </aside>
+    </section>
+    <section data-state="chapter-title">
+      01 / Before We Begin
+      <aside class="notes" data-markdown>
+        * What this talk is NOT about
+        * It’s about our experience. It’s not the only way, but it’s worked for us and we learned a few things along the way.
+      </aside>
+    </section>
+
+  </div>
+</div>
+
+
