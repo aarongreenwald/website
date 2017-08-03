@@ -5,24 +5,9 @@ const fs = require('fs');
 
 const isBot = ({ua, path}) => {
   const botUA = [
-    'Twitterbot',
-    'uptimerobot',
-    'uptimebot',
-    'http://www.linkdex.com/',
-    'http://www.bing.com/bingbot.htm',
-    'http://www.google.com/bot.htm',
-    'http://www.baidu.com/search/spider.html',
-    'http://www.semrush.com/bot.html',
-    'http://mj12bot.com/',
-    'http://help.yahoo.com/help/us/ysearch/slurp',
-    'http://napoveda.seznam.cz/en/seznambot-intro/',
-    'http://help.coccoc.com/searchengine',
-    'http://ahrefs.com/robot/',
-    'http://OpenLinkProfiler.org/bot',
-    'Google-Site-Verification/',
-    'Netcraft SSL Server Survey - contact info@netcraft.com',
-    'http://yandex.com/bots',
-    'DuckDuckGo-Favicons-Bot/1.0'
+    'bot',
+    'crawler',
+    'spider',
   ];
   const botPaths = [
     'robots.txt',
@@ -34,7 +19,7 @@ const isBot = ({ua, path}) => {
     '.well-known/',
     '.php'
   ];
-  return botUA.some(x => ua.includes(x)) || botPaths.some(x => path.includes(x));
+  return botUA.some(x => ua.toLowerCase().includes(x.toLowerCase())) || botPaths.some(x => path.toLowerCase().includes(x.toLowerCase()));
 };
 
 module.exports = {
