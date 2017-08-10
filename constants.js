@@ -31,6 +31,12 @@ const talks = {
         title: 'Scaling React Native Development: Making it Work',
         description: 'Slides for talk at React Native EU conference'
       }
+    },
+    startech: {
+      ['client-server']: {
+        title: 'Connecting to a Server: Android App Development',
+        description: '̄Accompanying slides for session of Startech course'
+      }
     }
   }
 };
