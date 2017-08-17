@@ -37,6 +37,12 @@ const talks = {
         title: 'Connecting to a Server: Android App Development',
         description: '̄Accompanying slides for session of Startech course'
       }
+    },
+    dnipro: {
+      ['testing-react-native']: {
+        title: 'Testing & React Native: Lessons from the Battlefield',
+        description: 'Slides for talk about Testing React Native applications: Meetup in Dnipro, Ukraine'
+      }
     }
   }
 };

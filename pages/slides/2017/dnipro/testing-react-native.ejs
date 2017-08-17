@@ -1,0 +1,434 @@
+<div class="reveal">
+	<div class="slides">
+		<section class="title-page">
+			<h1 class="title">Testing &amp; React Native</h1>
+				<h4 class="subtitle">Lessons from the Battlefield</h4>
+				<p class="author">
+					Aaron Greenwald
+				</p>
+                <div class="template-instance links"></div>
+
+				<aside class="notes" data-markdown>
+					** Abstract**
+
+					_Wix has been about cutting edge web development for a while, and we're all about TDD.
+					When we started mobile with RN, we struggled to replicate our test-heavy workflow that we'd grown to love.
+					We lacked tooling, best practices, and general know-how.
+
+					In this talk, you'll hear about what works and what doesn't.
+					You'll find out what methods we tried and rejected so you won't have to make the same mistakes,
+					and you'll get pointers toward approaches that we've found work so you can get started on the right foot.
+
+					A high-level talk that covers some philosophy, architecture, practical tips you can use, and interesting tidbits._
+				</aside>
+
+		</section>
+        <section>
+            Survey
+            <aside class="notes" data-markdown>
+                * RN Experience
+                * Testing Experience/Attitude
+            </aside>
+        </section>
+		<section data-state="chapter-title">
+			01 / Once Upon A Time
+			<aside class="notes" data-markdown>
+				* We were web developers
+				* Angular was popular
+				* We had a process that worked and that we could rely on, and we believed in
+					* TDD, CI, CD, Rollbacks, devops, etc...especially TDD
+				* Life was good
+			</aside>
+		</section>
+		<section>A long, long time ago</section>
+		<section class="aside">(About 1.5 years ago)</section>
+		<section class="aside">(That's 10.5 dog years)</section>
+		<section class="aside">(And 10.5<sup>10000000</sup> JS ecosystem years)</section>
+
+		<section data-state="background-img me"></section>
+		<section data-state="background-img trump">
+			<div class="caption">Sources:
+				<a href="https://www.theguardian.com/us-news/2015/aug/22/donald-trump-wont-win-republican-presidential-nomination">The Guardian</a> |
+				<a href="https://fivethirtyeight.com/features/donald-trumps-six-stages-of-doom/">Five Thirty Eight</a>
+			</div>
+		</section>
+		<!--<section data-state="background-img guardian"></section>-->
+		<!--<section data-state="background-img natesilver"></section>-->
+		<section data-state="background-img angular"></section>
+
+		<section>
+			BOOOORING!
+		</section>
+
+		<section>
+			Breaking Changes
+			<aside data-markdown class="notes">
+				So I went to work at Wix. On my first day I was offered RN work.
+			</aside>
+		</section>
+		<section data-state="background-img badass">
+		</section>
+		<section data-state="chapter-title">
+			02 / Valiant &amp; Brave
+			<aside class="notes">
+
+			</aside>
+		</section>
+
+		<section data-state="background-img buffoon">
+			<div class="caption">Credit: <a href="http://www.timeout.com/">Timeout</a></div>
+		</section>
+
+		<section>
+			<div>React Native 0.13</div>
+            <div class="fragment">Android Support</div>
+            <div class="fragment"><i>(Yeah, ok)</i></div>
+			<div class="fragment">Fast & Furious Development</div>
+
+		</section>
+		<section data-state="chapter-title">
+			03 / Taming the Wild
+		</section>
+        <section>How Can We TDD?</section>
+		<section>
+            <div>Testing Pyramid</div>
+			<div class="template-instance testing-pyramid"></div>
+
+		</section>
+
+		<section>
+			<div class="template-instance testing-pyramid focus unit no-fragment"></div>
+			<aside class="notes">
+				This is easy. I can even test Redux! Jasmine, mocha, whatever. I don’t care.
+			</aside>
+		</section>
+
+		<!--<section>-->
+			<!--[Code Sample]-->
+		<!--</section>-->
+		<!--<section>-->
+			<!--[Better Code Sample]-->
+		<!--</section>-->
+		<section>
+			<div class="template-instance testing-pyramid focus component no-fragment"></div>
+		</section>
+		<section>Enzyme</section>
+
+
+        <section>
+            Shallow vs Deep Rendering
+        </section>
+
+        <!--
+
+        <section>
+            Boilerplate
+            <pre>
+            <code>
+            Boilerplate
+            </code>
+            </pre>
+        </section>
+        <section>
+        <pre>
+        <code>
+        Angular Comparison
+        </code>
+        </pre>
+        </section>
+		<section>Enzyme Drivers</section>
+		<section>
+            <pre>
+                <code>
+beforeEach(() => {
+  initDriver();
+});
+it('should render footer when loading', () => {
+  driver.render({contacts: [], isLoading: true});
+  let footer = driver.renderFooter();
+  expect(footer.props.testID).toEqual('activity-indicator');
+
+  driver.render({contacts: [], isLoading: false});
+  footer = driver.renderFooter();
+  expect(footer).toBe(null);
+});
+                </code>
+            </pre>
+        </section>
+        <section>
+            <pre>
+                <code>
+function initDriver() {
+  driver = new ContactListDriver({
+    path: 'contact-list/contact-list.mobile.component',
+    mocks: {
+      'mobx-react/native': {observer: x => x},
+      './some-component': createMockReactComponent(),
+      'wix-react-native-ui-lib': uiLibMock
+    }
+  });
+}
+                </code>
+            </pre>
+        </section>
+
+        <section>
+            <pre>
+                <code>
+
+class ContactListDriver extends RNDriver {
+  get contacts() {
+    return this.propsOf('contacts').dataSource._dataBlob;
+  }
+  ...
+
+  renderFooter() {
+    return this.propsOf('contacts').renderFooter();
+  }
+}
+                </code>
+            </pre>
+        </section>
+
+        -->
+
+        <section>
+            Mocks, Mocks, Mocks
+        </section>
+        <section>
+            Architecture Matters
+        </section>
+        <section>
+            Jest
+        </section>
+		<section>
+			<div class="template-instance testing-pyramid focus e2e no-fragment"></div>
+		</section>
+
+		<section>Appium</section>
+		<section>
+			<pre>
+				<code>
+xit('should not allow sending an empty message',
+                    test.specAsync(async () => {
+
+  //check that the value is not sent if the message is empty
+  await driver.safeClick('sendButton');
+  await test.expectElementToNotExist('activity-guid');
+  await test.expectElementToNotExist('activity-1001');
+
+  //now type something, delete it and try to send
+  //again to check that it is not sent either
+  await driver.typeOnKeyboard('a');
+  await driver.tapKeyboardDelete(1);
+  await driver.sleep(500);
+  await driver.safeClick('sendButton', 1000);
+  await test.expectElementToNotExist('activity-guid');
+  await test.expectElementToNotExist('activity-1001');
+}));
+				</code>
+			</pre>
+		</section>
+        <section>
+			<pre>
+				<code>
+wd.addPromiseChainMethod('typeOnKeyboard', function (val) {
+  let t = this.execute(
+     'target.frontMostApp().keyboard()'
+     ).sleep(750);
+  for (let i = 0; i < val.length; i++) {
+    t = t.sleep(150).execute(
+      `target
+        .frontMostApp()
+        .keyboard()
+        .typeString('${val[i]}')`
+    );
+  }
+  return t;
+});
+				</code>
+			</pre>
+        </section>
+        <section>
+			<pre>
+				<code>
+...
+expectElementToNotExist: async testId => {
+  let element;
+  for (let i = 0; i < 20; i++) {
+    element = await driver.getElementIfExists(testId, 50);
+    if (element) {
+        // if it's still there check back in a little bit
+        await driver.sleep(50);
+    } else {
+      element = undefined;
+      break;
+    }
+  }
+  expect({element, testId}).not.toBeAValidElement();
+},
+...
+
+				</code>
+			</pre>
+        </section>
+		<section>
+			<div>WD</div>
+			<div class="fragment">IWD</div>
+			<div class="fragment">WTF</div>
+		</section>
+		<section>
+			<div class="list-header">Most Important Thing<sup><small>TM</small></sup></div>
+			<div class="fragment">Stable</div>
+			<div class="fragment">Fast</div>
+		</section>
+		<section>Reframing the Problem</section>
+		<section><s>E2E</s> UI Automation</section>
+		<section>
+			<div class="list-header">
+                github.com/wix/<b style="color:orange">detox</b>
+            </div>
+            <div class="fragment">
+                Stable
+            </div>
+            <div class="fragment">
+                Fast
+            </div>
+            <div class="fragment">
+                RN-Friendly
+            </div>
+		</section>
+        <section data-state="background-img detox-gif"></section>
+
+
+		<section data-state="chapter-title">
+			04 / Now What??
+		</section>
+		<section><i>(Detox for Android)</i></section>
+		<section>
+			<p class="fragment">Clueless</p>
+			<p class="fragment">Beginner</p>
+			<p class="fragment">Cynic</p>
+			<p class="fragment">Expert</p>
+		</section>
+
+		<section>
+			<p>Stability</p>
+			<p class="fragment">Lots of Options</p>
+			<p class="fragment">Few Excuses</p>
+
+            <aside data-markdown class="notes">
+                Key Takeaways:
+
+                * If you're just starting out, what I laid out - detox, enzyme, and whatever on the unit testing is a good starting point.
+                * There are many ways to test RN apps, and although it's definitely harder than the web, the tooling is getting better and there aren't any excuses to not test.
+                * If you're good at testing, please help the community make these tools more mature.
+
+            </aside>
+		</section>
+		<section>
+			Thank You
+            <div class="template-instance links"></div>
+        </section>
+	</div>
+</div>
+
+<div class="template" id="testing-pyramid">
+	<div class="testing-pyramid">
+		<div class="zone fragment"><span>E2E</span></div>
+		<div class="zone fragment"><span>Component</span></div>
+		<div class="zone fragment"><span>Unit</span></div>
+	</div>
+</div>
+
+<style>
+	.template {
+		display: none;
+	}
+
+	.testing-pyramid {
+		 /*padding-top: 2em !important;*/
+	 }
+	.zone {
+		height: 3em;
+		vertical-align: bottom;
+		position: relative;
+	}
+	.zone span {
+		position:absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+
+	}
+	.zone:nth-child(1) {
+		background-color: lightblue;
+		clip-path: polygon(50% 0, 62.5% 100%, 37.5% 100%);
+		-webkit-clip-path: polygon(50% 0, 62.5% 100%, 37.5% 100%);
+	}
+	.zone:nth-child(2) {
+		background-color: lightcoral;
+		clip-path: polygon(37.5% 0, 62.5% 0, 75% 100%, 25% 100%);
+		-webkit-clip-path: polygon(37.5% 0, 62.5% 0, 75% 100%, 25% 100%);
+	}
+	.zone:nth-child(3) {
+		background-color: yellowgreen;
+		clip-path: polygon(25% 0, 75% 0, 87.5% 100%, 12.5% 100%);
+		-webkit-clip-path: polygon(25% 0, 75% 0, 87.5% 100%, 12.5% 100%);
+
+	}
+
+	.focus {
+		transform: scale(.75);
+	}
+
+	.focus .zone {
+		opacity: 0.25 !important;
+	}
+
+	.focus.unit .zone:last-child {
+		opacity: 1 !important;
+	}
+
+	.focus.component .zone:nth-child(2) {
+		opacity: 1 !important;
+	}
+
+	.focus.e2e .zone:first-child {
+		opacity: 1 !important;
+	}
+
+	.natesilver body {
+		background-image: url(2017/react-amsterdam/natesilver.png);
+	}
+
+	.guardian body {
+		background-image: url(2017/react-amsterdam/guardian.png);
+	}
+
+	.trump body {
+		background-image: url(2017/react-amsterdam/trump.png);
+	}
+
+	.me body {
+		background-image: url(2017/react-amsterdam/me.jpg);
+	}
+
+	.buffoon body {
+		background-image: url(//media.timeout.com/images/100424795/1372/772/image.jpg);
+	}
+
+	.badass body {
+		background-image: url(//s-media-cache-ak0.pinimg.com/564x/1c/13/56/1c1356a2feb21c53e18278ff3e77bf5d.jpg);
+	}
+
+	.angular body {
+		background-image: url(//blog.altoros.com/wp-content/uploads/2014/05/angularjs-logo.png);
+	}
+
+    .detox-gif body {
+        background-image: url(//camo.githubusercontent.com/1ae2d3b49bfe21ae68f92884bb51acec934eed11/687474703a2f2f692e696d6775722e636f6d2f3351714865474f2e676966);
+    }
+
+</style>
+
