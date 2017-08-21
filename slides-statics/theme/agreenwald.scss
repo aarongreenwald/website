@@ -112,12 +112,12 @@ html.chapter-title {
 		$float: left, right;
 		$colors: #f3b878, #ad7ce4, #ff868b, #156680, #7cffd8;
 
-		section.scatter div:nth-of-type(#{$i}) {
-			font-size: .7 + (random(100) / 100) + em;
-			padding: .1em 0.5 + random(5) / 20 + em;
-			float: nth($float, random(length($float)));
-			color: nth($colors, random(length($colors)));
-		}
+		//section.scatter div:nth-of-type(#{$i}) {
+		//	font-size: .7 + (random(100) / 100) + em;
+		//	padding: .1em 0.5 + random(5) / 20 + em;
+		//	float: nth($float, random(length($float)));
+		//	color: nth($colors, random(length($colors)));
+		//}
 	}
 
 
