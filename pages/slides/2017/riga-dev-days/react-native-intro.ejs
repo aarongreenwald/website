@@ -212,9 +212,6 @@ let [
             </div>
             <div class="fragment">
                 <div class="template-instance links"></div>
-
-                <div class="disclaimer">Icons created by <a href="http://www.flaticon.com/authors/dave-gandy" title="Dave Gandy">Dave Gandy</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> and licensed under <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
-
             </div>
 
         </section>
@@ -296,31 +293,5 @@ let [
         content: "+ "
     }
 
-    .reveal section .disclaimer {
-        font-size: .3em;
-        position: fixed;
-        bottom: 0;
-        right: 0;
-        font-style: italic;
-    }
-
-
 
 </style>
-
-
-<script>
-
-  //always show first fragment immediately
-  Reveal.addEventListener('slidechanged', Reveal.nextFragment);
-
-  //when going backwards, hiding the first fragment should continue to move to the previous slide
-  //this isn't quite right as a general rule, because fragmenthidden could theoretically happen
-  //when trying to navigate forward.
-  Reveal.addEventListener('fragmenthidden', () => {
-    if (!Reveal.availableFragments().prev) {
-      Reveal.navigatePrev();
-    }
-  });
-</script>
-

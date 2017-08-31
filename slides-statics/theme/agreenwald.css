@@ -327,6 +327,13 @@ html.chapter-title section {
     width: 1.5em;
     height: 1.5em; }
 
+.reveal section .disclaimer {
+  font-size: .3em;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  font-style: italic; }
+
 .reveal .list-header {
   position: fixed;
   left: 0;
