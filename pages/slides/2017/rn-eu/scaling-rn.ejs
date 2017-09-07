@@ -75,6 +75,16 @@
       <div class="fragment fade-past">Scale Quickly</div>
     </section>
     <section>
+      <video controls loop>
+        <source src="2017/rn-eu/web-edited.mp4" type="video/mp4">
+      </video>
+    </section>
+    <section>
+      <video controls loop>
+        <source src="2017/rn-eu/mobile-edited.mp4" type="video/mp4">
+      </video>
+    </section>
+    <section>
       This isn't easy
     </section>
     <section>
@@ -83,31 +93,37 @@
 
 
     <section data-state="chapter-title">
-      04 / Philosophy
+      03 / Philosophy
       <aside class="notes" data-markdown>
         Philosophy:
 
-        * Divide & Conquer
+        * Modularity
         * Independent teams
         * Small government
         * Centralized UX (UI Lib)
       </aside>
     </section>
-    <section>
-      Divide & Conquer
+    <section data-background-color="black">
+      <div class="hamilton jefferson"></div>
     </section>
     <section>
-      Independent Teams
+      <div>
+        Hamilton <span style="color: blueviolet">feared anarchy</span> and thought in terms of <span style="color:blueviolet">order</span>; Jefferson <span style="color:coral">feared tyranny</span> and thought in terms of <span style="color:coral">freedom</span>.
+      </div>
+
+      <div style="font-style: italic;font-size: small; float:right"> - Someone @ University of Groningen</div>
     </section>
     <section>
-      Small Government
+      Independently Governed Teams
+    </section>
+    <section>
+      Small Central Government
     </section>
     <section>
       Centralized UX
     </section>
-
     <section data-state="chapter-title">
-      05 / People
+      04 / People
       <aside class="notes" data-markdown>
 
 
@@ -126,15 +142,16 @@
     <section>
       Companies & Guilds
     </section>
+    <section data-state="background-img taxes"></section>
+    <section data-state="background-img taxes2"></section>
     <section>
-      Taxes
-    </section>
-    <section>
-      <div class="fragment fade-past">Opposite Day</div>
-      <div class="fragment fade-past">Open Source</div>
+      <div class="fragment fade-past">Guild Weeks</div>
+      <div class="fragment fade-past">Guild Days</div>
+      <div class="fragment fade-past"><i>(Opposite Day)</i></div>
     </section>
     <section>
       <div class="fragment fade-past">Core/Infra Team</div>
+      <div class="fragment fade-past">Open Source</div>
       <div class="fragment fade-past">Experts & Specialists</div>
     </section>
 
@@ -161,13 +178,57 @@
       <div class="fragment fade-past">FOSS from Day One</div>
       <div class="fragment fade-past">Modules</div>
     </section>
+    <section data-state="background-img woa"></section>
+    <section>
+      <pre>
+        <code>
+export function initModules() {
+  require('wix-one-app-bi').default.init();
+  require('native-app-wix-login');
+  require('wix-one-app-feed');
+  require('wix-inbox-mobile');
+  require('wix-hotels-mobile-app');
+  require('wix-store-merchant-app');
+  require('wix-one-app-pos');
+  require('wix-one-app-module-blog');
+  require('wix-one-bookings-manager');
+  require('wix-visitors-mobile-app');
+  require('wix-invoices-mobile');
+  require('wix-contact-card-mobile');
+  require('wix-mobile-media-manager');
+  require('wix-one-app-more');
+  require('wix-promote-app-module');
+  //clubs
+  require('wix-one-clubs-chat').default();
+  require('wix-one-bookings-member').default();
+  require('wix-one-invites').default();
+  require('wix-one-clubs-manager').default();
+  require('wix-one-clubs-feed').default();
+  require('wix-one-activities').default();
+  require('wix-one-app-notifications');
+}
+
+        </code>
+      </pre>
+    </section>
     <section>
       <div class="fragment list-header">Module Registry</div>
-      <div class="fragment fade-past">No Shared State</div>
       <div class="fragment fade-past">PubSub Events</div>
       <div class="fragment fade-past">Component Registry</div>
     </section>
-
+    <section>
+      No Shared State
+    </section>
+    <section>
+      <div>UI Lib</div>
+      <div><i style="color:coral">github.com/wix/react-native-ui-lib</i></div>
+    </section>
+    <section>
+      wix-react-native-framework
+    </section>
+    <section>
+      Demo Apps
+    </section>
     <section data-state="chapter-title">
       06 / Sounds Easy
       <aside class="notes" data-markdown>
@@ -201,5 +262,27 @@
 
   </div>
 </div>
+<style>
+  .woa body {
+    background-image: url(2017/rn-eu/woa.png);
+  }
+
+  .hamilton.jefferson {
+    background: url(//upload.wikimedia.org/wikipedia/commons/thumb/0/05/Alexander_Hamilton_portrait_by_John_Trumbull_1806.jpg/440px-Alexander_Hamilton_portrait_by_John_Trumbull_1806.jpg) repeat-y,
+    url(//upload.wikimedia.org/wikipedia/commons/thumb/0/07/Official_Presidential_portrait_of_Thomas_Jefferson_%28by_Rembrandt_Peale%2C_1800%29.jpg/440px-Official_Presidential_portrait_of_Thomas_Jefferson_%28by_Rembrandt_Peale%2C_1800%29.jpg) repeat;
+    height: 440px;
+    width:880px;
+  }
+
+  .taxes2 body {
+    background-image: url(//media.giphy.com/media/m5Mc6wjeecaOY/giphy.gif);
+  }
+
+  .taxes body {
+    background-image: url(//media.riffsy.com/images/b159391c31b78e91b7c1a7139649679a/tenor.gif);
+  }
+
+
+</style>
 
 
