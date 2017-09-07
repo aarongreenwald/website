@@ -213,11 +213,58 @@ export function initModules() {
     </section>
     <section>
       <div class="fragment list-header">Module Registry</div>
-      <div class="fragment fade-past">PubSub Events</div>
       <div class="fragment fade-past">Component Registry</div>
+      <div class="fragment fade-past">PubSub Events</div>
+      <div class="fragment fade-past">Method Invocation</div>
+    </section>
+    <section>
+      <div class="list-header">Module Registry</div>
+      <div class="fragment">
+        <pre>
+          <code>
+// expose
+ModuleRegistry.notifyListeners('core.SessionUpdate', session);
+
+// consume
+const subscription = ModuleRegistry.addListener('core.SessionUpdate', function (session) {
+  // consumer handles updated session here
+});
+subscription.remove();
+          </code>
+        </pre>
+      </div>
+      <div class="fragment">
+        <pre>
+          <code>
+// expose (react-native-navigation screen), see note below
+ModuleRegistry.registerComponentAsScreen('hotels.Dashboard', () => ComponentClass, store, Provider);
+
+// expose (regular component / view)
+ModuleRegistry.registerComponent('hotels.ReservationView', () => ComponentClass);
+
+// consume
+const ComponentClass = ModuleRegisry.component('hotels.Dashboard');
+          </code>
+        </pre>
+      </div>
+      <div class="fragment">
+        <pre>
+          <code>
+// expose
+ModuleRegistry.registerMethod('inbox.getContactDetails', () => contactService.getContactDetails);
+
+// consume
+const contactDetails = await ModuleRegistry.invoke('inbox.getContactDetails', 'johnsmith@example.com');
+      </code>
+      </pre>
+  </div>
+
     </section>
     <section>
       No Shared State
+    </section>
+    <section>
+      Session Management
     </section>
     <section>
       <div>UI Lib</div>
