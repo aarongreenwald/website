@@ -11,13 +11,13 @@ const talks = {
     ['react-amsterdam']: {
       ['testing-react-native']: {
         title: 'Testing & React Native: Lessons from the Battlefield',
-        description: 'Slides for talk about Testing React Native applications'
+        description: 'Slides for talk about Testing React Native applications at React Amsterdam 2017'
       }
     },
     ['riga-dev-days']: {
       ['react-native-intro']: {
         title: 'Learn Once, Write Anywhere: Intro to React Native',
-        description: 'Slides for talk about introducing and explaining React Native'
+        description: 'Slides for talk introducing and explaining React Native'
       }
     },
     academy: {
@@ -28,8 +28,8 @@ const talks = {
     },
     ['rn-eu']: {
       ['scaling-rn']: {
-        title: 'Scaling React Native Development: Making it Work',
-        description: 'Slides for talk at React Native EU conference'
+        title: 'Scaling Mobile Development (with React Native, of course)',
+        description: 'Slides for talk at React Native EU 2017 conference'
       }
     },
     startech: {
