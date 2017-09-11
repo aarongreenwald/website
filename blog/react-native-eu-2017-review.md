@@ -89,7 +89,7 @@ Oh, and licensing came up, of course. In retrospect, I think Eric handled the qu
 
 One thing I really enjoyed was looking at other people's apps and showing them ours, which gave us an opportunity to see how other organizations deal with (or don't deal with) the challenges we face in our app. Because we're far from perfect, and we face new challenges almost daily. It was nice to see that some of the issues we're facing are not unique to us, but even nicer to see that some of the problems we have are fixable without too much work.
 
-Two instances of this from the conference afterparty stand out in my mind. First, I finally met Rafael Mendiola, a developer from Boston who I'd interacted with on Twitter but never met. He showed me what he's working on and we talked about how important it is to give users a consistent, coherent experience in your app and how you can build trust between your app and its users. I really liked some of the insight he had on this topic, but I don't feel I can do it justice repeating it so I'll leave that to him.
+Two instances of this from the conference afterparty stand out in my mind. First, I finally met [Rafael Mendiola](https://twitter.com/GroundControl), a developer from Boston who I'd interacted with on Twitter but never met. He showed me what he's working on and we talked about how important it is to give users a consistent, coherent experience in your app and how you can build trust between your app and its users. I really liked some of the insight he had on this topic, but I don't feel I can do it justice repeating it so I'll leave that to him.
 
 Then I met two developers from St Petersburg that work for Jetbrains on their issue tracker (YouTrack). I must be really tired right now, because I can't remember their names. But I do remember the app they showed me, which is a React Native client filled with features, and I couldn't help think that I REALLY wish Jira offered something similar. Atlassian, are you listening?
 
@@ -99,7 +99,7 @@ Of course, I got to reconnect with a bunch of members of the community I met pre
 <span class="img-caption">Just look at how cool those people are. I know, right?</span>
 
 
-Best of all, it's great to hear or see people use open source libraries that came out of Wix Engineering, becauseit tells us that we're providing the community with value and speaking to a need that exists.
+Best of all, it's great to hear or see people use open source libraries that came out of Wix Engineering, because it tells us that we're providing the community with value and speaking to a need that exists.
 
 ### Epilogue
 
