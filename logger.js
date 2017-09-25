@@ -19,6 +19,7 @@ const isBot = ({ua, path}) => {
     'cgi-bin',
     'a2billing',
     '.well-known/',
+    '/favicon.ico', //not quite a bot but functionally similar
     '.php'
   ];
   return botUA.some(x => ua.toLowerCase().includes(x.toLowerCase())) || botPaths.some(x => path.toLowerCase().includes(x.toLowerCase()));
@@ -52,14 +53,14 @@ module.exports = {
     const {path, query, headers} = req;
     const logData = {
       time: (new Date()).getTime(), //must be named 'time' for MP
+      ip, //special MP field,
       timestamp: new Date(), //formatted nicely for readability
+      ip_address: ip, //readability
       path,
       query,
       user_agent: uap(ua),
       isBot: isBot({ua, path}),
       referrer: headers['referer'] || headers['referrer'],
-      ip, //special MP field,
-      ip_address: ip, //readability
       country: ip2country(ip)
     };
 
