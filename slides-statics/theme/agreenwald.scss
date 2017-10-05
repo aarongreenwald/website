@@ -224,8 +224,8 @@ div.arrow-shape-container {
 }
 
 
-.fragment.fade-past:not(.current-fragment) {
-	color: #bbb;
+.fragment.fade-past:not(.current-fragment), .fade {
+	color: #bbb !important;
 }
 
 .blue {

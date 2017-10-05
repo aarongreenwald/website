@@ -423,7 +423,7 @@ div.arrow-shape-container.large div.arrow-shape::after {
 .template {
   display: none; }
 
-.fragment.fade-past:not(.current-fragment) {
+.fragment.fade-past:not(.current-fragment), .fade {
   color: #bbb; }
 
 .blue {
