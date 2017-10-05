@@ -43,6 +43,12 @@ const talks = {
         title: 'Testing & React Native: Lessons from the Battlefield',
         description: 'Slides for talk about Testing React Native applications: Meetup in Dnipro, Ukraine'
       }
+    },
+    mobileera: {
+      ['rn-code-reuse']: {
+        title: 'React Native Code Reuse: Architecture that Works',
+        description: 'Slides for Mobile Era (Oslo, Norway) talk on reusing code in React Native apps'
+      }
     }
   }
 };

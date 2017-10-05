@@ -1,0 +1,223 @@
+<div class="reveal">
+    <div class="slides">
+        <section class="title-page">
+            <h1>React Native Code Reuse</h1>
+            <h4>Architecture that Works</h4>
+            <p class="author">
+                Aaron Greenwald
+            </p>
+            <div class="template-instance links"></div>
+
+            <aside class="notes" data-markdown>
+
+            </aside>
+
+        </section>
+        <section>
+            Survey
+            <aside class="notes" data-markdown>
+
+            </aside>
+        </section>
+        <section data-state="chapter-title">
+            01 / The Promise
+            <aside class="notes" data-markdown>
+
+            </aside>
+        </section>
+        <section>
+            <div class="fragment">
+                “...that approach yielded around 85% reuse of app code”
+                <div style="width:100%;font-style: italic;font-size: 0.7em;text-align: right">
+                    - Facebook
+                </div>
+                <img src="2017/mobileera/react.png" width="70em;" style="border-radius: 50%"/>
+            </div>
+
+            <div class="fragment">
+                “Don’t repeat yourself. It’s not only repetitive, it’s redundant, and people have heard it before.”
+                <div style="width:100%;font-style: italic;font-size: 0.7em;text-align: right">
+                    - Lemony Snicket
+                </div>
+            </div>
+        </section>
+        <section>
+            Is it true?
+        </section>
+        <section>
+            Yes!
+        </section>
+        <section>
+            (Mostly)
+        </section>
+        <section>
+            <div class="fragment">Android & iOS</div>
+            <div class="fragment">Web Apps</div>
+            <div class="fragment">Other RN Projects</div>
+        </section>
+        <section data-state="chapter-title">
+            02 / Android & iOS
+            <aside class="notes" data-markdown>
+
+
+
+            </aside>
+        </section>
+        <section>
+            <div class="list-header">Platform-Specific Code</div>
+            <div class="platform-code">
+
+                <div class="circle">
+                    <div class="header">Platform Module</div>
+                    <!--<div>Conditional Statements</div>-->
+                </div>
+                <div class="circle invisible">
+                    <div class="header">Filename Suffixes</div>
+                    <!--<div>Separate Files</div>-->
+                </div>
+            </div>
+        </section>
+        <section data-state="background-img platform-module"></section>
+        <section>
+            <div class="list-header">Platform-Specific Code</div>
+
+            <div class="platform-code">
+
+                <div class="circle invisible">
+                    <div class="header">Platform Module</div>
+                    <!--<div>Conditional Statements</div>-->
+                </div>
+                <div class="circle">
+                    <div class="header">Filename Suffixes</div>
+                    <!--<div>Separate Files</div>-->
+                </div>
+            </div>
+        </section>
+        <section data-state="background-img filenames"></section>
+        <section data-background-color="rgb(63, 63, 63)" data-background-transition="none">
+            <pre>
+                <code>
+import InputBox from './InputBox';
+                </code>
+            </pre>
+        </section>
+
+        <section>
+            <div class="list-header">Platform-Specific Code</div>
+
+            <div class="platform-code">
+                <div class="circle">
+                    <div class="header">Platform Module</div>
+                    <!--<div>Conditional Statements</div>-->
+                </div>
+                <div class="circle">
+                    <div class="header">Filename Suffixes</div>
+                    <!--<div>Separate Files</div>-->
+                </div>
+            </div>
+        </section>
+        <section>
+            <span style="color:teal">Composition</span>
+            <span style="color:gray">></span>
+            <span style="color:sandybrown">Inheritance</span>
+        </section>
+        <section>
+            Architecture Matters
+        </section>
+        <section>
+            <div class="fragment fade-past">Keep logic out of views</div>
+            <div class="fragment fade-past">Presenters/Dispatchers</div>
+            <div class="fragment fade-past">Logic should be cross platform</div>
+            <div class="fragment fade-past">Small & modular views</div>
+        </section>
+
+        <section data-state="chapter-title">
+            03 / Web Apps
+            <aside class="notes" data-markdown>
+
+            </aside>
+        </section>
+        <section>
+            Architecture Matters
+        </section>
+        <section>
+            <div class="fragment fade-past">Reusable application logic</div>
+            <div class="fragment fade-past">Compilation gets complicated</div>
+            <div class="fragment fade-past">Create a separate module</div>
+            <div class="fragment fade-past">npm link...</div>
+        </section>
+        <section data-state="chapter-title">
+            04 / Multiple Projects
+            <aside class="notes" data-markdown>
+
+
+
+            </aside>
+        </section>
+        <section>
+            Architecture Matters
+        </section>
+        <section>
+            <div class="fragment fade-past">Binaries</div>
+            <div class="fragment fade-past">Dependency Hell</div>
+            <div class="fragment fade-past">Is it worthwhile?</div>
+
+        </section>
+        <section>
+            Architecture Matters
+        </section>
+        <section>
+            #architecture_matters
+
+
+            <div class="template-instance links"></div>
+
+        </section>
+
+    </div>
+</div>
+<style>
+    .platform-module body {
+        background-image: url(2017/mobileera/platform-module.png);
+    }
+
+    .filenames body {
+        background-image: url(2017/mobileera/filenames2.png);
+    }
+
+    .platform-code {
+        display: flex; flex-direction: row; justify-content: space-around; margin-top: 1.5em;
+    }
+
+    .circle {
+         background-color: #2298ef;
+         color: white;
+         border-radius: 50%;
+         text-align: center;
+     }
+
+    .circle.invisible {
+        opacity: 0;
+    }
+
+    .platform-code > div {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 7.5em;
+        height: 7.5em;
+        margin-top: 2em;
+    }
+
+    .circle > div {
+        font-size: .5em;
+    }
+    .circle > div.header {
+        font-size: .7em;
+    }
+
+
+
+</style>
+
+
