@@ -49,6 +49,12 @@ const talks = {
         title: 'React Native Code Reuse: Architecture that Works',
         description: 'Slides for Mobile Era (Oslo, Norway) talk on reusing code in React Native apps'
       }
+    },
+    buildstuff: {
+      rtl: {
+        title: 'Why RTL Support is So Hard: Detours in Abstraction',
+        description: 'Slides for BuildStuffLT (Vilnius, Lithuania) talk on right-to-left support in software'
+      }
     }
   }
 };

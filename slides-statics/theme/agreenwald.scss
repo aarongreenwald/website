@@ -148,9 +148,16 @@ div.arrow-shape-container {
 	$arrowBarWidthLarge: 7em;
 	$arrowTriangleLipHeightLarge: .25em;
 
+	$arrowHeightSmall: .4em;
+	$arrowBarWidthSmall: 6em;
+	$arrowTriangleLipHeightSmall: .15em;
+
 	$arrowTriangleHeight: ($arrowHeight / 2) + ($arrowTriangleLipHeight * 2);
 	$arrowTriangleHeightLarge: ($arrowHeightLarge / 2) + ($arrowTriangleLipHeightLarge * 2);
+	$arrowTriangleHeightSmall: ($arrowHeightSmall / 2) + ($arrowTriangleLipHeightSmall * 2);
 	$arrowColor: $blue;
+
+	position: relative;
 
 
 	div.arrow-shape {
@@ -171,7 +178,7 @@ div.arrow-shape-container {
 	}
 
 
-	div.arrow-shape::before {
+	div.arrow-shape:not(.ltr)::before {
 		content: "";
 		position: absolute;
 		left: -$arrowTriangleHeight;
@@ -179,7 +186,7 @@ div.arrow-shape-container {
 		border-right-color: $arrowColor;
 	}
 
-	div.arrow-shape::after {
+	div.arrow-shape:not(.rtl)::after {
 		content: "";
 		position: absolute;
 		left: $arrowTriangleHeight + $arrowBarWidth;
@@ -212,6 +219,35 @@ div.arrow-shape-container {
 
 			left: $arrowTriangleHeightLarge + $arrowBarWidthLarge;
 			border-width: $arrowTriangleHeightLarge;
+
+		}
+
+	}
+
+	&.small {
+
+		div.arrow-shape {
+			width: $arrowBarWidthSmall;
+			height: $arrowHeightSmall;
+			margin: 0 $arrowTriangleHeightSmall;
+
+			div {
+				font-size: .8em;
+			}
+
+		}
+
+
+		div.arrow-shape::before {
+
+			left: -$arrowTriangleHeightSmall;
+			border-width: $arrowTriangleHeightSmall;
+		}
+
+		div.arrow-shape::after {
+
+			left: $arrowTriangleHeightSmall + $arrowBarWidthSmall;
+			border-width: $arrowTriangleHeightSmall;
 
 		}
 

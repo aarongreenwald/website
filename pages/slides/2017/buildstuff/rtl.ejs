@@ -1,0 +1,360 @@
+<div class="reveal">
+    <div class="slides">
+        <section class="title-page">
+            <h1 style="font-size:1.3em;">Why RTL Support is So Hard</h1>
+            <h4 class="subtitle">Detours in Abstraction</h4>
+            <p class="author">
+                Aaron Greenwald
+            </p>
+            <div class="template-instance links"></div>
+
+            <aside class="notes" data-markdown>
+
+            </aside>
+
+        </section>
+        <section data-state="chapter-title" class="large">
+            Introduction
+        </section>
+        <section class="large">
+            dextrosinistral
+        </section>
+        <section class="large">
+            sinistrodextral
+        </section>
+        <section class="large">
+            boustrophedon
+        </section>
+        <section data-state="background-img lithuanian-boustrophedon"></section>
+        <section>
+            <div class="fragment row">
+                <div>dextrosinistral</div>
+                <div class="arrow-shape-container">
+                    <div class="arrow-shape ltr"></div>
+                </div>
+
+            </div>
+            <div class="fragment row" dir="rtl">
+                <div>sinistrodextral</div>
+                <div class="arrow-shape-container">
+                    <div class="arrow-shape rtl">RTL</div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div>boustrophedon</div>
+            <div class="boustrophedon-arrows">
+                <div class="arrow-shape-container small ltr">
+                    <div class="arrow-shape ltr"></div>
+                </div>
+                <div class="arrow-shape-container small rtl">
+                    <div class="arrow-shape rtl"></div>
+                </div>
+                <div class="arrow-shape-container small ltr">
+                    <div class="arrow-shape ltr"></div>
+                </div>
+                <div class="arrow-shape-container small rtl">
+                    <div class="arrow-shape rtl"></div>
+                </div>
+            </div>
+        </section>
+        <section>
+            How many languages are RTL languages?
+        </section>
+        <section class="large">
+            Scripts != Languages
+        </section>
+        <section>
+            <table class="grid">
+                <tr>
+                    <td class="fragment script">Arabic</td>
+                    <td>
+                        <span class="fragment">Arabic</span><span class="fragment">, Persian</span><span  class="fragment">, Kurdish</span><span  class="fragment">, Pashto</span><span  class="fragment">, Punjabi</span><span class="fragment">, (Azeri), (Kashmiri)</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="fragment script">Hebrew</td>
+                    <td>
+                        <span class="fragment">Hebrew</span><span  class="fragment">, Yiddish</span><span  class="fragment">, (Ladino)</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="fragment script">Urdu</td>
+                    <td><span class="fragment">Urdu</span></td>
+                </tr>
+                <tr>
+                    <td class="fragment script">Syriac</td>
+                    <td>
+                        <span class="fragment">Syriac</span><span  class="fragment">, Aramaic</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="fragment script">...</td>
+                    <td>
+                        <span class="fragment">...</span>
+                        <span class="fragment">...</span>
+                        <span class="fragment">...</span>
+                    </td>
+                </tr>
+            </table>
+        </section>
+        <section>
+            500 million
+        </section>
+        <section>
+            <aside class="notes">
+                What does it mean to care? And what's in scope, what's out of scope?
+            </aside>
+            <div class="fragment">Accessibility</div>
+            <div class="fragment">i18n</div>
+        </section>
+        <section>
+            <aside class="notes">
+                What does i18n include?
+            </aside>
+            <div class="fragment">Culture</div>
+            <div class="fragment">Language</div>
+            <div class="fragment">Layout</div>
+        </section>
+        <section data-state="chapter-title">
+            A Change in Perspective...
+        </section>
+
+        <section data-state="background-img wiki-lt"></section>
+        <section data-state="background-img wiki-lt-he"></section>
+        <section data-state="background-img yad2-search-1"></section>
+        <section data-state="background-img yad2-search-2"></section>
+        <section data-state="background-img yad2-search-3"></section>
+        <section data-state="background-img yad2-result-1"></section>
+        <section data-state="background-img yad2-result-2"></section>
+        <section data-state="background-img yad2-result-3"></section>
+        <section data-state="background-img gmail"></section>
+        <section data-state="background-img gmail-he"></section>
+        <section data-state="chapter-title">...With Some Western Hegemony</section>
+        <section>
+            <style>
+                @font-face {
+                    font-family: 'FontAwesome';
+                    src: url('common/fonts/fontawesome-webfont.eot?#iefix&v=4.2.0') format('embedded-opentype'),
+                        url('common/fonts/fontawesome-webfont.woff?v=4.2.0') format('woff'),
+                        url('common/fonts/fontawesome-webfont.ttf?v=4.2.0') format('truetype'),
+                        url('common/fonts/fontawesome-webfont.svg?v=4.2.0#fontawesomeregular') format('svg');
+                    font-weight: normal;
+                    font-style: normal;
+                }
+
+                p.media-controls {
+                    display: inline-block;
+                    font: normal normal normal 14px/1 FontAwesome;
+                    font-size: inherit;
+                    text-rendering: auto;
+                    -webkit-font-smoothing: antialiased;
+                    -moz-osx-font-smoothing: grayscale;
+                }
+            </style>
+
+            <p class="media-controls">
+                &#xf04a;
+                &nbsp;&nbsp;
+                &#xf04b;
+                &nbsp;&nbsp;
+                &#xf04e;
+            </p>
+        </section>
+        <section>
+            Are you feeling lucky?
+        </section>
+        <section data-state="chapter-title">Bidirectional Text</section>
+        <section data-state="background-img acrobat-adobe"></section>
+        <section data-state="background-img bank-bullets"></section>
+        <section data-state="background-img why-twitter"></section>
+        <section>למה<span class="">?</span></section>
+        <section>למה<span class="focus-character">?</span></section>
+        <section dir="rtl">למה<span class="focus-character">?</span></section>
+
+        <section data-state="chapter-title">
+            Text Input
+        </section>
+        <section>
+            <aside class="notes" data-markdown>
+                Demo - this is messed up - wat??
+                First english, then hebrew, then mixed
+                Terminals, text editors, and the web
+            </aside>
+            Demo Time
+        </section>
+        <section data-state="chapter-title">
+            Controlling the Chaos
+        </section>
+        <section style="font-family: monospace">
+
+            <aside class="notes" data-markdown>
+                HTML & Web layouts - what the browser spec supports for free if you don’t break it - demo
+                This can help with the layout problem as well as some of the text problems
+            </aside>
+            <div>dir="rtl|ltr|auto"</div>
+        </section>
+        <section style="font-family: monospace">
+            <div class="fragment">&lt;table/&gt;</div>
+            <div class="fragment">flex-start | flex-end</div>
+        </section>
+        <section style="font-family: monospace">
+            <div class="fragment">position:absolute</div>
+            <div class="fragment">float:right|left</div>
+        </section>
+
+        <section>
+            Text Layout
+        </section>
+        <section>
+            Input Streams
+        </section>
+        <section>
+            Unicode Bidi Spec
+        </section>
+        <section>
+            Text Input, Revisited
+        </section>
+        <section data-state="chapter-title">
+            So What?
+
+            <aside class="notes" data-markdown>
+                What’s the takeaway? Practical tips? Is any of this worth it?
+                Don’t break the browser
+                don’t reinvent the wheel
+                don’t implement images from designers with absolute
+                use the OS
+                things that are more complex than you can handle.
+                Further resources: Google (DuckDuckGo)
+            </aside>
+
+        </section>
+        <section>
+            <div class="fragment">Decide whether you care</div>
+            <div class="fragment">Don't throw away a free lunch</div>
+            <div class="fragment">Test, review, consult</div>
+        </section>
+        <section class="large">
+            boustrophedon
+        </section>
+        <section>
+            <span class="large">Thank You</span>
+            <div class="template-instance links"></div>
+        </section>
+
+    </div>
+</div>
+<style>
+    .focus-character {
+        color: orangered;
+    }
+
+    .lithuanian-boustrophedon body {
+        background-image: url(2017/buildstuff/lithuanian_boustrophedon.png);
+        background-color: white;
+    }
+
+    .acrobat-adobe body {
+        background-image: url(2017/buildstuff/acrobat_adobe.png);;
+    }
+
+    .why-twitter body {
+        background-image: url(2017/buildstuff/why_twitter.png);;
+        background-color: white;
+    }
+
+    .bank-bullets body {
+        background-image: url(2017/buildstuff/bank_bullets.png);;
+        background-color: white;
+    }
+
+    .wiki-lt body {
+        background-image: url(2017/buildstuff/wiki_lt.png);;
+        background-color: white;
+    }
+
+    .wiki-lt-he body {
+        background-image: url(2017/buildstuff/wiki_lt_he.png);;
+        background-color: white;
+    }
+
+    .gmail body {
+        background-image: url(2017/buildstuff/gmail.png);;
+        background-color: white;
+    }
+
+    .gmail-he body {
+        background-image: url(2017/buildstuff/gmail_he.png);;
+        background-color: white;
+    }
+
+    .yad2-search-1 body {
+        background-image: url(2017/buildstuff/yad2_search_1.png);
+        background-color: white;
+    }
+
+    .yad2-search-2 body {
+        background-image: url(2017/buildstuff/yad2_search_2.png);
+        background-color: white;
+    }
+
+    .yad2-search-3 body {
+        background-image: url(2017/buildstuff/yad2_search_3.png);
+        background-color: white;
+    }
+
+    .yad2-result-1 body {
+        background-image: url(2017/buildstuff/yad2_result_1.png);;
+        background-color: white;
+    }
+
+    .yad2-result-2 body {
+        background-image: url(2017/buildstuff/yad2_result_2.png);;
+        background-color: white;
+    }
+
+    .yad2-result-3 body {
+        background-image: url(2017/buildstuff/yad2_result_3.png);;
+        background-color: white;
+    }
+
+
+    .grid tr, .grid td {
+        border: none !important;
+    }
+
+     .large {
+        font-size: 1.8em !important;
+    }
+
+    .fragment.row {
+        display:flex;
+        padding: 1em;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .boustrophedon-arrows {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .boustrophedon-arrows div {
+        margin: .5em;
+    }
+
+    .arrow-shape-container.small.rtl {
+        margin-left: 0.8em;
+    }
+
+    .arrow-shape-container.small.ltr {
+        margin-right: 0.8em;
+    }
+
+    .script {
+        color: #00a4db;
+    }
+</style>
+
+
