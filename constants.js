@@ -54,7 +54,7 @@ const talks = {
       rtl: {
         title: 'Why RTL Support is So Hard: Detours in Abstraction',
         description: 'Slides for BuildStuffLT (Vilnius, Lithuania) talk on right-to-left support in software',
-        thumbnail: '//i.imgflip.com/1zh1i4.jpg'
+        thumbnail: 'https://i.imgflip.com/1zh1i4.jpg'
       }
     }
   }
