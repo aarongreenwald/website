@@ -54,7 +54,7 @@ const readfile = path => new Promise((resolve, reject) =>
   })
 );
 
-readdir('./blog').then(posts => {
+readdir('../blog').then(posts => {
   const promises = [];
   posts.forEach(post => {
     const processedPost = readfile(`./blog/${post}`)
