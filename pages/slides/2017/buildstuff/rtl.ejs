@@ -221,11 +221,14 @@
         <section data-state="chapter-title">
             Text Input
         </section>
-        <section>
-            <video controls loop>
-                <source src="2017/buildstuff/rtl-input.mp4" type="video/mp4">
-            </video>
-        </section>
+        <!--<section>-->
+            <!--<video controls loop>-->
+                <!--<source src="2017/buildstuff/rtl-input.mp4" type="video/mp4">-->
+            <!--</video>-->
+        <!--</section>-->
+        <section data-state="background-img hmb"></section>
+        <section data-state="background-img confused"></section>
+        <section data-state="background-img frustrated"></section>
         <section data-state="chapter-title">
             Controlling the Chaos
         </section>
@@ -239,7 +242,111 @@
         </section>
         <section style="font-family: monospace">
             <div class="fragment">&lt;table/&gt;</div>
-            <div class="fragment">flex-start | flex-end</div>
+            <div class="fragment">flex | flex-start | flex-end</div>
+        </section>
+        <section>
+            <div style="display: flex; flex-direction: row;">
+                <div>
+                    <pre class="override">
+                    <code>
+<table dir="ltr">
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+    </tbody>
+</table>
+                    </code>
+                    </pre>
+                </div>
+                <div style="align-self: center">
+                <table dir="ltr">
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                        </tr>
+                    </tbody>
+                </table>
+                </div>
+            </div>
+
+        </section>
+        <section>
+            <div style="display: flex; flex-direction: row;">
+                <div>
+                    <pre class="override">
+                    <code>
+<table dir="rtl">
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+    </tbody>
+</table>
+                    </code>
+                    </pre>
+                </div>
+                <div style="align-self: center">
+                    <table dir="rtl">
+                        <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </section>
+        <section>
+            <div style="flex-direction: row; display: flex;">
+                <pre class="override">
+                <code>
+<div dir="ltr"
+     style="display:flex;
+     flex-direction: row;">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+</div>
+                </code>
+            </pre>
+                <div style="display:flex; flex-direction: row;" dir="ltr" class="spaced-table">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                </div>
+            </div>
+
+        </section>
+        <section>
+            <div style="flex-direction: row; display: flex;">
+                <pre class="override">
+                <code>
+<div dir="rtl"
+     style="display:flex;
+     flex-direction: row;">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+</div>
+                </code>
+            </pre>
+                <div style="display:flex; flex-direction: row;" dir="rtl" class="spaced-table">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                </div>
+            </div>
+
         </section>
         <section style="font-family: monospace">
             <div class="fragment">position:absolute</div>
@@ -258,7 +365,7 @@
             </div>
         </section>
         <section>
-            &lt;20k Words
+            &lt; 20k Words
         </section>
         <section data-state="chapter-title">
             So What?
@@ -369,6 +476,18 @@
 
     }
 
+    .hmb body {
+        background-image: url(//i.imgflip.com/1zh1i4.jpg);
+    }
+
+    .confused body {
+        background-image: url(//i874.photobucket.com/albums/ab305/motomobbers/Confused-Cat-Meme-1-610x457_zpsb75e74fe.jpg);
+    }
+    
+    .frustrated body {
+        background-image: url(//media0.giphy.com/media/9ZOyRdXL7ZVKg/giphy.gif);
+    }
+
     .grid tr, .grid td {
         border: none !important;
     }
@@ -408,6 +527,16 @@
     
     .hidden {
         opacity:0;
+    }
+
+    .reveal pre.override {
+        /*position: inherit;*/
+    }
+
+    .spaced-table {
+        justify-content: space-between;
+        width: 3em;
+        align-self: center;
     }
 
 </style>
