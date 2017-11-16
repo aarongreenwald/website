@@ -17,7 +17,7 @@ app.use((req, res, next) => {
 //serve static directory from disk for Let'sEncrypt's ssl verification
 app.use('/.well-known', express.static('/var/www/html/.well-known'));
 app.use(partials());
-app.set('views', './pages');
+app.set('views', '../pages');
 app.set('view engine', 'ejs');
 
 app.get('/', (req, res) => res.render('home', PageValues({title: 'Home', description: pages.homeDescription})));
