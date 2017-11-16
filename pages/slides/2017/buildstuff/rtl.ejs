@@ -132,27 +132,24 @@
         <section data-state="background-img gmail-he"></section>
         <section data-state="chapter-title">...With Some Western Hegemony</section>
         <section>
-            <style>
-                @font-face {
-                    font-family: 'FontAwesome';
-                    src: url('common/fonts/fontawesome-webfont.eot?#iefix&v=4.2.0') format('embedded-opentype'),
-                        url('common/fonts/fontawesome-webfont.woff?v=4.2.0') format('woff'),
-                        url('common/fonts/fontawesome-webfont.ttf?v=4.2.0') format('truetype'),
-                        url('common/fonts/fontawesome-webfont.svg?v=4.2.0#fontawesomeregular') format('svg');
-                    font-weight: normal;
-                    font-style: normal;
-                }
-
-                p.media-controls {
-                    display: inline-block;
-                    font: normal normal normal 14px/1 FontAwesome;
-                    font-size: inherit;
-                    text-rendering: auto;
-                    -webkit-font-smoothing: antialiased;
-                    -moz-osx-font-smoothing: grayscale;
-                }
-            </style>
-
+            <p class="media-controls">
+                &#xf04a;
+                &nbsp;&nbsp;
+                &#xf04b;
+                &nbsp;&nbsp;
+                &#xf04e;
+            </p>
+        </section>
+        <section>
+            <p class="media-controls" style="transform: rotate(180deg)">
+                &#xf04a;
+                &nbsp;&nbsp;
+                &#xf04b;
+                &nbsp;&nbsp;
+                &#xf04e;
+            </p>
+        </section>
+        <section>
             <p class="media-controls">
                 &#xf04a;
                 &nbsp;&nbsp;
@@ -168,20 +165,66 @@
         <section data-state="background-img acrobat-adobe"></section>
         <section data-state="background-img bank-bullets"></section>
         <section data-state="background-img why-twitter"></section>
+
         <section>למה<span class="">?</span></section>
         <section>למה<span class="focus-character">?</span></section>
+        <section>
+            <table dir="rtl" class="grid">
+                <tr class="fragment" data-fragment-index="0">
+                    <td>
+                        <span class="focus-character">?</span>
+                    </td>
+                    <td>ל</td>
+                    <td>מ</td>
+                    <td>ה</td>
+                    <td><span class="hidden">?</span></td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="focus-character fragment" data-fragment-index="4">4</span>
+                    </td>
+                    <td class="fragment" data-fragment-index="1">1</td>
+                    <td class="fragment" data-fragment-index="2">2</td>
+                    <td class="fragment" data-fragment-index="3">3</td>
+                    <td><span class="hidden">4</span></td>
+
+                </tr>
+            </table>
+        </section>
+        <section>
+            <table dir="rtl" class="grid">
+                <tr>
+                    <td><span class="hidden">?</span></td>
+                    <td>ל</td>
+                    <td>מ</td>
+                    <td>ה</td>
+                    <td><span class="focus-character">?</span></td>
+                </tr>
+                <tr>
+                    <td><span class="hidden">4</span></td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td><span class="focus-character">4</span></td>
+                </tr>
+            </table>
+        </section>
+
         <section dir="rtl">למה<span class="focus-character">?</span></section>
+        <section>למה<span class="focus-character">?</span></section>
+
+
+        <section data-state="background-img why">
+            <span style="font-weight: bolder; font-size: larger; position: absolute; left: 0">WHY????</span>
+        </section>
 
         <section data-state="chapter-title">
             Text Input
         </section>
         <section>
-            <aside class="notes" data-markdown>
-                Demo - this is messed up - wat??
-                First english, then hebrew, then mixed
-                Terminals, text editors, and the web
-            </aside>
-            Demo Time
+            <video controls loop>
+                <source src="2017/buildstuff/rtl-input.mp4" type="video/mp4">
+            </video>
         </section>
         <section data-state="chapter-title">
             Controlling the Chaos
@@ -202,18 +245,20 @@
             <div class="fragment">position:absolute</div>
             <div class="fragment">float:right|left</div>
         </section>
-
-        <section>
-            Text Layout
-        </section>
         <section>
             Input Streams
         </section>
         <section>
-            Unicode Bidi Spec
+            Unicode Bidi Algorithm
+
+            <div>
+                <a style="font-size:.5em" href="https://www.unicode.org/reports/tr9/">
+                    www.unicode.org/reports/tr9/
+                </a>
+            </div>
         </section>
         <section>
-            Text Input, Revisited
+            &lt;20k Words
         </section>
         <section data-state="chapter-title">
             So What?
@@ -318,6 +363,11 @@
         background-color: white;
     }
 
+    .why body {
+        background-image: url(//res.cloudinary.com/drjhfq56w/image/fetch/q_20,w_500/https://s-media-cache-ak0.pinimg.com/originals/d2/7f/7a/d27f7a2d8e427055dc6114f9a3e02c62.jpg);
+        background-color: white;
+
+    }
 
     .grid tr, .grid td {
         border: none !important;
@@ -355,6 +405,31 @@
     .script {
         color: #00a4db;
     }
+    
+    .hidden {
+        opacity:0;
+    }
+
 </style>
 
+<style>
+    @font-face {
+        font-family: 'FontAwesome';
+        src: url('common/fonts/fontawesome-webfont.eot?#iefix&v=4.2.0') format('embedded-opentype'),
+        url('common/fonts/fontawesome-webfont.woff?v=4.2.0') format('woff'),
+        url('common/fonts/fontawesome-webfont.ttf?v=4.2.0') format('truetype'),
+        url('common/fonts/fontawesome-webfont.svg?v=4.2.0#fontawesomeregular') format('svg');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    p.media-controls {
+        display: inline-block;
+        font: normal normal normal 14px/1 FontAwesome;
+        font-size: inherit;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+</style>
 
