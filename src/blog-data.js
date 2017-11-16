@@ -54,10 +54,10 @@ const readfile = path => new Promise((resolve, reject) =>
   })
 );
 
-readdir('../blog').then(posts => {
+readdir(`${__dirname}/../blog`).then(posts => {
   const promises = [];
   posts.forEach(post => {
-    const processedPost = readfile(`./blog/${post}`)
+    const processedPost = readfile(`${__dirname}/../blog/${post}`)
       .then(data => processPost(post, data));
     promises.push(processedPost);
   });
