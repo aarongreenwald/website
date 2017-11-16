@@ -7,8 +7,8 @@ const logger = require('./logger');
 const {pages, talks} = require('./page-metadata');
 
 app.use(compression());
-app.use('/static', express.static('static'));
-app.use('/slides-statics', express.static('static/slides', { maxAge: (60 * 60 * 24 * 90)}));
+app.use('/static', express.static(`${__dirname}/../static`));
+app.use('/slides-statics', express.static(`${__dirname}/../static/slides`, { maxAge: (60 * 60 * 24 * 90)}));
 
 app.use((req, res, next) => {
   logger.log(req);
