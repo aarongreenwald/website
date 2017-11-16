@@ -1,7 +1,7 @@
 const fs = require('fs');
 const moment = require('moment');
 const chart = require('chart');
-const {isBot} = require('../logger');
+const {isBot} = require('../src/logger');
 
 const opts = require('minimist')(process.argv.slice(2));
 const [logFile] = opts._;

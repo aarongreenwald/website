@@ -1,0 +1,149 @@
+html.chapter-title .reveal .slide-background {
+  background-color: #2298ef; }
+
+html.chapter-title section {
+  color: white;
+  font-weight: 700 !important;
+  text-align: center; }
+
+.reveal .title-page {
+  text-align: left;
+  padding-left: 20px; }
+  .reveal .title-page h1 {
+    font-size: 1.6em;
+    font-weight: 800;
+    color: #2298ef; }
+  .reveal .title-page .author {
+    font-size: .8em; }
+
+.reveal .links {
+  justify-content: space-between;
+  position: fixed;
+  bottom: 4em;
+  left: 0;
+  right: 0;
+  display: flex; }
+  .reveal .links a {
+    color: #2298ef;
+    font-size: .8em; }
+  .reveal .links img {
+    border: none;
+    box-shadow: none;
+    margin: 0 .4em;
+    background: none;
+    width: 1.5em;
+    height: 1.5em; }
+
+.reveal section .disclaimer {
+  font-size: .3em;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  font-style: italic; }
+
+.reveal .list-header {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 2.5em; }
+
+.reveal .caption {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  color: #ccc !important;
+  font-size: 0.35em !important; }
+
+.reveal .aside {
+  font-size: .8em;
+  font-style: italic; }
+
+.reveal pre {
+  box-shadow: none;
+  white-space: pre-wrap;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.reveal pre code {
+  max-height: 100%;
+  padding: 0 15px; }
+
+.reveal section div {
+  line-height: 1.7em; }
+
+.background-img body {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  background-color: #222;
+  color: #ddd; }
+
+div.arrow-shape-container {
+  position: relative; }
+  div.arrow-shape-container div.arrow-shape {
+    width: 4.2em;
+    height: 1.5em;
+    background-color: #2298ef;
+    margin: 0 1.25em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-self: center; }
+    div.arrow-shape-container div.arrow-shape div {
+      line-height: 1em;
+      font-size: .8em;
+      color: #fff; }
+  div.arrow-shape-container div.arrow-shape:not(.ltr)::before {
+    content: "";
+    position: absolute;
+    left: -1.25em;
+    border: 1.25em solid transparent;
+    border-right-color: #2298ef; }
+  div.arrow-shape-container div.arrow-shape:not(.rtl)::after {
+    content: "";
+    position: absolute;
+    left: 5.45em;
+    border: 1.25em solid transparent;
+    border-left-color: #2298ef; }
+  div.arrow-shape-container.large div.arrow-shape {
+    width: 7em;
+    height: 4em;
+    margin: 0 2.5em; }
+    div.arrow-shape-container.large div.arrow-shape div {
+      font-size: .8em; }
+  div.arrow-shape-container.large div.arrow-shape::before {
+    left: -2.5em;
+    border-width: 2.5em; }
+  div.arrow-shape-container.large div.arrow-shape::after {
+    left: 9.5em;
+    border-width: 2.5em; }
+  div.arrow-shape-container.small div.arrow-shape {
+    width: 6em;
+    height: 0.4em;
+    margin: 0 0.5em; }
+    div.arrow-shape-container.small div.arrow-shape div {
+      font-size: .8em; }
+  div.arrow-shape-container.small div.arrow-shape::before {
+    left: -0.5em;
+    border-width: 0.5em; }
+  div.arrow-shape-container.small div.arrow-shape::after {
+    left: 6.5em;
+    border-width: 0.5em; }
+
+.template {
+  display: none; }
+
+.fragment.fade-past:not(.current-fragment), .fade {
+  color: #bbb !important; }
+
+.blue {
+  color: #2298ef; }
+
+/*# sourceMappingURL=agreenwald.css.map */

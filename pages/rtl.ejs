@@ -1,43 +1,44 @@
 <html>
-    <head>      
-        <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
-        <link href="/static/style.css" rel="stylesheet">       
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">      
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" type="img/ico" href="/static/favicon.ico">
-        <meta name="robots" content="noindex">
-        <title>Hello again! | Aaron Greenwald</title>
+        <title>RTL Shenanigans</title>
     </head>
-    <body>
-    <div class="container-fluid">
-    <div class="grid">
-    <div class="row">
-    <div class="col-md-2"></div>
-    <div class="col-md-8 side-padding">
-    <p>         
-            Hi! So you scanned my QR code. They say no one scans those things, but at least one person does. Cool.
-            It was (I can safely assume) nice meeting you, and I'd like to stay in touch, so try contacting me in one of the following ways:
-            <ol>
-                <li><a class="email-address">Email</a></li>
-                <li><a href="https://linkedin.com/in/greenwaldaaron">LinkedIn</a></li>
-                <li><a href="https://facebook.com/aaron.greenwald.18">Facebook</a></li>                         
-            </ol>
-            If you'd like, you can download my <a href="/static/aaron-greenwald.vcf">contact card</a>. Some browsers will open it automatically, some won't. No promises from me.
-            
-            And while I have your attention, why don't you have a look around my <a href="/" >site</a> a bit? Thanks!
-            
-        <div class="col-md-2"></div>
+    <body style="max-width: 400px;">
+
+
+
+        <!--<div dir="rtl">Hello there</div>-->
+        <div>&#x202B;&#x05F4;שלום ליטא&#x05F4;&#x202C;</div>
+
+        <!--<div dir="rtl"><q lang="he">שלום ליטא</q></div>-->
+        <!--<div><q lang="he" dir="rtl">שלום ליטא</q></div>-->
+        <!--<div><q lang="he" dir="ltr">שלום ליטא</q></div>-->
+
+        <!--<div><q lang="en" dir="rtl">An English language & RTL quote, this is</q>, said Yoda.</div>-->
+        <!--<div><q lang="en" dir="ltr">An English language & LTR quote, this is</q>, said Yoda.</div>-->
+        <!--<div><q lang="he" dir="ltr">A Hebrew language & LTR quote, this is</q>, said Yoda.</div>-->
+        <!--<div><q lang="he" dir="rtl">A Hebrew language & RTL quote, this is</q>, said Yoda.</div>-->
+
+        <!--<div><bdo>Hi there שלום</bdo></div>-->
+
+
+    <table dir="rtl">
+        <tr>
+            <td>Oכ</td>
+            <td>Two</td>
+            <td>Three</td>
+        </tr>
+    </table>
+
+
+        <div style="width: 100%;" dir="ltr">
+            <div style="float: left;">First</div>
+            <div style="float: right">Second</div>
         </div>
-        </div>
-        </div> 
+
+
+        <table></table>
+
     </body>
 </html>
-<script type="text/javascript" >
-    var elements = document.querySelectorAll(".email-address");
-    var emailAddress = "aaron" + "@" + "aarongreenwald.com";
-    for (var i = 0; i < elements.length; i++ ){     
-        elements[i].onclick = function() {
-            prompt("Please copy and paste my email address into your mail client.", emailAddress)       
-        };  
-    }
-</script>

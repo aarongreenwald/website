@@ -6,6 +6,7 @@ const pages = {
   workDesc: `Aaron Greenwald's coding projects and hobby software.`,
   talksDesc: `̄A selection of Aaron Greenwald's public appearances: talks and workshops`
 };
+
 const talks = {
   2017: {
     ['react-amsterdam']: {

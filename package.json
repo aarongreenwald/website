@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "private": true,
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "start": "npm run build; node index.js",
-    "prebuild": "mkdir slides-statics/revealjs/; cp -r ./node_modules/reveal.js/css ./node_modules/reveal.js/js ./node_modules/reveal.js/lib ./node_modules/reveal.js/plugin ./slides-statics/revealjs",
-    "build": "node-sass --recursive --output ./slides-statics/theme --source-map true --source-map-contents ./slides-statics/theme",
-    "postbuild": "sed '/@import.*/d' ./slides-statics/theme/agreenwald.css > temp && mv temp ./slides-statics/theme/agreenwald.css",
-    "watch": "nodemon -w slides-statics/theme -w resources -w pages -w blog -w index.js --ext js,ejs,md,scss --ignore node_modules -x 'npm run start' ",
+    "start": "npm run build; node src/index.js",
+    "prebuild": "mkdir static/slides/revealjs/; cp -r ./node_modules/reveal.js/css ./node_modules/reveal.js/js ./node_modules/reveal.js/lib ./node_modules/reveal.js/plugin ./static/slides/revealjs",
+    "build": "node-sass --recursive --output ./static/slides/theme --source-map true --source-map-contents ./static/slides/theme",
+    "postbuild": "sed '/@import.*/d' ./static/slides/theme/agreenwald.css > temp && mv temp ./static/slides/theme/agreenwald.css",
+    "watch": "nodemon -w static/slides/theme -w resources -w pages -w blog -w index.js --ext js,ejs,md,scss --ignore node_modules -x 'npm run start' ",
     "test": "eslint ."
   },
   "repository": {
