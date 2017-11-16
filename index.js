@@ -73,12 +73,13 @@ const PageValues = opts => Object.assign({
 const SlidePageValues = opts => Object.assign({
   layout: 'slides/slide-template',
 }, PageValues(opts));
+
 const getSlidePageValues = ({year, event, talk}) => {
-  const {title, description} = talks[year][event][talk];
+  const {title, description, thumbnail} = talks[year][event][talk];
   return SlidePageValues({
     title,
     description,
-    twitterCardImageUrl: 'https://avatars3.githubusercontent.com/u/6300588?v=4&s=450'
+    twitterCardImageUrl: thumbnail || 'https://avatars3.githubusercontent.com/u/6300588?v=4&s=450'
   });
 
 };
