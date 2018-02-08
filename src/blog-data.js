@@ -2,6 +2,7 @@ const fs = require('fs');
 const showdown = require('showdown');
 const converter = new showdown.Converter();
 converter.setFlavor('github');
+converter.setOption('omitExtraWLInCodeBlocks', true);
 const moment = require('moment');
 
 let posts = [];
@@ -20,10 +21,11 @@ const processPost = (slug, data) => {
   if (md) {
     content = converter.makeHtml(content);
   }
-  const PREVIEW_LENGTH = 700;
+  const PREVIEW_LENGTH = 500;
+  const preview = content.length > PREVIEW_LENGTH + 1 ? content.substr(0, content.indexOf('. ', PREVIEW_LENGTH) + 1) : content;
   return {
     slug,
-    preview: content.length > PREVIEW_LENGTH + 1 ? content.substr(0, content.indexOf('. ', PREVIEW_LENGTH) + 1) : content,
+    preview,
     //TODO * 3
     description: null,
     twitterCardImageUrl: null,
