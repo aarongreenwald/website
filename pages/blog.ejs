@@ -1,8 +1,9 @@
 <div>
     <div>
-        <div class="blog-title"><a href="/blog">My Coding Blog</a> 
-        	<div class="blog-tagline">because there weren't enough programming blogs out there yet</div>
+        <div class="blog-title">
+          <a href="/blog">My Coding Blog</a>         
         </div>
+        <div class="blog-tagline">because there weren't enough programming blogs out there yet</div>
          <div class="content">
             <% if (showingTag) { %>
                 <div class="tag-notice">
@@ -25,24 +26,13 @@
          	
             <% } %>
                      	
-             <% posts && posts.forEach(post => {%>
+            <% posts && posts.forEach(post => {%>
                 <div class="post post-list">
                     <div class="post-title"><a href="/blog/<%=post.slug%>"><%=post.title%></a></div>
-                    <div class="post-date"><%=post.formattedDate%></div>
-                    <div class="post-content">
-                      <div>
-                        <%- post.preview%>
-                      </div>
-                      <a title="read more..." href="/blog/<%=post.slug%>">read more ...</a>
-                      <div class="tags">
-                          <% post.tags.forEach(tag => { %>
-                              <a href="/blog/tag/<%=tag%>" title="View posts tagged '<%=tag%>'"><%=tag%></a>
-                          <% }) %>
-                      </div>
-                    </div>
+                    <div class="post-date"><%=post.formattedDate%></div>                  
                 </div>
-             <% }) %>
-     		
+            <% }) %>
+          
             <% if (!posts) { %>
                 <div style="margin:80px 0;width: 100%;">
                   Questions? Comments? Rants? A blog is not a blog without a place readers can use
@@ -54,11 +44,21 @@
           
          </div>   	                  
          <div class="sidebar"> 
-         	<div class="about">
-         		You're reading Aaron Greenwald's coding blog,
-         		where he writes infrequently about code, software and programming.
-         		Read more about him (me, actually) <a href="/">here</a>.
-         	</div> 
+            <div class="about">
+              You're reading Aaron Greenwald's coding blog,
+              where he writes infrequently about code, software and programming.
+              Read more about him (me, actually) <a href="/">here</a>.
+            </div> 
+            <% if (posts) { %>
+              <div class="tags">
+                <div>
+                  Tags
+                </div>
+                <% [...new Set([].concat.apply([], posts.map(p => p.tags)))].sort().forEach(tag => { %>
+                    <a href="/blog/tag/<%=tag%>" title="View posts tagged '<%=tag%>'"><%=tag%></a>
+                <% }) %>
+              </div>
+            <% } %>
          </div>       
     </div>
 </div>
@@ -78,7 +78,8 @@
 
 .blog-tagline {
   font-style:italic;
-  font-size:10pt;
+  font-size: .8em;
+  margin-top: 15px;
 }
 
 .sidebar{
@@ -115,7 +116,7 @@
   margin-right:10px;
 }
 
-.content .post .post-date {
+.content .post:not(.post-list) .post-date {
   font-size: 1.2em;
   margin-top:5px;
   font-style: italic;
@@ -136,12 +137,24 @@
   margin-right: auto;
 }
 
+.content .post-list.post {
+  margin-top: 1em;
+}
+
+.content .post-list .post-title {
+  font-size: 1.15em;
+}
+
+.content .post-list .post-date {
+  font-size: .9em;
+}
+
 .content .tag-notice {
+  padding:5px 3px;
   margin-top:10px;
   border:1px solid #ddd;
-  padding:15px;
   background-color:#eee;
-  border-radius:5px;
+  border-radius:3px;
 }
 
 .content .tag-notice .tag {
@@ -175,6 +188,18 @@ pre {
   line-height: 1.5em;
 }
 
+.sidebar .tags {
+  margin-top: 1em;
+  float: none;
+}
+
+.sidebar .tags a {
+  margin-top: 1em;
+  float: none;
+  margin-left: 0;
+  margin-right: 5px;
+}
+
 pre {
     overflow-x: scroll;
     max-width: 97vw;
@@ -185,6 +210,13 @@ code {
     border-radius: 4px;
     padding: 2px 5px;
 }
+
+@media only screen and (min-width:1100px){
+  pre {
+    max-width: 700px;
+  }
+}
+
 
 </style>
 
