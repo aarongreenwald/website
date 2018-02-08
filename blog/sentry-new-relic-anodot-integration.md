@@ -121,7 +121,7 @@ The `debug` query parameter tells `sentry-monitor` to not actually send any data
 
 ## Why So Complicated?
 
-<img alt="Why????" src="//res.cloudinary.com/drjhfq56w/image/fetch/q_20,w_500/https://s-media-cache-ak0.pinimg.com/originals/d2/7f/7a/d27f7a2d8e427055dc6114f9a3e02c62.jpg"/>
+<img alt="Why????" src="//res.cloudinary.com/drjhfq56w/image/fetch/q_20,w_300/https://s-media-cache-ak0.pinimg.com/originals/d2/7f/7a/d27f7a2d8e427055dc6114f9a3e02c62.jpg"/>
 
 Why did I do it this way? Why didn’t I just keep my first draft of the script and start it on a server with a `setInterval` of five minutes?
 
