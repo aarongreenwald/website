@@ -38,19 +38,3 @@ _Credit to [Justin Poliachik](https://medium.com/@Jpoliachik) for this [blog pos
 
 <sup>1</sup>It's also an opportunity for people like yourself to help out by submitting a PR. Yes, you. So don't just sit there reading this, go do it!
 </div>
-
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/zenburn.min.css">
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-<style>
-    pre {
-        overflow-x: scroll;
-        max-width: 97vw;
-    }
-
-    code {
-        background-color: rgba(100, 100, 100, 0.25);
-        border-radius: 4px;
-        padding: 2px 5px;
-    }
-</style>
