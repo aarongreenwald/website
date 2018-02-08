@@ -36,5 +36,5 @@ _Credit to [Justin Poliachik](https://medium.com/@Jpoliachik) for this [blog pos
 --------------------
 <div style="font-size:small">
 
-<sup>1</sup>It's also an opportunity for people like yourself to help out by submitting a PR. Yes, you. So don't just sit there reading this, go do it!
+<sup>1</sup>It's also an opportunity for people like yourself to help out by submitting a PR. React Native is open source, and the team has enough to do already. So it's up to us to help out. Why are you still sitting there reading this? Go do it!
 </div>
