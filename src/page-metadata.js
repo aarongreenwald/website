@@ -58,6 +58,14 @@ const talks = {
         thumbnail: 'https://i.imgflip.com/1zh1i4.jpg'
       }
     }
+  },
+  2018: {
+    kyiv: {
+      ['react-native-workshop']: {
+        title: 'React Native the Hard Way: Workshop',
+        description: 'Slides for React Native workshop in Kyiv, Ukraine'
+      }
+    }
   }
 };
 
