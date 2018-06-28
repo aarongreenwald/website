@@ -65,6 +65,12 @@ const talks = {
         title: 'React Native the Hard Way: Workshop',
         description: 'Slides for React Native workshop in Kyiv, Ukraine'
       }
+    },
+    sofia: {
+      ['rn-code-reuse']: {
+        title: 'React Native Code Reuse: Architecture that Works',
+        description: 'Slides for talk on reusing code and architecture in React Native apps, delivered in Sofia (Bulgaria)'
+      }
     }
   }
 };
