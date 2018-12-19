@@ -1,7 +1,7 @@
 <div>
     <div>
         <div class="blog-title">
-          <a href="/blog">My Coding Blog</a>         
+          <a href="/blog">My Coding Blog</a>
         </div>
         <div class="blog-tagline">because there weren't enough programming blogs out there yet</div>
          <div class="content">
@@ -11,28 +11,28 @@
                 </div>
             <% } %>
 
-         	
+
             <% if (!posts) { %>
                 <div class="post">
                     <div class="post-title"><%=post.title%></div>
                     <div class="post-date"><%=post.formattedDate%></div>
                     <div class="post-content"><%-post.content%></div>
                     <div style="margin-bottom:30px;" class="tags">
-                        <% post.tags.forEach(tag => { %> 
+                        <% post.tags.forEach(tag => { %>
                             <a href="/blog/tag/<%=tag%>" title="View posts tagged '<%=tag%>'"><%=tag%></a>
-                        <% }) %>                
-                    </div>                
+                        <% }) %>
+                    </div>
          	    </div>
-         	
+
             <% } %>
-                     	
+
             <% posts && posts.forEach(post => {%>
                 <div class="post post-list">
                     <div class="post-title"><a href="/blog/<%=post.slug%>"><%=post.title%></a></div>
-                    <div class="post-date"><%=post.formattedDate%></div>                  
+                    <div class="post-date"><%=post.formattedDate%></div>
                 </div>
             <% }) %>
-          
+
             <% if (!posts) { %>
                 <div style="margin:80px 0;width: 100%;">
                   Questions? Comments? Rants? A blog is not a blog without a place readers can use
@@ -40,26 +40,27 @@
                   Twitter to join the discussion. I'm <a href="//twitter.com/aaronjgreenwald">@aaronjgreenwald</a> and I'd love to hear from you.
                 </div>
             <% } %>
-        
-          
-         </div>   	                  
-         <div class="sidebar"> 
+
+
+         </div>
+         <div class="sidebar">
             <div class="about">
               You're reading Aaron Greenwald's coding blog,
               where he writes infrequently about code, software and programming.
               Read more about him (me, actually) <a href="/">here</a>.
-            </div> 
-            <% if (posts) { %>
+            </div>
+            <% if (posts && tags) { %>
               <div class="tags">
                 <div>
                   Tags
                 </div>
-                <% [...new Set([].concat.apply([], posts.map(p => p.tags)))].sort().forEach(tag => { %>
+                <%
+                    tags.forEach(tag => { %>
                     <a href="/blog/tag/<%=tag%>" title="View posts tagged '<%=tag%>'"><%=tag%></a>
                 <% }) %>
               </div>
             <% } %>
-         </div>       
+         </div>
     </div>
 </div>
 <style>

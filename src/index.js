@@ -34,7 +34,8 @@ app.get('/slides/:year/:event/:talk', (req, res) => res.render(req.path.slice(1)
 app.get('/blog', (req, res) => res.render('blog', PageValues({
   title: 'Blog',
   description: pages.blogDesc,
-  posts: blog.posts
+  posts: blog.posts,
+  tags: getTags(blog.posts)
 })));
 app.get('/blog/:slug', (req, res) => {
   const post = blog.posts.find(p => p.slug === req.params.slug);
@@ -53,8 +54,15 @@ app.get('/blog/tag/:tag', (req, res) => res.render('blog', PageValues({
   title: 'Blog',
   description: `Posts tagged "${req.params.tag}" from Aaron Greenwald's coding blog`,
   posts: blog.posts.filter(p => p.tags.indexOf(req.params.tag) !== -1),
-  showingTag: req.params.tag 
+  tags: getTags(blog.posts),
+  showingTag: req.params.tag
 })));
+
+const getTags = posts => {
+  const tags = [].concat(...posts.map(p => p.tags));
+  const counted = tags.reduce((acc, value) => { acc[value] = (acc[value] || 0) + 1; return acc }, {});
+  return Object.keys(counted).sort((a, b) => counted[a] > counted[b] ? -1 : 1);
+};
 
 const PageValues = opts => Object.assign({
   title: opts.title || null,
