@@ -2,7 +2,7 @@ How Generic is Too Generic? A Suggestion
 12/18/2018
 architecture code 
 
-Recently I've been giving a lot of thought to the issue of genericization (that _might_ be an actual word) in application infrastructure. We all know that the holy grail of software development is to not repeat yourself. And most would say that the principle applies not just inside an individual project, but inside an organization and the larger ecosystem as well. That's how we end up in this familiar scenario:
+Recently I've been giving a lot of thought to the issue of genericization (that _[might](https://www.merriam-webster.com/dictionary/genericization)_ be an [actual word](https://books.google.com/ngrams/graph?content=genericization&case_insensitive=on&year_start=1800&year_end=2000&corpus=15&smoothing=0&share=&direct_url=t1%3B%2Cgenericization%3B%2Cc0)) in application infrastructure. We all know that the holy grail of software development is to not repeat yourself. And most would say that the principle applies not just inside an individual project, but inside an organization and the larger ecosystem as well. That's how we end up in this familiar scenario:
 
 You work for a large company, and you notice that multiple teams in different parts of the company are building the same kind of functionality for different projects. But you're a good developer, and you pride yourself on how well you look out for the broader wellbeing of the projects you work on. You care about code reuse. You care about clean architecture. So you pitch the idea that maybe, just maybe, the two teams should combine efforts and save on redundant work. Why not build a shared service that will serve both teams? A microservice, you'll call it. (This scores you extra points in buzzword bingo.) This service won't be too specific to any of the individual use-cases, it'll be generic. This will make it more durable, because maybe in the future even more projects will use it. You're not just building products anymore, you're building _infrastructure_.
 
@@ -26,6 +26,6 @@ _If there isn't an 80% case that can be made to **just work**, your service is t
 
 If you can't give consumers a short snippet of code that just works for 80% of their needs, your service is trying to do too many unrelated things. You'd be better off splitting it into multiple services, or focusing only on a lower layer and not trying to solve all the problems for all the people.
 
-Well...what do you think? I'm still working this out in my mind, it's just an idea.  The number is arbitrary, the rule is arbitrary, and please don't take this so seriously. But do think about it.
+Well...what do you think? I'm still working this out in my mind, it's just an idea.  The number is arbitrary, the rule is arbitrary, and please don't take this too seriously. But do think about it.
 
 _Disclaimer, Disclosure, and other Fine Print: This post was not inspired by real events. Any resemblance to projects I may have or may not have worked on in the past, present, future, or whenever, is entirely coincidental and should not be inferred._
