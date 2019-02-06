@@ -1,0 +1,253 @@
+<div class="reveal">
+    <div class="slides">
+        <section class="title-page">
+            <h1>React Native Code Reuse</h1>
+            <h4>Architecture that Works</h4>
+            <p class="author">
+                Aaron Greenwald
+            </p>
+            <div class="template-instance links"></div>
+
+            <aside class="notes" data-markdown>
+
+            </aside>
+
+        </section>
+        <section class="theme">
+            Survey
+            <aside class="notes" data-markdown>
+
+            </aside>
+        </section>
+        <section data-state="chapter-title" class="theme">
+            01 / The Promise
+            <aside class="notes" data-markdown>
+
+            </aside>
+        </section>
+        <section>
+            <div class="fragment">
+                “...that approach yielded around 85% reuse of app code”
+                <div style="width:100%;font-style: italic;font-size: 0.7em;text-align: right">
+                    - Facebook
+                </div>
+                <img src="2017/mobileera/react.png" width="70em;" style="border-radius: 50%"/>
+            </div>
+
+            <div class="fragment">
+                “Don’t repeat yourself. It’s not only repetitive, it’s redundant, and people have heard it before.”
+                <div style="width:100%;font-style: italic;font-size: 0.7em;text-align: right">
+                    - Lemony Snicket
+                </div>
+            </div>
+        </section>
+        <section class="theme">
+            Is it true?
+        </section>
+        <section class="theme">
+            Yes!
+        </section>
+        <section class="theme">
+            (Mostly)
+        </section>
+        <section>
+            <span class="fragment"></span>
+            <div class="fragment">Android & iOS</div>
+            <div class="fragment">Web Apps</div>
+            <div class="fragment">Other RN Projects</div>
+        </section>
+        <section data-state="chapter-title" class="theme">
+            02 / Android & iOS
+            <aside class="notes" data-markdown>
+
+
+
+            </aside>
+        </section>
+        <section class="theme">
+            What can you share?
+        </section>
+        <section class="theme">
+            What CAN'T you share?
+        </section>
+        <section class="theme">
+            But How?
+        </section>
+        <section>
+            <div class="list-header fragment">Platform-Specific Code</div>
+            <div class="platform-code fragment">
+
+                <div class="circle">
+                    <div class="header">Platform Module</div>
+                    <!--<div>Conditional Statements</div>-->
+                </div>
+                <div class="circle invisible">
+                    <div class="header">Filename Suffixes</div>
+                    <!--<div>Separate Files</div>-->
+                </div>
+            </div>
+        </section>
+        <section data-state="background-img platform-module"></section>
+        <section>
+            <div class="list-header">Platform-Specific Code</div>
+
+            <div class="platform-code">
+
+                <div class="circle invisible">
+                    <div class="header">Platform Module</div>
+                    <!--<div>Conditional Statements</div>-->
+                </div>
+                <div class="circle">
+                    <div class="header">Filename Suffixes</div>
+                    <!--<div>Separate Files</div>-->
+                </div>
+            </div>
+        </section>
+        <section data-state="background-img filenames"></section>
+        <section data-background-color="rgb(63, 63, 63)" data-background-transition="none" class="theme">
+            <pre>
+                <code>
+import InputBox from './InputBox';
+                </code>
+            </pre>
+        </section>
+
+        <section>
+            <div class="list-header">Platform-Specific Code</div>
+
+            <div class="platform-code">
+                <div class="circle">
+                    <div class="header">Platform Module</div>
+                    <!--<div>Conditional Statements</div>-->
+                </div>
+                <div class="circle">
+                    <div class="header">Filename Suffixes</div>
+                    <!--<div>Separate Files</div>-->
+                </div>
+            </div>
+        </section>
+        <section class="theme">
+            <span style="color:teal">Composition</span>
+            <span style="color:gray">></span>
+            <span style="color:sandybrown">Inheritance</span>
+        </section>
+        <section data-state="background-img overcomplicated"></section>
+        <section class="theme">
+            Architecture Matters
+        </section>
+        <section>
+            <div class="fragment fade-past">Logic should be cross platform</div>
+            <div class="fragment fade-past">Keep logic out of views</div>
+            <div class="fragment fade-past">Presenters/Dispatchers</div>
+            <div class="fragment fade-past">HOCs, Hooks, ${new_cool_thing}</div>
+        </section>
+        <section>
+            Small & Modular Views
+        </section>
+
+        <section data-state="chapter-title" class="theme">
+            03 / Web Apps
+            <aside class="notes" data-markdown>
+
+            </aside>
+        </section>
+        <section class="theme">
+            Architecture Matters
+        </section>
+        <section>
+            <div class="fragment fade-past">Completely separate UI</div>
+            <div class="fragment fade-past">Create a separate module</div>
+            <div class="fragment fade-past">Reusable application logic</div>
+            <div class="fragment fade-past">Compilation gets complicated</div>
+            <div class="fragment fade-past">npm/yarn link...</div>
+        </section>
+        <section data-state="background-img npm-link"></section>
+        <section data-state="chapter-title" class="theme">
+            04 / Multiple Projects
+            <aside class="notes" data-markdown>
+
+            </aside>
+        </section>
+        <section class="theme">
+            Architecture Matters
+        </section>
+        <section>
+            <div class="fragment fade-past">Binaries</div>
+            <div class="fragment">Dependency Hell</div>
+        </section>
+        <section data-state="background-img no-idea"></section>
+        <section class="theme">Is it worth it?</section>
+        <section class="theme">
+            Architecture Matters
+        </section>
+        <section>
+            <div class="theme">
+                #architecture_matters
+            </div>
+
+            <div class="template-instance links"></div>
+
+        </section>
+
+    </div>
+</div>
+<style>
+    .npm-link body {
+        background-image: url(//media0.giphy.com/media/9ZOyRdXL7ZVKg/giphy.gif);
+    }
+
+    .overcomplicated body {
+        background-image: url(//i874.photobucket.com/albums/ab305/motomobbers/Confused-Cat-Meme-1-610x457_zpsb75e74fe.jpg);
+    }
+
+    .no-idea body {
+        background-image: url(http://i0.kym-cdn.com/photos/images/facebook/000/234/146/bf8.jpg);
+    }
+
+    .platform-module body {
+        background-image: url(2017/mobileera/platform-module.png);
+    }
+
+    .filenames body {
+        background-image: url(2017/mobileera/filenames2.png);
+    }
+
+    .platform-code {
+        display: flex; flex-direction: row; justify-content: space-around; margin-top: 1.5em;
+    }
+
+    .circle {
+         background-color: #2298ef;
+         color: white;
+         border-radius: 50%;
+         text-align: center;
+     }
+
+    .circle.invisible {
+        opacity: 0;
+    }
+
+    .platform-code > div {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 7.5em;
+        height: 7.5em;
+        margin-top: 2em;
+    }
+
+    .circle > div {
+        font-size: .5em;
+    }
+    .circle > div.header {
+        font-size: .7em;
+    }
+
+    .theme {
+        font-size: 1.8em !important;
+    }
+
+
+</style>
+
+

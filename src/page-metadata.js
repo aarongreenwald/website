@@ -9,14 +9,14 @@ const pages = {
 
 const talks = {
   2017: {
-    ['react-amsterdam']: {
-      ['testing-react-native']: {
+    'react-amsterdam': {
+      'testing-react-native': {
         title: 'Testing & React Native: Lessons from the Battlefield',
         description: 'Slides for talk about Testing React Native applications at React Amsterdam 2017'
       }
     },
-    ['riga-dev-days']: {
-      ['react-native-intro']: {
+    'riga-dev-days': {
+      'react-native-intro': {
         title: 'Learn Once, Write Anywhere: Intro to React Native',
         description: 'Slides for talk introducing and explaining React Native'
       }
@@ -27,26 +27,26 @@ const talks = {
         description: 'Slides for talk - Geekspeak for Humans'
       }
     },
-    ['rn-eu']: {
-      ['scaling-rn']: {
+    'rn-eu': {
+      'scaling-rn': {
         title: 'Scaling Mobile Development (with React Native, of course)',
         description: 'Slides for talk at React Native EU 2017 conference'
       }
     },
     startech: {
-      ['client-server']: {
+      'client-server': {
         title: 'Connecting to a Server: Android App Development',
         description: '̄Accompanying slides for session of Startech course'
       }
     },
     dnipro: {
-      ['testing-react-native']: {
+      'testing-react-native': {
         title: 'Testing & React Native: Lessons from the Battlefield',
         description: 'Slides for talk about Testing React Native applications: Meetup in Dnipro, Ukraine'
       }
     },
     mobileera: {
-      ['rn-code-reuse']: {
+      'rn-code-reuse': {
         title: 'React Native Code Reuse: Architecture that Works',
         description: 'Slides for Mobile Era (Oslo, Norway) talk on reusing code in React Native apps'
       }
@@ -61,15 +61,23 @@ const talks = {
   },
   2018: {
     kyiv: {
-      ['react-native-workshop']: {
+      'react-native-workshop': {
         title: 'React Native the Hard Way: Workshop',
         description: 'Slides for React Native workshop in Kyiv, Ukraine'
       }
     },
     sofia: {
-      ['rn-code-reuse']: {
+      'rn-code-reuse': {
         title: 'React Native Code Reuse: Architecture that Works',
         description: 'Slides for talk on reusing code and architecture in React Native apps, delivered in Sofia (Bulgaria)'
+      }
+    }
+  },
+  2019: {
+    vilnius: {
+      'rn-code-reuse': {
+        title: 'React Native Code Reuse: Architecture that Works',
+        description: 'Slides for talk on reusing code and architecture in React Native apps, delivered in Vilnius (Lithuania)'
       }
     }
   }
