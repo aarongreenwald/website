@@ -79,6 +79,12 @@ const talks = {
         title: 'React Native Code Reuse: Architecture that Works',
         description: 'Slides for talk on reusing code and architecture in React Native apps, delivered in Vilnius (Lithuania)'
       }
+    },
+    'tel-aviv': {
+      'clean-tests': {
+        title: 'Tests Are Code, Too!',
+        description: 'Slides for talk on clean code in tests, delivered in Tel Aviv, Israel'
+      }
     }
   }
 };

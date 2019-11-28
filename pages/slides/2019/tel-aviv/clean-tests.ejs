@@ -1,0 +1,215 @@
+<div class="reveal">
+    <div class="slides">
+        <section class="title-page">
+            <h1>Tests Are Code, Too!</h1>
+            <p class="author">
+                Aaron Greenwald
+            </p>
+            <div class="template-instance links"></div>
+
+            <aside class="notes" data-markdown>
+
+                If you were a piece of test code, you’d probably feel pretty bad about yourself. You look over at your friends on the production side of the codebase and you see a well-cared for bunch. They’re organized, neat, and efficient. It’s obvious that someone cares. But when you look around your surroundings, you can’t help but noticed how neglected they are. There are poorly-named functions everywhere, piles of copy-paste code strewn about, and broken pieces of who-knows-what littering your files. It’s shameful.
+
+                Fortunately, you’re not a piece of test code, you’re a developer. That means that you have the power to make things better for underserved communities of code. In this talk, we’ll remind ourselves that tests are code, too, and we’ll look at ways to keep them clean, readable, and maintainable.
+            </aside>
+
+        </section>
+        <section class="theme">
+            Survey
+            <aside class="notes" data-markdown>
+
+            </aside>
+        </section>
+        <section data-state="chapter-title" class="theme">
+            01 / What Are Tests?
+            <aside class="notes" data-markdown>
+
+            </aside>
+        </section>
+        <section>
+            <div class="fragment">Testing Pyramid</div>
+            <div class="template-instance testing-pyramid"></div>
+        </section>
+        <section>
+            Why Do We Write Tests?
+            <div class="fragment">Bug Prevention</div>
+            <div class="fragment">Bug Remediation</div>
+            <div class="fragment">Velocity</div>
+            <div class="fragment">Confidence</div>
+            <div class="fragment">Design (TDD)</div>
+            <div class="fragment">Documentation</div>
+            <div class="fragment">RDD</div>
+            <div class="fragment">Satisfaction</div>
+
+            <aside class="notes" data-markdown>
+                * Bug Prevention: for our users, so that we will have a better quality product with fewer regressions
+                * Bug Remediation: for ourselves, so that we can save time while troubleshooting, debugging,
+                * Velocity: it's better than manual testing
+                * Confidence: Permission to refactor
+                * Design: The idea behind TDD
+                * RDD: because we think it'll be good for our CV
+                * Satisfaction: some of us like it.
+            </aside>
+
+        </section>
+
+        <section data-state="chapter-title" class="theme">
+            02 / Why it Matters
+            <aside class="notes" data-markdown>
+
+
+
+            </aside>
+        </section>
+        <section>
+            Maybe it doesn't
+            <aside class="notes" data-markdown>As long as they do their job</aside>
+        </section>
+        <section>(so don't get too hung up on this)</section>
+        <section>
+            (so don't get too hung up on this)
+            <aside class="notes" data-markdown>Ugly code isn't a good reason not to write tests or delete them, IMO.</aside>
+        </section>
+        <section>But it does matter</section>
+        <section>
+            Like production code...
+            <div class="fragment">Easier maintenance</div>
+            <div class="fragment">Easier readability</div>
+            <div class="fragment">...etc</div>
+        </section>
+        <section>
+            But wait...there's more
+            <div class="fragment">so that it lasts</div>
+            <div class="fragment">so that it explains</div>
+            <aside class="notes" data-markdown>
+                -- Also for some reasons less likely to apply to prod code
+                -- in a sense, clean tests is MORE important than clean prod. No one will delete prod code because they are frustrated, don't understand it, or don't see it's value.
+                -- less likely to be discarded in a stressful moment, more likely to be there when you need it
+                -- main job is to fail, second main job is to explain Why
+                -- and the main purpose of prod is for users, the main purpose of tests is for us
+                -- so messy tests aren't just a pain, they reduce the functionality of the tests!!
+            </aside>
+        </section>
+        <section>
+            So why is it so hard?
+        </section>
+        <section>
+            <div class="fragment">We're in a rush</div>
+            <div class="fragment">We don't know how</div>
+            <div class="fragment">Copy/paste, mocks, and inherent mess</div>
+        </section>
+        <section class="chapter-title">
+            03 / A Better Way
+        </section>
+        <section>
+            Guiding Principles
+            <div class="fragment">Read like prose</div>
+            <div class="fragment">given/when/then</div>
+            <div class="fragment">Keep them SHORT</div>
+            <div class="fragment">Hide the mess</div>
+        </section>
+        <section>
+            Patterns
+            <div class="fragment">Builders</div>
+            <div class="fragment">aFooBar()</div>
+            <div class="fragment">Mocks</div>
+            <div class="fragment">Drivers</div>
+        </section>
+        <section>Libraries</section>
+        <section class="chapter-title">
+            04 / No Code
+        </section>
+        <section>The cleanest code is the code that doesn't exist...</section>
+        <section>testim.io</section>
+        <section>Same same...but different</section>
+        <section class="chapter-title">
+            05 / Before You Go
+        </section>
+        <section>Be a Champion</section>
+        <section>Accept Your Responsibility</section>
+        <section>Keep Your Tests Clean</section>
+        <section>
+            <div class="template-instance links"></div>
+
+        </section>
+
+    </div>
+</div>
+<style>
+
+    .theme {
+        font-size: 1.8em !important;
+    }
+
+</style>
+
+<div class="template" id="testing-pyramid">
+    <div class="testing-pyramid">
+        <div class="zone fragment"><span>E2E</span></div>
+        <div class="zone fragment"><span>Integration</span></div>
+        <div class="zone fragment"><span>Unit</span></div>
+    </div>
+</div>
+
+<style>
+    .template {
+        display: none;
+    }
+
+    .testing-pyramid {
+        /*padding-top: 2em !important;*/
+    }
+    .zone {
+        height: 3em;
+        vertical-align: bottom;
+        position: relative;
+    }
+    .zone span {
+        position:absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+    }
+    .zone:nth-child(1) {
+        background-color: lightblue;
+        clip-path: polygon(50% 0, 62.5% 100%, 37.5% 100%);
+        -webkit-clip-path: polygon(50% 0, 62.5% 100%, 37.5% 100%);
+    }
+    .zone:nth-child(2) {
+        background-color: lightcoral;
+        clip-path: polygon(37.5% 0, 62.5% 0, 75% 100%, 25% 100%);
+        -webkit-clip-path: polygon(37.5% 0, 62.5% 0, 75% 100%, 25% 100%);
+    }
+    .zone:nth-child(3) {
+        background-color: yellowgreen;
+        clip-path: polygon(25% 0, 75% 0, 87.5% 100%, 12.5% 100%);
+        -webkit-clip-path: polygon(25% 0, 75% 0, 87.5% 100%, 12.5% 100%);
+
+    }
+
+    .focus {
+        transform: scale(.75);
+    }
+
+    .focus .zone {
+        opacity: 0.25 !important;
+    }
+
+    .focus.unit .zone:last-child {
+        opacity: 1 !important;
+    }
+
+    .focus.component .zone:nth-child(2) {
+        opacity: 1 !important;
+    }
+
+    .focus.e2e .zone:first-child {
+        opacity: 1 !important;
+    }
+
+</style>
+
+
+
