@@ -22,14 +22,10 @@
             </aside>
         </section>
         <section data-state="chapter-title" class="theme">
-            01 / What Are Tests?
+            01 / Why We Test
             <aside class="notes" data-markdown>
 
             </aside>
-        </section>
-        <section>
-            <div class="fragment">Testing Pyramid</div>
-            <div class="template-instance testing-pyramid"></div>
         </section>
         <section>
             <div class="fragment">Bug Prevention</div>
@@ -54,23 +50,35 @@
             </aside>
 
         </section>
+        <section>
+            <div class="fragment">Testing Pyramid</div>
+            <div class="template-instance testing-pyramid"></div>
+        </section>
+        <section>
+            <div>Jest</div>
+            <div>Jasmine</div>
+            <div>Mocha</div>
+            <div>Protractor</div>
+            <div>Puppeteer</div>
+            <div>...etc</div>
+        </section>
 
         <section data-state="chapter-title" class="theme">
-            02 / Why it Matters
+            02 / Why We Care
             <aside class="notes" data-markdown>
 
 
 
             </aside>
         </section>
-        <section class="theme">
-            Maybe it doesn't
+        <section>
+            maybe we don't
             <aside class="notes" data-markdown>As long as they do their job</aside>
         </section>
         <section>(so don't get too hung up on this)
             <aside class="notes" data-markdown>Ugly code isn't a good reason not to write tests or delete them, IMO.</aside>
         </section>
-        <section class="theme">But it does matter</section>
+        <section class="theme">it does matter</section>
         <section>
             <div class="fragment">Easier maintenance</div>
             <div class="fragment">Easier readability</div>
@@ -101,19 +109,53 @@
             03 / A Better Way
         </section>
         <section>
-            <div class="fragment list-header">Guiding Principles</div>
             <div class="fragment">Read like prose</div>
-            <div class="fragment">given/when/then</div>
+            <div class="fragment popover">
+                <div class="template-instance tiny-test"></div>
+            </div>
             <div class="fragment">Keep them SHORT</div>
+            <div class="fragment popover">
+                <div class="template-instance tiny-test"></div>
+            </div>
+            <div class="fragment popover">
+                <div class="stuffed-closet"></div>
+            </div>
             <div class="fragment">Hide the mess</div>
+
+            <aside class="notes" data-markdown>Guiding Principles</aside>
         </section>
         <section>
-            <div class="fragment list-header">Patterns</div>
+            <aside class="notes">Patterns</aside>
 
+            <div class="fragment">given/when/then</div>
+            <div class="fragment popover">
+                <pre><code>
+it('should choose the best dev stack given the audience', () => {
+    givenAudience('ReactILMeetup');
+
+    const choice = when.getBestFedStack();
+
+    expect(choice).toContain('React');
+});
+                    </code></pre>
+            </div>
+<div class="fragment popover">
+                <pre><code>
+['ReactILMeetup', 'AngularConference'].forEach(audience =>
+    it(`should choose the best dev stack for audience: ${audience} `, () => {
+        givenAudience(audience);
+
+        const choice = when.getBestFedStack();
+
+        expect(choice).toContain('React');
+    })
+);
+        </code></pre>
+</div>
             <div class="fragment">Builders</div>
+            <div class="fragment">Drivers</div>
             <div class="fragment">aFooBar()</div>
             <div class="fragment">Mocks</div>
-            <div class="fragment">Drivers</div>
         </section>
         <section class="theme">Libraries</section>
         <section data-state="chapter-title" class="theme">
@@ -143,6 +185,17 @@
     }
 
 </style>
+
+<div class="template" id="tiny-test">
+    <pre>
+        <code>
+it('should render footer when loading', () => {
+  givenAppInLoadingState();
+  expect(footer).toBeVisible();
+});
+        </code>
+    </pre>
+</div>
 
 <div class="template" id="testing-pyramid">
     <div class="testing-pyramid">
@@ -209,6 +262,28 @@
         opacity: 1 !important;
     }
 
+    .fragment.popover {
+        display: none;
+    }
+
+    .fragment.popover.current-fragment {
+        display: unset;
+        position: fixed;
+        background-color: white;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+
+    .stuffed-closet {
+        background-image: url(2019/react-il/stuffed_closet.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        height: 100%;
+    }
 </style>
 
 
