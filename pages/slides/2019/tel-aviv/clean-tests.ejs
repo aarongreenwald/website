@@ -178,7 +178,7 @@ it('should choose the best dev stack given the audience', () => {
 });
                     </code></pre>
             </div>
-<div class="fragment popover">
+            <div class="fragment popover">
                 <pre><code>
 ['ReactILMeetup', 'AngularConference'].forEach(audience =>
     it(`should choose the best dev stack for audience: ${audience} `, () => {
@@ -192,8 +192,90 @@ it('should choose the best dev stack given the audience', () => {
         </code></pre>
 </div>
             <div class="fragment fade-past">Builders</div>
-            <div class="fragment fade-past">Drivers</div>
+<div class="fragment popover">
+                <pre><code>
+it('should support creating adding todos to a list', () => {
+    const todo = {
+        id: 'todo-item-id',
+        title: 'some title'
+    };
+
+    todoList.add(todo);
+
+    expect(todoList.get('todo-item-id)).toBe(todo);
+});
+                </code></pre>
+            </div>
+            <div class="fragment popover">
+                <pre><code>
+it('should support creating adding todos to a list', () => {
+    const todo = new ToDoBuilder()
+        .withId('todo-item-id')
+        .build();
+
+    todoList.add(todo);
+
+    expect(todoList.get('todo-item-id)).toBe(todo);
+});
+                </code></pre>
+            </div>
+
+            <div class="fragment popover">
+                <pre><code>
+it('should support deleting attachments from a todo', () => {
+    const todo = new ToDoBuilder()
+        .withAttachments([
+            new AttachmentBuilder().build()
+        ])
+        .build();
+
+    const updatedTodo = todo.deleteAttachments();
+
+    expect(updatedTodo.attachments).toBe(null);
+});
+                </code></pre>
+            </div>
+            <div class="fragment popover">
+                <pre><code>
+const todo = new ToDoBuilder()
+    .withAttachments([
+        new AttachmentBuilder()
+            .withId('attachment-0-id')
+            .build(),
+        new AttachmentBuilder()
+            .withId('attachment-1-id')
+            .build()
+    ])
+    .build();
+                </code></pre>
+            </div>
             <div class="fragment fade-past">aFooBar()</div>
+            <div class="fragment popover">
+                <pre><code>
+function aTodoWithAttachments(length = 0) {
+    return new ToDoBuilder()
+        .withAttachments([
+            ...new Array(length).fill(0).map((_, i) =>
+                new AttachmentBuilder()
+                    .withId(`attachment-${i}-id`)
+                    .build()
+            )
+        ])
+        .build();
+}
+                </code></pre>
+            </div>
+            <div class="fragment popover">
+                <pre><code>
+const todo = aTodoWithAttachments(3);
+
+todo.deleteFirstAttachment();
+
+expect(todo.attachments.length).toBe(2);
+                </code></pre>
+            </div>
+            <div class="fragment fade-past">Drivers</div>
+
             <div class="fragment">Mocks</div>
         </section>
         <section class="large">Libraries</section>
