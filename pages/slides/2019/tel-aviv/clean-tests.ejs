@@ -15,14 +15,55 @@
             </aside>
 
         </section>
-        <section class="theme">
+        <section class="large">
             Survey
             <aside class="notes" data-markdown>
 
             </aside>
         </section>
-        <section data-state="chapter-title" class="theme">
-            01 / Why We Test
+        <section data-state="chapter-title" class="large">
+            00 / Preface
+        </section>
+        <section>
+            <div class="fragment" data-fragment-index="0">Testing Pyramid</div>
+            <div class="template-instance testing-pyramid"></div>
+        </section>
+        <section>
+            <div>Testing Pyramid</div>
+            <div class="testing-pyramid-gradient"></div>
+        </section>
+        <section>
+            <div>Jest</div>
+            <div>Jasmine</div>
+            <div>Mocha</div>
+            <div>Protractor</div>
+            <div>Puppeteer</div>
+            <div>...etc</div>
+        </section>
+        <section data-state="chapter-title" class="large">
+            01 / Why We Care
+            <aside class="notes" data-markdown>
+
+
+
+            </aside>
+        </section>
+        <section class="large">
+            maybe we don't
+            <aside class="notes" data-markdown>As long as they do their job</aside>
+        </section>
+        <section>(so don't get too hung up on this)
+            <aside class="notes" data-markdown>Ugly code isn't a good reason not to write tests or delete them, IMO.</aside>
+        </section>
+        <section class="large">but we do care</section>
+        <section>
+            <div class="fragment">Easier maintenance</div>
+            <div class="fragment">Easier readability</div>
+            <div class="fragment">...etc</div>
+        </section>
+        <section class="large">But wait...there's more</section>
+        <section data-state="chapter-title" class="large">
+            02 / Why We Test
             <aside class="notes" data-markdown>
 
             </aside>
@@ -50,41 +91,14 @@
             </aside>
 
         </section>
-        <section>
-            <div class="fragment">Testing Pyramid</div>
-            <div class="template-instance testing-pyramid"></div>
-        </section>
-        <section>
-            <div>Jest</div>
-            <div>Jasmine</div>
-            <div>Mocha</div>
-            <div>Protractor</div>
-            <div>Puppeteer</div>
-            <div>...etc</div>
-        </section>
-
-        <section data-state="chapter-title" class="theme">
-            02 / Why We Care
+        <section data-state="chapter-title" class="large">
+            03 / Why We Care (pt 2)
             <aside class="notes" data-markdown>
 
 
 
             </aside>
         </section>
-        <section>
-            maybe we don't
-            <aside class="notes" data-markdown>As long as they do their job</aside>
-        </section>
-        <section>(so don't get too hung up on this)
-            <aside class="notes" data-markdown>Ugly code isn't a good reason not to write tests or delete them, IMO.</aside>
-        </section>
-        <section class="theme">it does matter</section>
-        <section>
-            <div class="fragment">Easier maintenance</div>
-            <div class="fragment">Easier readability</div>
-            <div class="fragment">...etc</div>
-        </section>
-        <section class="theme">But wait...there's more</section>
         <section>
             <div class="fragment">So that they last</div>
             <div class="fragment">So that they explain</div>
@@ -97,16 +111,46 @@
                 -- so messy tests aren't just a pain, they reduce the functionality of the tests!!
             </aside>
         </section>
-        <section class="theme">
-            So why is it so hard?
+        <section>
+            <div>Bug Prevention</div>
+            <div>Bug Remediation</div>
+            <div>Velocity</div>
+            <div>Confidence</div>
+            <div>Design (TDD)</div>
+            <div>Documentation</div>
+            <div>RDD</div>
+            <div>Satisfaction</div>
+        </section>
+        <section>
+            <div>Bug Prevention</div>
+            <div style="color: orange">Bug Remediation</div>
+            <div>Velocity</div>
+            <div>Confidence</div>
+            <div>Design (TDD)</div>
+            <div style="color: orange">Documentation</div>
+            <div>RDD</div>
+            <div>Satisfaction</div>
+        </section>
+        <section>
+            <div>Bug Prevention</div>
+            <div style="color: orange">Bug Remediation</div>
+            <div style="color: orange">Velocity</div>
+            <div>Confidence</div>
+            <div>Design (TDD)</div>
+            <div style="color: orange">Documentation</div>
+            <div>RDD</div>
+            <div>Satisfaction</div>
+        </section>
+        <section class="large">
+            But it's hard
         </section>
         <section>
             <div class="fragment">We're in a rush</div>
             <div class="fragment">We don't know how</div>
             <aside class="notes" data-markdown>Copy/paste, mocks, and inherent mess</aside>
         </section>
-        <section data-state="chapter-title" class="theme">
-            03 / A Better Way
+        <section data-state="chapter-title" class="large">
+            04 / A Better Way
         </section>
         <section>
             <div class="fragment">Read like prose</div>
@@ -157,21 +201,24 @@ it('should choose the best dev stack given the audience', () => {
             <div class="fragment">aFooBar()</div>
             <div class="fragment">Mocks</div>
         </section>
-        <section class="theme">Libraries</section>
-        <section data-state="chapter-title" class="theme">
-            04 / No Code
+        <section class="large">Libraries</section>
+        <section data-state="chapter-title" class="large">
+            05 / No Code
         </section>
         <section>The cleanest code is the code that doesn't exist...</section>
-        <section class="theme">testim.io</section>
-        <section class="theme">Same same...but different</section>
-        <section data-state="chapter-title" class="theme">
-            05 / Before You Go
+        <section class="large">testim.io</section>
+        <section class="large">Same same...but different</section>
+        <section data-state="chapter-title" class="large">
+            06 / Before You Go
         </section>
-        <section class="theme">Be a Champion</section>
-        <section class="theme">Accept Your Responsibility</section>
-        <section class="theme">Clean Your Tests</section>
+        <section class="large">Be a Champion</section>
+        <section class="large">Accept Your Responsibility</section>
+        <section class="large">Clean Your Tests</section>
         <section>
-            #clean_your_tests
+            <div class="large">
+                #clean_your_tests
+            </div>
+
             <div class="template-instance links"></div>
 
         </section>
@@ -180,7 +227,7 @@ it('should choose the best dev stack given the audience', () => {
 </div>
 <style>
 
-    .theme {
+    .large {
         font-size: 1.8em !important;
     }
 
@@ -199,9 +246,9 @@ it('should render footer when loading', () => {
 
 <div class="template" id="testing-pyramid">
     <div class="testing-pyramid">
-        <div class="zone fragment"><span>E2E</span></div>
-        <div class="zone fragment"><span>Integration</span></div>
-        <div class="zone fragment"><span>Unit</span></div>
+        <div class="zone fragment" data-fragment-index="3"><span>E2E</span></div>
+        <div class="zone fragment" data-fragment-index="2"><span>Integration</span></div>
+        <div class="zone fragment" data-fragment-index="1"><span>Unit</span></div>
     </div>
 </div>
 
@@ -210,9 +257,14 @@ it('should render footer when loading', () => {
         display: none;
     }
 
-    .testing-pyramid {
-        /*padding-top: 2em !important;*/
+    .testing-pyramid-gradient {
+        height: 9em;
+        vertical-align: bottom;
+        position: relative;
+        clip-path: polygon(50% 0, 87.5% 100%, 12.5% 100%);
+        background-image: linear-gradient(lightblue, lightgreen, lightsalmon);
     }
+
     .zone {
         height: 3em;
         vertical-align: bottom;
@@ -231,36 +283,36 @@ it('should render footer when loading', () => {
         -webkit-clip-path: polygon(50% 0, 62.5% 100%, 37.5% 100%);
     }
     .zone:nth-child(2) {
-        background-color: lightcoral;
+        background-color: lightgreen;
         clip-path: polygon(37.5% 0, 62.5% 0, 75% 100%, 25% 100%);
         -webkit-clip-path: polygon(37.5% 0, 62.5% 0, 75% 100%, 25% 100%);
     }
     .zone:nth-child(3) {
-        background-color: yellowgreen;
+        background-color: lightsalmon;
         clip-path: polygon(25% 0, 75% 0, 87.5% 100%, 12.5% 100%);
         -webkit-clip-path: polygon(25% 0, 75% 0, 87.5% 100%, 12.5% 100%);
 
     }
 
-    .focus {
-        transform: scale(.75);
-    }
+    /*.focus {*/
+    /*    transform: scale(.75);*/
+    /*}*/
 
-    .focus .zone {
-        opacity: 0.25 !important;
-    }
+    /*.focus .zone {*/
+    /*    opacity: 0.25 !important;*/
+    /*}*/
 
-    .focus.unit .zone:last-child {
-        opacity: 1 !important;
-    }
+    /*.focus.unit .zone:last-child {*/
+    /*    opacity: 1 !important;*/
+    /*}*/
 
-    .focus.component .zone:nth-child(2) {
-        opacity: 1 !important;
-    }
+    /*.focus.component .zone:nth-child(2) {*/
+    /*    opacity: 1 !important;*/
+    /*}*/
 
-    .focus.e2e .zone:first-child {
-        opacity: 1 !important;
-    }
+    /*.focus.e2e .zone:first-child {*/
+    /*    opacity: 1 !important;*/
+    /*}*/
 
     .fragment.popover {
         display: none;
@@ -285,6 +337,5 @@ it('should render footer when loading', () => {
         height: 100%;
     }
 </style>
-
 
 
