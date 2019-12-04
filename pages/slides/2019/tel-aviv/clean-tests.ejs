@@ -24,12 +24,11 @@
         <section data-state="chapter-title" class="large">
             00 / Preface
         </section>
+        <section class="large">Testing Pyramid</section>
         <section>
-            <div class="fragment" data-fragment-index="0">Testing Pyramid</div>
             <div class="template-instance testing-pyramid"></div>
         </section>
         <section>
-            <div>Testing Pyramid</div>
             <div class="testing-pyramid-gradient"></div>
         </section>
         <section>
@@ -57,9 +56,9 @@
         </section>
         <section class="large">but we do care</section>
         <section>
-            <div class="fragment">Easier maintenance</div>
-            <div class="fragment">Easier readability</div>
-            <div class="fragment">...etc</div>
+            <div class="fragment fade-past">Easier maintenance</div>
+            <div class="fragment fade-past">Easier readability</div>
+            <div class="fragment fade-past">...etc</div>
         </section>
         <section class="large">But wait...there's more</section>
         <section data-state="chapter-title" class="large">
@@ -94,9 +93,12 @@
         <section data-state="chapter-title" class="large">
             03 / Why We Care (pt 2)
         </section>
+        <section data-state="background-img"></section>
         <section>
-            <div class="fragment fade-past">So that they last</div>
-            <div class="fragment fade-past">So that they explain</div>
+            so that they last
+        </section>
+        <section>
+            so that they explain
             <aside class="notes" data-markdown>
                 -- Also for some reasons less likely to apply to prod code
                 -- in a sense, clean tests is MORE important than clean prod. No one will delete prod code because they are frustrated, don't understand it, or don't see it's value.
@@ -136,12 +138,24 @@
             <div>RDD</div>
             <div>Satisfaction</div>
         </section>
+        <section>
+            <div>Bug Prevention</div>
+            <div style="color: orange">Bug Remediation</div>
+            <div style="color: orange">Velocity</div>
+            <div>Confidence</div>
+            <div>Design (TDD)</div>
+            <div style="color: orange">Documentation</div>
+            <div>RDD</div>
+            <div style="color: orange">Satisfaction</div>
+        </section>
         <section class="large">
             But it's hard
         </section>
         <section>
-            <div class="fragment fade-past">We're in a rush</div>
-            <div class="fragment fade-past">We don't know how</div>
+            We're in a rush
+        </section>
+        <section>
+            We don't know how
             <aside class="notes" data-markdown>Copy/paste, mocks, and inherent mess</aside>
         </section>
         <section data-state="chapter-title" class="large">
@@ -166,34 +180,21 @@
         <section>
             <aside class="notes">Patterns</aside>
 
-            <div class="fragment fade-past">given/when/then</div>
+            <div class="fragment fade-past">given / when / then</div>
             <div class="fragment popover">
-                <pre><code>
+                <pre><code class="javascript">
 it('should choose the best dev stack given the audience', () => {
     givenAudience('ReactILMeetup');
 
-    const choice = when.getBestFedStack();
+    const choice = getBestFedStack();
 
     expect(choice).toContain('React');
 });
                     </code></pre>
             </div>
-            <div class="fragment popover">
-                <pre><code>
-['ReactILMeetup', 'AngularConference'].forEach(audience =>
-    it(`should choose the best dev stack for audience: ${audience} `, () => {
-        givenAudience(audience);
-
-        const choice = when.getBestFedStack();
-
-        expect(choice).toContain('React');
-    })
-);
-        </code></pre>
-</div>
-            <div class="fragment fade-past">Builders</div>
+            <div class="fragment fade-past">builders</div>
 <div class="fragment popover">
-                <pre><code>
+                <pre><code class="javascript">
 it('should support creating adding todos to a list', () => {
     const todo = {
         id: 'todo-item-id',
@@ -202,28 +203,28 @@ it('should support creating adding todos to a list', () => {
 
     todoList.add(todo);
 
-    expect(todoList.get('todo-item-id)).toBe(todo);
+    expect(todoList.get('todo-item-id')).toBe(todo);
 });
                 </code></pre>
             </div>
             <div class="fragment popover">
-                <pre><code>
+                <pre><code class="javascript">
 it('should support creating adding todos to a list', () => {
-    const todo = new ToDoBuilder()
+    const todo = new TodoBuilder()
         .withId('todo-item-id')
         .build();
 
     todoList.add(todo);
 
-    expect(todoList.get('todo-item-id)).toBe(todo);
+    expect(todoList.get('todo-item-id')).toBe(todo);
 });
                 </code></pre>
             </div>
 
             <div class="fragment popover">
-                <pre><code>
+                <pre><code class="javascript">
 it('should support deleting attachments from a todo', () => {
-    const todo = new ToDoBuilder()
+    const todo = new TodoBuilder()
         .withAttachments([
             new AttachmentBuilder().build()
         ])
@@ -236,8 +237,8 @@ it('should support deleting attachments from a todo', () => {
                 </code></pre>
             </div>
             <div class="fragment popover">
-                <pre><code>
-const todo = new ToDoBuilder()
+                <pre><code class="javascript">
+const todo = new TodoBuilder()
     .withAttachments([
         new AttachmentBuilder()
             .withId('attachment-0-id')
@@ -251,9 +252,9 @@ const todo = new ToDoBuilder()
             </div>
             <div class="fragment fade-past">aFooBar()</div>
             <div class="fragment popover">
-                <pre><code>
+                <pre><code class="javascript">
 function aTodoWithAttachments(length = 0) {
-    return new ToDoBuilder()
+    return new TodoBuilder()
         .withAttachments([
             ...new Array(length).fill(0).map((_, i) =>
                 new AttachmentBuilder()
@@ -266,7 +267,7 @@ function aTodoWithAttachments(length = 0) {
                 </code></pre>
             </div>
             <div class="fragment popover">
-                <pre><code>
+                <pre><code class="javascript">
 const todo = aTodoWithAttachments(3);
 
 todo.deleteFirstAttachment();
@@ -274,11 +275,43 @@ todo.deleteFirstAttachment();
 expect(todo.attachments.length).toBe(2);
                 </code></pre>
             </div>
-            <div class="fragment fade-past">Drivers</div>
+            <div class="fragment fade-past">drivers</div>
+            <div class="fragment popover">
+                <pre><code class="javascript">
+it('should open the new todo window on button press', () => {
+    todoListDriver.loadPage();
 
-            <div class="fragment">Mocks</div>
+    todoListDriver.when.newTodoButtonClicked();
+
+    expect(driver.get.newTodoModal()).toBeVisible();
+});
+                </code></pre>
+            </div>
+            <div class="fragment popover">
+                <pre><code class="javascript">
+class TodoListDriver extends PageDriver {
+    loadPage() {
+        this.driver.navigateTo('/todos');
+    }
+
+    when = {
+        newTodoButtonClicked () {
+            $('#new-todo').click();
+        }
+    }
+
+    get = {
+        newTodoModal () {
+            return $('#new-todo');
+        }
+    }
+}
+                </code></pre>
+            </div>
+
+<!--            <div class="fragment">Mocks</div>-->
         </section>
-        <section class="large">Libraries</section>
+<!--        <section class="large">Libraries</section>-->
         <section data-state="chapter-title" class="large">
             05 / No Code
         </section>
@@ -312,7 +345,7 @@ expect(todo.attachments.length).toBe(2);
 
 <div class="template" id="tiny-test">
     <pre>
-        <code>
+        <code class="javascript">
 it('should render footer when loading', () => {
   givenAppInLoadingState();
   expect(footer).toBeVisible();
@@ -371,25 +404,6 @@ it('should render footer when loading', () => {
 
     }
 
-    /*.focus {*/
-    /*    transform: scale(.75);*/
-    /*}*/
-
-    /*.focus .zone {*/
-    /*    opacity: 0.25 !important;*/
-    /*}*/
-
-    /*.focus.unit .zone:last-child {*/
-    /*    opacity: 1 !important;*/
-    /*}*/
-
-    /*.focus.component .zone:nth-child(2) {*/
-    /*    opacity: 1 !important;*/
-    /*}*/
-
-    /*.focus.e2e .zone:first-child {*/
-    /*    opacity: 1 !important;*/
-    /*}*/
 
     .fragment.popover {
         display: none;
@@ -405,7 +419,6 @@ it('should render footer when loading', () => {
         right: 0;
     }
 
-
     .stuffed-closet {
         background-image: url(2019/react-il/stuffed_closet.png);
         background-repeat: no-repeat;
@@ -414,5 +427,4 @@ it('should render footer when loading', () => {
         height: 100%;
     }
 </style>
-
 
