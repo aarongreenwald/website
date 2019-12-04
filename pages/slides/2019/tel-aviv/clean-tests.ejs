@@ -7,19 +7,25 @@
             </p>
             <div class="template-instance links"></div>
 
-            <aside class="notes" data-markdown>
+            <aside class="notes">
 
-                If you were a piece of test code, you’d probably feel pretty bad about yourself. You look over at your friends on the production side of the codebase and you see a well-cared for bunch. They’re organized, neat, and efficient. It’s obvious that someone cares. But when you look around your surroundings, you can’t help but noticed how neglected they are. There are poorly-named functions everywhere, piles of copy-paste code strewn about, and broken pieces of who-knows-what littering your files. It’s shameful.
+                If you were a piece of test code, you’d probably feel pretty bad about yourself.
+                You look over at your friends on the production side of the codebase and
+                you see a well-cared for bunch. They’re organized, neat, and efficient.
+                It’s obvious that someone cares. But when you look around your surroundings,
+                you can’t help but noticed how neglected they are. There are poorly-named functions
+                everywhere, piles of copy-paste code strewn about, and broken pieces of who-knows-what
+                littering your files. It’s shameful.
 
-                Fortunately, you’re not a piece of test code, you’re a developer. That means that you have the power to make things better for underserved communities of code. In this talk, we’ll remind ourselves that tests are code, too, and we’ll look at ways to keep them clean, readable, and maintainable.
+                Fortunately, you’re not a piece of test code, you’re a developer.
+                That means that you have the power to make things better for underserved
+                communities of code. In this talk, we’ll remind ourselves that tests are code,
+                too, and we’ll look at ways to keep them clean, readable, and maintainable.
             </aside>
 
         </section>
         <section class="large">
             Survey
-            <aside class="notes" data-markdown>
-
-            </aside>
         </section>
         <section data-state="chapter-title" class="large">
             00 / Preface
@@ -41,18 +47,22 @@
         </section>
         <section data-state="chapter-title" class="large">
             01 / Why We Care
-            <aside class="notes" data-markdown>
-
-
-
-            </aside>
         </section>
         <section class="large">
             maybe we don't
-            <aside class="notes" data-markdown>As long as they do their job</aside>
+            <aside class="notes" data-markdown>
+                As long as they do their job
+
+                And the purpose of tests are to fail.
+            </aside>
         </section>
-        <section>(so don't get too hung up on this)
-            <aside class="notes" data-markdown>Ugly code isn't a good reason not to write tests or delete them, IMO.</aside>
+        <section style="font-style: italic">
+            (so don't get too hung up on this)
+            <aside class="notes" data-markdown>
+                Ugly code isn't a good reason not to write tests or delete them, IMO.
+                I once had a coworker who removed code because it wasn't readable. I
+                disagree with that. More on that later.
+            </aside>
         </section>
         <section class="large">but we do care</section>
         <section>
@@ -63,9 +73,6 @@
         <section class="large">But wait...there's more</section>
         <section data-state="chapter-title" class="large">
             02 / Why We Test
-            <aside class="notes" data-markdown>
-
-            </aside>
         </section>
         <section>
             <div class="fragment fade-past">Bug Prevention</div>
@@ -78,12 +85,12 @@
             <div class="fragment fade-past">Satisfaction</div>
 
             <aside class="notes" data-markdown>
-                ##Why Do We Write Tests?
+                ## Why Do We Write Tests?
 
                 * Bug Prevention: for our users, so that we will have a better quality product with fewer regressions
                 * Bug Remediation: for ourselves, so that we can save time while troubleshooting, debugging,
-                * Velocity: it's better than manual testing
-                * Confidence: Permission to refactor
+                * Velocity: it's faster than manual testing, and it allows for CI/CD
+                * Confidence: Permission to refactor (overlaps with Velocity)
                 * Design: The idea behind TDD
                 * RDD: because we think it'll be good for our CV
                 * Satisfaction: some of us like it.
@@ -93,17 +100,23 @@
         <section data-state="chapter-title" class="large">
             03 / Why We Care (pt 2)
         </section>
-        <section data-state="background-img"></section>
+        <section data-state="background-img">
+            <aside class="notes" data-markdown>
+                -- Also for some reasons less likely to apply to prod code
+                -- in a sense, clean tests is MORE important than clean prod.
+                -- No one will delete prod code because they are frustrated,
+                    don't understand it, or don't see it's value.
+                -- less likely to be discarded in a stressful moment,
+                more likely to be there when you need it
+                -- main job is to fail, but that only works if they're still around
+            </aside>
+        </section>
         <section>
             so that they last
         </section>
         <section>
             so that they explain
             <aside class="notes" data-markdown>
-                -- Also for some reasons less likely to apply to prod code
-                -- in a sense, clean tests is MORE important than clean prod. No one will delete prod code because they are frustrated, don't understand it, or don't see it's value.
-                -- less likely to be discarded in a stressful moment, more likely to be there when you need it
-                -- main job is to fail, second main job is to explain Why
                 -- and the main purpose of prod is for users, the main purpose of tests is for us
                 -- so messy tests aren't just a pain, they reduce the functionality of the tests!!
             </aside>
