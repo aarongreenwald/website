@@ -318,6 +318,8 @@ class TodoListDriver extends PageDriver {
         <section>The cleanest code is the code that doesn't exist...</section>
         <section class="large">testim.io</section>
         <section class="large">Same same...but different</section>
+        <section data-state="background-img messy-testim"></section>
+        <section data-state="background-img cleaner-testim"></section>
         <section data-state="chapter-title" class="large">
             06 / Before You Go
         </section>
@@ -426,5 +428,15 @@ it('should render footer when loading', () => {
         background-position: center;
         height: 100%;
     }
+
+    .messy-testim body {
+        background-image: url(2019/react-il/messy_testim.png);
+    }
+
+
+    .cleaner-testim body {
+        background-image: url(2019/react-il/cleaner_testim.png);
+    }
+
 </style>
 
