@@ -1,0 +1,278 @@
+<div class="reveal">
+    <div class="slides">
+        <section class="title-page">
+            <h1>Go Slow to Go Fast</h1>
+            <p class="author">
+                Aaron Greenwald
+            </p>
+            <div class="template-instance links"></div>
+
+            <aside class="notes">
+
+                Software engineering is often a race against the clock. The competition doesn't rest,
+                impatient clients have deadlines, and management wants results.
+                You desperately need a way to improve your team's velocity.
+
+                Can automated test coverage really be the answer?
+                Perhaps, but only if you can overcome the organizational hurdles that stand in your way.
+                Changing an existing team's culture is never easy,
+                and it gets increasingly difficult as teams get larger and organizations more "enterprisey".
+
+                Come hear Aaron Greenwald discuss how their group at Microsoft worked to change a
+                fast-moving development team that doesn't have time to test into a faster-moving
+                development team that doesn't have time not to.
+
+                He'll also take a practical look at the kinds of tests we can write and best-practices
+                for making sure they actually serve as the velocity drivers we need them to.
+
+            </aside>
+
+        </section>
+        <section data-state="chapter-title" class="large">
+            00 / Velocity
+        </section>
+        <section class="large">
+            The Holy Grail
+        </section>
+        <section>
+            v = ds/dt
+        </section>
+        <section>
+            a = dv/dt
+        </section>
+        <section class="large">
+            Labor Efficiency
+        </section>
+
+        <section>
+            <div class="fragment fade-past">WFH</div>
+            <div class="fragment fade-past">WFO</div>
+            <div class="fragment fade-past">No Coffee</div>
+            <div class="fragment fade-past">More Coffee</div>
+        </section>
+
+        <section>
+            Technology - the Great Accelerator
+        </section>
+        <section>
+            <div class="fragment">Infra</div>
+            <div class="fragment">
+                <div>Azure/AWS/GCP</div>
+                <div>Frontend Frameworks</div>
+                <div>Libraries</div>
+            </div>
+        </section>
+        <section>
+            (goes both ways)
+            <aside class="notes">
+                Velocity going backwards is usually due to Product Management issues.
+
+                Acceleration going backwards is usually due to engineering issues
+            </aside>
+        </section>
+        <section data-state="chapter-title" class="large">
+            01 / Go Slow to Go Fast
+        </section>
+        <section>
+            Racing
+        </section>
+        <section>
+            <div class="fragment fade-past">Reusable Code</div>
+            <div class="fragment fade-past">Architecture</div>
+            <div class="fragment fade-past">Abstractions</div>
+            <div class="fragment fade-past">Planning</div>
+        </section>
+        <section class="large">
+            Tests
+        </section>
+        <section data-state="chapter-title" class="large">
+            02 / Tests
+        </section>
+        <section>Regressions Cost Time</section>
+        <section>
+            <div class="fragment fade-past">Triaging</div>
+            <div class="fragment fade-past">Debugging</div>
+            <div class="fragment fade-past">Fixing</div>
+            <div class="fragment fade-past">Deploying</div>
+            <div class="fragment fade-past">Post-mortems</div>
+            <div class="fragment fade-past">Managing Up</div>
+            <aside class="notes">
+                aka psychological support for management having a conniption
+            </aside>
+
+        </section>
+        <section>
+            Safe Refactors
+            <aside class="notes">
+                Which allow us to do refactors that will yield us code reuse, abstractions, etc
+            </aside>
+        </section>
+        <section>
+            Faster Deployment
+            <aside class="notes">
+                More automation --> less manual work --> more frequent deployes
+            </aside>
+        </section>
+        <section>
+            This wold ain't all sunshine and roses, kid
+        </section>
+        <section>
+            Writing tests can be time-consuming
+        </section>
+        <section>
+            There's a learning curve
+        </section>
+        <section>
+            Tests cost more than code!
+        </section>
+
+        <section>
+            Tests are worth it
+        </section>
+        <section>
+            (I think)
+        </section>
+        <section>
+            How do we sell it?
+        </section>
+        <section>
+            YMMV
+        </section>
+        <section data-state="chapter-title" class="large">
+            03 / Getting Started
+        </section>
+        <section>
+            <div class="fragment fade-past">ROI</div>
+            <div class="fragment fade-past">Showing Value</div>
+        </section>
+        <section data-state="chapter-title" class="large">
+            04 / Return on Investment
+        </section>
+        <section>Biggest win for smallest effort</section>
+        <section class="large">Testing Pyramid</section>
+        <section>
+            <div class="template-instance testing-pyramid"></div>
+        </section>
+        <section>
+            <div class="testing-pyramid-gradient"></div>
+        </section>
+        <section>
+            Where to start?
+        </section>
+        <section>
+            The tippity top
+        </section>
+        <section>
+            testim.io
+        </section>
+        <section>
+            leave the middle for last
+        </section>
+        <section>
+            <div class="fragment list-header">Within the Codebase</div>
+            <div class="fragment"><span style="color:orange">F</span>ragile</div>
+            <div class="fragment"><span style="color:orange">F</span>requently Changed</div>
+            <div class="fragment"><span style="color:orange">F</span>oncusing</div>
+        </section>
+        <section data-state="chapter-title" class="large">
+            05 / Showing Value
+        </section>
+        <section class="large">
+            Carrots
+            <aside class="notes" data-markdown>
+                As long as they do their job
+
+                And the purpose of tests are to fail.
+            </aside>
+        </section>
+        <section>
+            (and sticks)
+            <aside class="notes" data-markdown>
+                mails on where test coverage is lacking
+
+            </aside>
+        </section>
+        <section class="large">
+            Catching Bugs
+            <aside class="notes" data-markdown>
+               A test that never fails is a useless test.
+                when it catches a bug, you begin to believe
+            </aside>
+        </section>
+        <section data-state="chapter-title" class="large">
+            06 / Farm Animals
+        </section>
+
+
+        <section>
+            <div class="large">
+                Thank You
+            </div>
+
+            <div class="template-instance links"></div>
+
+        </section>
+
+    </div>
+</div>
+<style>
+
+    .large {
+        font-size: 1.8em !important;
+    }
+
+</style>
+
+
+<div class="template" id="testing-pyramid">
+    <div class="testing-pyramid">
+        <div class="zone fragment" data-fragment-index="3"><span>E2E</span></div>
+        <div class="zone fragment" data-fragment-index="2"><span>Integration</span></div>
+        <div class="zone fragment" data-fragment-index="1"><span>Unit</span></div>
+    </div>
+</div>
+
+<style>
+    .template {
+        display: none;
+    }
+
+    .testing-pyramid-gradient {
+        height: 9em;
+        vertical-align: bottom;
+        position: relative;
+        clip-path: polygon(50% 0, 87.5% 100%, 12.5% 100%);
+        background-image: linear-gradient(lightblue, lightgreen, lightsalmon);
+    }
+
+    .zone {
+        height: 3em;
+        vertical-align: bottom;
+        position: relative;
+    }
+    .zone span {
+        position:absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+    }
+    .zone:nth-child(1) {
+        background-color: lightblue;
+        clip-path: polygon(50% 0, 62.5% 100%, 37.5% 100%);
+        -webkit-clip-path: polygon(50% 0, 62.5% 100%, 37.5% 100%);
+    }
+    .zone:nth-child(2) {
+        background-color: lightgreen;
+        clip-path: polygon(37.5% 0, 62.5% 0, 75% 100%, 25% 100%);
+        -webkit-clip-path: polygon(37.5% 0, 62.5% 0, 75% 100%, 25% 100%);
+    }
+    .zone:nth-child(3) {
+        background-color: lightsalmon;
+        clip-path: polygon(25% 0, 75% 0, 87.5% 100%, 12.5% 100%);
+        -webkit-clip-path: polygon(25% 0, 75% 0, 87.5% 100%, 12.5% 100%);
+
+    }
+
+</style>
+

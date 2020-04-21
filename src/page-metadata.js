@@ -86,6 +86,14 @@ const talks = {
         description: 'Slides for talk on clean code in tests, delivered in Tel Aviv, Israel'
       }
     }
+  },
+  2020: {
+    web: {
+      'fast-slow': {
+        title: 'Go Slow to Go Fast',
+        description: 'Slides for webinar talk on tests and velocity hosted by testim.io'
+      }
+    }
   }
 };
 
