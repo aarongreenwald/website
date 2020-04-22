@@ -35,32 +35,30 @@
             The Holy Grail
         </section>
         <section>
-            v = ds/dt
+            <i>v = ds/dt</i>
         </section>
         <section>
-            a = dv/dt
+            <i>a = d<span style="color:red">v</span>/dt</i>
         </section>
-        <section class="large">
-            Labor Efficiency
-        </section>
-
         <section>
+            <div class="fragment list-header">Labor Efficiency</div>
+            <div class="fragment fade-past">Open Space</div>
             <div class="fragment fade-past">WFH</div>
-            <div class="fragment fade-past">WFO</div>
             <div class="fragment fade-past">No Coffee</div>
             <div class="fragment fade-past">More Coffee</div>
         </section>
 
-        <section>
-            Technology - the Great Accelerator
+        <section class="large">
+            The Great Accelerator
+        </section>
+        <section class="large">
+            Technology
         </section>
         <section>
-            <div class="fragment">Infra</div>
-            <div class="fragment">
-                <div>Azure/AWS/GCP</div>
-                <div>Frontend Frameworks</div>
-                <div>Libraries</div>
-            </div>
+            <div class="fragment list-header">Infra</div>
+            <div class="fragment">Azure/AWS/GCP</div>
+            <div class="fragment">Frontend Frameworks</div>
+            <div class="fragment">Libraries</div>
         </section>
         <section>
             (goes both ways)
@@ -73,11 +71,22 @@
         <section data-state="chapter-title" class="large">
             01 / Go Slow to Go Fast
         </section>
+        <section data-state="background-img keithcode">
+            <div class="caption">
+                By <a rel="nofollow" class="external text" href="https://www.flickr.com/photos/94329335@N00">Serafina</a> from San Francisco, USA - <a rel="nofollow" class="external text" href="https://www.flickr.com/photos/phyxiusone/4094062595/">DSC00910</a>, <a href="https://creativecommons.org/licenses/by-sa/2.0" title="Creative Commons Attribution-Share Alike 2.0">CC BY-SA 2.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=15097753">Link</a>
+            </div>
+        </section>
+
+        </section>
         <section>
-            Racing
+            Velocity isn't the goal...
+        </section>
+        <section>
+            It's the result
         </section>
         <section>
             <div class="fragment fade-past">Reusable Code</div>
+            <div class="fragment fade-past">Documentation</div>
             <div class="fragment fade-past">Architecture</div>
             <div class="fragment fade-past">Abstractions</div>
             <div class="fragment fade-past">Planning</div>
@@ -113,8 +122,8 @@
                 More automation --> less manual work --> more frequent deployes
             </aside>
         </section>
-        <section>
-            This wold ain't all sunshine and roses, kid
+        <section class="large">
+            But...
         </section>
         <section>
             Writing tests can be time-consuming
@@ -135,14 +144,11 @@
         <section>
             How do we sell it?
         </section>
-        <section>
-            YMMV
-        </section>
         <section data-state="chapter-title" class="large">
-            03 / Getting Started
+            03 / Selling It
         </section>
         <section>
-            <div class="fragment fade-past">ROI</div>
+            <div class="fragment fade-past">Return on Investment</div>
             <div class="fragment fade-past">Showing Value</div>
         </section>
         <section data-state="chapter-title" class="large">
@@ -168,14 +174,24 @@
         <section>
             leave the middle for last
         </section>
+
+        <section data-state="chapter-title" class="large">
+            05 / Showing Value
+        </section>
+        <section class="large">
+            Catching Bugs
+            <aside class="notes" data-markdown>
+               A test that never fails is a useless test.
+                when it catches a bug, you begin to believe
+            </aside>
+        </section>
         <section>
-            <div class="fragment list-header">Within the Codebase</div>
+            <div class="fragment list-header">Focus on:</div>
             <div class="fragment"><span style="color:orange">F</span>ragile</div>
             <div class="fragment"><span style="color:orange">F</span>requently Changed</div>
             <div class="fragment"><span style="color:orange">F</span>oncusing</div>
         </section>
-        <section data-state="chapter-title" class="large">
-            05 / Showing Value
+        <section data-state="background-img confused">
         </section>
         <section class="large">
             Carrots
@@ -192,15 +208,16 @@
 
             </aside>
         </section>
-        <section class="large">
-            Catching Bugs
-            <aside class="notes" data-markdown>
-               A test that never fails is a useless test.
-                when it catches a bug, you begin to believe
-            </aside>
-        </section>
         <section data-state="chapter-title" class="large">
             06 / Farm Animals
+        </section>
+        <section data-state="background-img pigs">
+            <div class="caption">
+                By <a rel="nofollow" class="external text" href="https://www.flickr.com/photos/woolamaloo_gazette/">byronv2</a> - <a rel="nofollow" class="external text" href=https://www.flickr.com/photos/woolamaloo_gazette/357053051">Source</a>, <a href="https://creativecommons.org/licenses/by-sa/2.0" title="Creative Commons Attribution-Share Alike 2.0">CC BY-SA 2.0</a>
+            </div>
+        </section>
+        <section class="large">
+            Clean Tests
         </section>
 
 
@@ -273,6 +290,19 @@
         -webkit-clip-path: polygon(25% 0, 75% 0, 87.5% 100%, 12.5% 100%);
 
     }
+
+    .keithcode body {
+        background-image: url(2020/web/keithcode.jpg);
+    }
+
+    .confused body {
+        background-image: url(2020/web/confused.jpg);
+    }
+
+    .pigs body {
+        background-image: url(2020/web/pigs.jpg);
+    }
+
 
 </style>
 
