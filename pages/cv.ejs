@@ -4,10 +4,7 @@
             div.job-entry  span.title { 
                 font-weight:bold;
             }
-            div.job-entry span.employer{
-                
-            }
-            div.job-entry span.time-frame{
+            span.time-frame{
                 font-style:italic;  
             }
             div.job-entry > div.details {               
@@ -23,129 +20,241 @@
             .right {
                 align-self: flex-end;
             }
-            @media (max-width: 1000px) {
+            .name, .contact {
+                text-align: center;
+            }
+            @media screen and (max-width: 1000px) {
                 .row {
                     display: block;
                 }
-            }               
+            }    
+
+            h1 {
+                font-weight: bold;
+                font-size: unset;
+                margin-block-end: 0;
+                margin-block-start: 0;
+            }
+
+          
+
+            section > h1 {
+                text-transform: uppercase;
+                margin-top: 1em;
+            }
+
+            section > p {
+                margin-block-start: 0;
+            }
+
+            @media screen {
+                .printonly {
+                    display: none;
+                }
+            } 
+
+            @media print {
+                nav, .noprint {
+                    display: none;
+                }
+
+                .job-entry > .details > p,ul {
+                    margin-block-start: unset;
+                }
+
+                /* @page { margin: 1cm; } */
+                body { 
+                    /* margin: 1cm; */
+                    line-height: unset;
+                }
+                a {
+                    text-decoration: none;
+                    color: unset;
+                }
+            }          
 </style>
 
-<div class="job-entry">
-    <div class="row">
-        <div class="grow">
-            <span class="title">Software Developer</span> -
-            <span class="employer"><a href="http://www.wix.com">Wix.com</a></span>
-        </div>
-        <div>
-            <span class="time-frame right">October 2015 – Present</span>
-        </div>
-    </div>
-    <div class = "details">
-        <p>
-            Currently focused on mobile development with React Native.
-        </p>
-    </div>
+<div class="printonly">
+    <h1 class="name">Aaron Greenwald</h1>
+    <div class="contact">www.aarongreenwald.com | aaron@aarongreenwald.com</div>
 
-<div class="job-entry">
-    <div class="row">
-        <div class="grow">
-            <span class="title">Software Developer (Lead)</span> - 
-            <span class="employer"><a href="http://www.americancapital.com">American Capital</a></span>
+
+    <section>
+        <h1>Summary</h1>
+        <p>
+            Senior software developer with broad experience in various technologies. 
+            Experienced with taking ownership of code and driving projects to completion.
+        </p>
+    </section>
+    <section>
+        <h1>Languages</h1>
+        <p>
+            
+            English: Native-level <br />
+            Hebrew: Intermediate working proficiency
+        </p>
+    </section>
+</div>
+
+<section>
+    <h1>Work Experience</h1>
+    <div class="job-entry">
+        <div class="row">
+            <div class="grow">
+                <span class="title">Software Engineer</span> -
+                <span class="employer"><a href="http://www.microsoft.com">Microsoft</a></span>
+            </div>
+            <div>
+                <span class="time-frame right">May 2019 – Present</span>
+            </div>
         </div>
-        <div>                          
-            <span class="time-frame right">October 2013 – September 2015</span>
-        </div>      
+        <div class = "details">
+            <p>
+                Member of Windows Cyber Defense, building the
+                 <a href="https://docs.microsoft.com/en-us/windows/security/threat-protection/microsoft-defender-atp/microsoft-defender-advanced-threat-protection">MDATP</a>
+                 and <a href="https://docs.microsoft.com/en-us/microsoft-365/security/mtp/microsoft-threat-protection">MTP</a> 
+                 frontends. 
+            </p>
+        </div>
     </div>
     
-
-    <div class = "details">
-        <p>
-            Led development efforts on an internal web application for managing mission-critical 
-            data connected with the company's portfolio holdings' finances. 
-            This new application replaced two legacy applications, 
-            bringing new data collection capabilities and a modern solution to a core business concern.
-            We used AngularJS to build the front-end, and ASP.NET MVC to build the server-side
-            API. This combination allowed us to provide a modern UX and a full-featured app 
-            in a shorter development time-frame.
-        </p>
-        <p>
-            Other projects included leading development on a time tracking application to facilitate 
-            billing and ongoing maintenance of various internal applications.
-        </p>
-        Technologies:
-        <ul>      
-            <li>AngularJS</li>
-            <li>SQL Server (2008, 2012)</li>
-            <li>.NET (C#, ASP.NET MVC 5 & Web API, WebForms)</li>
-            <li>JavaScript (jQuery), HTML, CSS (Bootstrap), nodejs, npm </li>
-            <li>TFS 2013, git</li>
-        </ul>
-    </div>
-</div>      
-
-<div class="job-entry">     
-    <div class="row">
-        <div class="grow">
-            <span class="title">Software Developer/Analyst</span> - 
-            <span class="employer"><a href="http://www.geico.com">GEICO</a></span>
+    <div class="job-entry">
+        <div class="row">
+            <div class="grow">
+                <span class="title">Software Engineer</span> -
+                <span class="employer"><a href="http://www.wix.com">Wix.com</a></span>
+            </div>
+            <div>
+                <span class="time-frame right">October 2015 – May 2019</span>
+            </div>
         </div>
-        <div>
-            <span class="time-frame right">July 2012 – October 2013</span>
-        </div>      
-    </div>
-    <div class = "details">
-        <p>
-        Member of a team responsible for the development and maintenance of an internal business 
-        intelligence/analytics application built with SAS and .NET. Received two promotions in fifteen months.
-        </p>
-        <p>
-        Responsibilities included both the design and development of new functionality in 
-        addition to maintaining and fixing bugs in legacy code. Tools/Technologies:
-        </p>
-        <ul>
-            <li>SAS</li>
-            <li>SQL (DB2, SQL Server)</li>
-            <li>Javascript (jQuery/jQuery UI), HTML, CSS</li>
-            <li>SSRS</li>
-            <li>.NET (C#, ASP.NET MVC, WinForms)</li>
-            <li>Unix, SVN (Helped team transition from TFS to SVN for source control)</li>
-        </ul>
-                    <p>
-        Participated in complete SDLC, and collaborated with team members on:
-        </p>
-        <ul>
-            <li>Fixing bugs</li>
-            <li>Designing and developing new features</li>
-            <li>Writing technical and user test plans and test scripts</li>
-            <li>Technical testing</li>
-            <li>Documenting new features (user and technical)</li>
-            <li>Deployment</li>
-        </ul>
-        <p>
-            Delivered a talk at the company's annual SAS User Group conference entitled: <i>Deduping Methods: SAS & SQL (plus other SQL windowing tricks)</i>
-        </p>
-    </div>
-</div>  
-
-
-<div class="job-entry">
-    <div class="row">
-        <div class="grow">
-            <span class="title">Technical Support</span> - 
-            <span class="employer"><a href="http://www.dynamicdataconcepts.com">Dynamic Data Concepts</a></span>
+        <div class = "details">
+            <p>
+                Fullstack engineer, including server, web, and mobile (React Native) as needed. 
+                Founding member of team building Wix’s mobile presence with React Native, 
+                building and scaling the core chat product from idea phase to 50k+ DAU. 
+                Responsible for architecture, development, and deployment and production monitoring of our team’s deliverables. 
+            </p>
+    
+            <ul>
+                <li>Frontend: JavaScript, React, React Native</li>
+                <li>Backend: Scala, NodeJS</li>
+                <li>Simultaneous focus on scale, performance, and code-base maintainability</li>
+                <li>Trained and mentored junior colleagues</li>
+                <li>Spoke at multiple conferences and meetups, sharing our team’s experience and knowledge with broader the community (See <a class="noprint" href="/talks"> talks</a><span class="printonly">agreenwald.com/talks</span>)
+                </li>
+            </ul>
+                
+    
+            
         </div>
-        <div>
-            <span class="time-frame right">May 2011 - June 2012</span>     
-        </div>      
+    </div>
+    
+    <div class="job-entry">
+        <div class="row">
+            <div class="grow">
+                <span class="title">Software Developer (Lead)</span> - 
+                <span class="employer"><a href="https://www.linkedin.com/company/american-capital">American Capital</a></span>
+            </div>
+            <div>                          
+                <span class="time-frame right">October 2013 – September 2015</span>
+            </div>      
+        </div>
+        
+    
+        <div class = "details">
+            <p>
+                Lead developer on a team developing and maintaining multiple internal web applications 
+                for managing mission-critical data connected with the company’s finances and core business. 
+                Developed common JavaScript code base for our applications, 
+                increasing productivity to the point where we can stand up new applications in weeks instead of months. 
+            </p>        
+            <ul>    
+                <li>Chose new technologies and frameworks for the team</li> 
+                <li>Architected, designed, and developed applications</li>
+                <li>Assisted in requirements gathering and demoing application to customers and stakeholders</li>
+                <li>Trained junior developers and provided coding guidance</li>
+                <li>Monitored and drove team progress</li>
+                <li>JavaScript, AngularJS, Twitter Bootstrap (CSS), focus on responsive design</li>
+                <li>SQL Server (2008, 2012)</li>
+                <li>.NET (C#, ASP.NET MVC 5 & Web API, WebForms), OOP</li>
+            </ul>
+        </div>
     </div>      
-    <div class = "details">         
-        <ul>
-            <li>Responsible for software testing as part of the software release cycle</li>
-            <li>Troubleshooted client issues</li>
-            <li>Resolved technical issues and helped users get the software working for them</li>
-            <li>Trained users in company's software</li>
-            <li>Administered JIRA as company's bug tracker and support Helpdesk</li>
-            <li>Used Microsoft Visual Studio Lightswitch to develop a customer information database to interact with JIRA</li>
-        </ul>
+    
+    <div class="job-entry">     
+        <div class="row">
+            <div class="grow">
+                <span class="title">Programmer/Analyst</span> - 
+                <span class="employer"><a href="http://www.geico.com">GEICO</a></span>
+            </div>
+            <div>
+                <span class="time-frame right">July 2012 – October 2013</span>
+            </div>      
+        </div>
+        <div class = "details">
+            <p>
+                Development and maintenance of an internal business intelligence/analytics application with executive 
+                management visibility. Application forms basis of pricing/underwriting decision analysis 
+                affecting upwards of $15 billion in insurance premiums
+            </p>
+            <ul>
+                <li>Responsible for design/development of new functionality and maintaining/fixing legacy code.                </li>
+                <li>Emphasis on accuracy and performance – especially when processing large datasets                </li>
+                <li>Brainstormed, designed and developed new features                </li>
+                <li>Refactored code to simplify future maintenance, increased modularity and performance                </li>
+                <li>Designed technical and user test plans and test scripts, performed technical testing                </li>
+                <li>Improved team’s dev practices: helped implement source control system (SVN)                </li>
+                <li>SAS, SQL (DB2, SQL Server), .NET (C#, ASP.NET MVC), SSRS, UNIX                </li>
+            </ul>
+            <p class="noprint">
+                Delivered a talk at the company's annual SAS User Group conference entitled: <i>Deduping Methods: SAS & SQL (plus other SQL windowing tricks)</i>
+            </p>
+        </div>
+    </div>  
+    
+    
+    <div class="job-entry">
+        <div class="row">
+            <div class="grow">
+                <span class="title">Technical Support/Account Manager (B2B)</span> - 
+                <span class="employer"><a href="http://www.dynamicdataconcepts.com">Dynamic Data Concepts</a></span>
+            </div>
+            <div>
+                <span class="time-frame right">May 2011 - June 2012</span>     
+            </div>      
+        </div>      
+        <div class="details">         
+            <ul>
+                <li>Conducted on-site trainings as part of new customer onboarding</li>
+                <li>Troubleshooted client issues, liasoned between customer and dev teams</li>
+                <li>Cleaned customer SQL data caused by software bugs</li>
+                <li>Performed QA as part of dev release cycle</li>
+                <li>Jira admin: installed, configured and maintained company's on-prem Jira installation</li>
+                <li>Developed in-house CRM using Microsoft Visual Studio Lightswitch to facilitate customer billing</li>
+            </ul>
+        </div>
+    </div>  
+    
+</section>
+
+<section>
+    <h1>Education</h1>
+    <div class="row">
+        <div class="grow">
+            <span class="employer">Touro College</span>
+        </div>
+        <div>
+            <span class="time-frame right">June 2012</span>
+        </div>
     </div>
-</div>  
+    <div class = "details">
+        <ul>
+            <li>Bachelor of Science in <b>Mathematics</b></li>
+            <li>Minor in Finance</li>
+            <li>Recipient of Lander’s Honors Scholarship</li>
+            <li>In-Major GPA: 4.0, Overall GPA: 3.98</li>
+            </li>
+        </ul>                    
+    </div>
+</section>
