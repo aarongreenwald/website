@@ -5,7 +5,7 @@ code
 >><span style="font-size:larger">"Comments are a code smell."</span>
 
         
->>>>--_your team's principled developer_
+>><span style="font-size:smaller">--_your team's principled developer_</span>
 
 Well, I dunno. I think the smell was there before you wrote the comments. The comments are febreze. They cover the smell that was already there without actually fixing the problem, which is that your code is overcomplicated and confusing.
 
