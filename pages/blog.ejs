@@ -1,9 +1,5 @@
 <div>
     <div>
-        <div class="blog-title">
-          <a href="/blog">My Coding Blog</a>
-        </div>
-        <div class="blog-tagline">because there weren't enough programming blogs out there yet</div>
          <div class="content">
             <% if (showingTag) { %>
                 <div class="tag-notice">
@@ -34,12 +30,14 @@
             <% }) %>
 
             <% if (!posts) { %>
-                <div style="margin:80px 0;width: 100%;">
+                <div style="margin:80px 0 20px 0;width: 100%;">
                   Questions? Comments? Rants? A blog is not a blog without a place readers can use
                   to tell the world how much money they make by just clicking links on Google. Head to
                   Twitter to join the discussion. I'm <a href="//twitter.com/aaronjgreenwald">@aaronjgreenwald</a> and I'd love to hear from you.
                 </div>
+                <div style="float:right"><a href="/blog">&#x23CE; Back to blog</a></div>
             <% } %>
+
 
 
          </div>
@@ -47,7 +45,7 @@
             <div class="about">
               You're reading Aaron Greenwald's coding blog,
               where he writes infrequently about code, software and programming.
-              Read more about him (me, actually) <a href="/">here</a>.
+              Read more about him (me, actually) <a href="/about">here</a>.
             </div>
             <% if (posts && tags) { %>
               <div class="tags">
@@ -64,24 +62,6 @@
     </div>
 </div>
 <style>
-
-
-.blog-title {
-  font-size:3em;
-  line-height: 1em;
-}
-
-.blog-title a,
-.blog-title a:hover {
-  color:black;
-  text-decoration:none;
-}
-
-.blog-tagline {
-  font-style:italic;
-  font-size: .8em;
-  margin-top: 15px;
-}
 
 .sidebar{
   display: inline-block;
@@ -107,9 +87,6 @@
   }
 }
 
-.content .post {
-  margin-top:2em;
-}
 
 .content .post .post-title {
   font-size:2em;

@@ -21,6 +21,7 @@ app.set('views', `${__dirname}/../pages`);
 app.set('view engine', 'ejs');
 
 app.get('/', (req, res) => res.render('home', PageValues({title: 'Home', description: pages.homeDescription})));
+app.get('/about', (req, res) => res.render('about', PageValues({title: 'About', description: pages.aboutDescription})))
 app.get('/projects', (req, res) => res.redirect(301, '/work'));
 app.get('/resume', (req, res) => res.redirect(301, '/cv'));
 app.get('/work', (req, res) => res.render('work', PageValues({title: 'Work', description: pages.workDesc})));

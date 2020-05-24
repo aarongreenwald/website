@@ -8,51 +8,8 @@
         </div>
     </div>
 </section>
+
 <section>
-    <h3>tldr;</h3>
-    <ul class="tldr">
-        <li>I <a href="/work">code</a> (all the time)</li>
-        <li>I <a href="/cv">work</a> (a fair amount)</li>
-        <li>I <a href="/talks">talk</a> (now and then)</li>
-        <li>I <a href="https://twitter.com/aaronjgreenwald">tweet</a> (infrequently)</li>
-        <li>I <a href="/blog">blog</a> (even less frequently)</li>
-    </ul>
-</section>
-<section id="details">
-    <h3>The Details</h3>
-    <p>
-        Over the years, I've done a broad range of application development using a variety of tech. Lately 
-        I've developed a strong preference for "fullstack" work because I enjoy building products end-to-end. 
-        Things I've worked on professionally:
-        <ul>
-            <li>Web apps with React and Angular</li>
-            <li>Mobile apps with React Native</li>
-            <li>Scala server development</li>
-            <li>.NET and SQL Server backends</li>
-            <li>Nodejs</li>
-        </ul>
-        I've also lightly used Kotlin in hobby projects, and once upon a time WinForms was my tool of choice.
-    </p>    
-    <p>
-        A few years ago I moved to Tel Aviv, Israel from Washington, DC. 
-        Prior to living in DC, I did time in NYC and Baltimore. I have native-level fluency in English and a working proficiency in Hebrew, 
-        as well as a desire to improve my skills in a few other languages. 
-        I hold a B.Sc. in Mathematics from Touro College in NY.  
-    </p>    
-    <p>  
-        My (mostly) complete professional bio can be found on my <a href="/cv">CV</a> or on <a href="https://linkedin.com/in/greenwaldaaron">LinkedIn</a>,
-        and samples of my work can be found on <a href="https://github.com/aarongreenwald">GitHub</a>.
-    </p>
-
-    <h3>Contact Me</h3>
-    Because I recieve a lot of spam through LinkedIn, I don't usually monitor my inbox there. The best way to reach me is directly via <a class="email-address"> email</a>. (If you send spam to my email inbox, I will probably ignore you as well. Please don't.)
-    If you're reading this on a mobile device, you can also download 
-    my <a href="/static/aaron-greenwald.vcf">contact card</a>.
-</section>
-<div style="margin-top:30px;"> 
-    <a style="font-size:1.2em" id='read-more'>About Me: The Long Version</a>
-</div>
-
     <div class="icon-list-container">
         <div class="icon-list">
             <a title="My github profile" href="https://github.com/aarongreenwald"><span class="icon-github-sign icon-lg" /></a>
@@ -63,6 +20,17 @@
             </a>
         </div>
     </div>
+</section>
+<section>
+    <ul class="tldr">    
+        <li><a href="/about">About</a></li>
+        <li><a href="/talks">Talks</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/cv">CV</a></li>
+    </ul>
+</section>
+
+ 
 </div>
 <style>
 
@@ -84,26 +52,67 @@
         flex-direction: column;
     }
 
-</style>
-<script>
-
-    //Finds y value of given object
-    function findPos(obj) {
-        const curtop = 0;
-        if (obj.offsetParent) {
-            do {
-                curtop += obj.offsetTop;
-            } while (obj = obj.offsetParent);
-        return [curtop];
-        }
+    ul.tldr {
+        display: flex;
+        justify-content: center;
+        padding-inline-start: unset;
     }
-    
-    document.getElementById('details').className = 'hide';
-    document.getElementById('read-more').addEventListener('click', function(){
-        document.getElementById('details').className = 'show';
-        document.getElementById('read-more').style.display = 'none';
-        window.scroll(0,findPos(document.getElementById("details")));
+    ul.tldr > li {
+        display: inline;
+        margin: 0 10px;
+        
+        /* font-size: 1.5em;
+        line-height: 1.5em; */
+    }
 
-    })
-</script>
+    .icon-list-container {
+        padding:10px 20px;
+        font-size: 1.2em;
+    }
+
+    .icon-list {
+        text-align:center;
+        margin-top:10px;    
+    }
+
+    .icon-list a {
+        margin: 5px;
+    }
+
+    /*socialicious icons*/
+    .icon-lg{
+        font-size: 25px;
+    }
+
+    /* fix the colors of the icons
+        so that they don't get changed to blue when they're iside an <a> tag*/
+    .icon-github-sign {
+        color:black;
+    }
+    .icon-twitter-sign {
+        color:#33ccff;    
+    }
+    .icon-linkedin-sign {
+        color: #4875b4;
+    }
+
+    .intro {
+        display: flex;
+    }
+
+    .head-shot {
+        margin-right:15px;
+        object-fit: cover;
+        border-radius: 50%;
+        float:left;
+        height: 100px;
+        /*zoom: .2;*/
+    }
+
+    .hello {
+        align-self: center;
+        max-width: 400px;
+    }
+
+</style>
         

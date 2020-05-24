@@ -4,7 +4,8 @@ const pages = {
   blogDesc: `Aaron Greenwald's sparsely populated blog about software, coding, and more. Sometimes sarcastic, occasionally entertaining, always enlightening.`,
   cvDesc: `Aaron Greenwald's resume/professional bio - software developer, programmer.`,
   workDesc: `Aaron Greenwald's coding projects and hobby software.`,
-  talksDesc: `̄A selection of Aaron Greenwald's public appearances: talks and workshops`
+  talksDesc: `̄A selection of Aaron Greenwald's public appearances: talks and workshops`,
+  aboutDescription: 'About me'
 };
 
 const talks = {
